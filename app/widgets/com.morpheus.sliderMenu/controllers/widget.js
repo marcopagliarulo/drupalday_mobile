@@ -133,7 +133,7 @@ function buildMenu(items, parent) {
 	
 				item.add(icon);
 			}
-			item.addEventListener('click',function(e){$.hide();});
+			item.addEventListener('click',function(e){$.hideMenu();});
 			if(typeof items[i].callback == 'function') {
 				item.addEventListener('click',items[i].callback);
 			}
