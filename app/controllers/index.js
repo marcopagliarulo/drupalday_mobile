@@ -24,7 +24,15 @@ function openMenuItem(event){
 		}
 	}
 }
-
+function openIndex(event){
+	if(difference){
+		openController('countdown');
+	}
+	else{
+		openController('live');
+	}
+	$.SliderMenuContainer.hideMenu();
+}
 // Initialize the slide menu
 $.SliderMenuContainer.init({
     items: menuItems,

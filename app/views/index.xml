@@ -3,6 +3,7 @@
 		<View id="header">
 			<ImageView id="menuButton"></ImageView>
 			<Label id="headerTitle">DRUPALDAY 2014</Label>
+			<ImageView id="homeButton" onClick="openIndex" bubbleParent="false"></ImageView>
 		</View>
 		<View id="wrapperContainer" layout="absolute">
 			<View id="container" layout="vertical">

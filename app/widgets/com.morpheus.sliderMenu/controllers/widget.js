@@ -36,9 +36,9 @@ $.init = function(params) {
 	if(elementShowHide != null){
 		elementShowHide.addEventListener('click', function(){
 			if (menuOpen){
-				$.hide();
+				$.hideMenu();
 			}else{
-				$.show();
+				$.showMenu();
 			}
 		});
 	}
@@ -155,7 +155,7 @@ function buildMenu(items, parent) {
 /**
  * Clears all items from the side menu
  */
-$.show = function() {
+exports.showMenu = function() {
 	moveTo= 0;
 	menuOpen=true;
 	$.animateMenu(moveTo);
@@ -163,7 +163,7 @@ $.show = function() {
 /**
  * Clears all items from the side menu
  */
-$.hide= function() {
+exports.hideMenu= function() {
 	moveTo= "-80%";
 	menuOpen=false;
 	$.animateMenu(moveTo);

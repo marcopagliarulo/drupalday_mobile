@@ -11,6 +11,11 @@
 	width: "8%",
 	left: "5%",
 }
+"#homeButton":{
+	image: '/images/home.png',
+	width: "8%",
+	right: "5%",
+}
 "#header" : {
 	width: Titanium.UI.FILL,
 	height:Titanium.UI.SIZE,
