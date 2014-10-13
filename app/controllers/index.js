@@ -31,6 +31,7 @@ function openIndex(event){
 	else{
 		openController('live');
 	}
+	$.headerTitle.text = "DRUPALDAY 2014";
 	$.SliderMenuContainer.hideMenu();
 }
 // Initialize the slide menu
