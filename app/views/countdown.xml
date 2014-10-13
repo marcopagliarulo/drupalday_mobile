@@ -1,0 +1,13 @@
+<Alloy>
+	<View id="countdown" layout="vertical">
+		<ImageView id="logoCountdown"></ImageView>
+		<Label id="time"></Label>
+		<View layout="horizontal" id="drupalday" >
+			<Label id="drupal">DRUPAL</Label>
+			<Label id="day">DAY</Label>
+		</View>
+		<Label id="location">MILANO</Label>
+		<Label id="date">14-15 NOVEMBRE 2014</Label>
+		<Label id="address">Università degli Studi\ndi Milano-Bicocca</Label>
+	</View>
+</Alloy>

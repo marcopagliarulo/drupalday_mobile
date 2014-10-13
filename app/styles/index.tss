@@ -1,0 +1,27 @@
+"#container" : {
+	backgroundColor: "#ffffff",
+	backgroundImage: "/images/background.png",
+	backgroundRepeat: true
+}
+"#wrapperContainer" : {
+	width: "100%",
+}
+"#menuButton":{
+	image: '/images/menu.png',
+	width: "8%",
+	left: "5%",
+}
+"#header" : {
+	width: Titanium.UI.FILL,
+	height:Titanium.UI.SIZE,
+	backgroundColor:"#139ad4",
+	height: "50dp",
+}
+"#headerTitle" : {
+	color : "#ffffff",
+	left: "15%",
+	font : {
+		fontSize : "25sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	}
+}

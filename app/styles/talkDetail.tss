@@ -1,0 +1,47 @@
+".headerView" : {
+	height : Ti.UI.SIZE,
+},
+".subHeaderView" : {
+	height : Ti.UI.SIZE,
+	borderWidth : "0dp",
+},
+
+".listSpeaker" : {
+	font: {
+		fontSize : "15sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	},
+	color : "#ea415e",
+	left: "5%",
+},
+".listTitle" : {
+	left: "5%",
+	top : "5%",
+	backgroundColor : "transparent"
+},
+
+".favorite" : {
+	right: "5%"
+},
+
+".body" : {
+	width : "90%",
+	left : "5%",
+	font: {
+		fontSize : "20sp",
+		fontFamily : Alloy.Globals.museosans_300
+	},
+	color : "#139ad4",
+},
+".category" : {
+	font: {
+		fontSize : "20sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	},
+	color : "#139ad4",
+	left: "5%",
+},
+".viewLevel" : {
+	right: "5%",
+	width: Ti.UI.SIZE,
+},

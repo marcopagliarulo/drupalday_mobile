@@ -1,0 +1,22 @@
+".headerView" : {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	top : "5%"
+}
+".listImage" : {
+	width: "25%",
+	left : "5%"  
+},
+".listTitle" : {
+	left : "35%",
+	backgroundColor : "transparent"
+}
+".body" : {
+	width : "90%",
+	left : "5%",
+	font: {
+		fontSize : "20sp",
+		fontFamily : Alloy.Globals.museosans_300
+	},
+	color : "#139ad4",
+},

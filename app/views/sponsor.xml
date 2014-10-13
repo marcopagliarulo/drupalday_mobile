@@ -1,0 +1,4 @@
+<Alloy>
+	<ScrollView id="sponsor" layout="vertical" scrollType="vertical">
+    </ScrollView>
+</Alloy>

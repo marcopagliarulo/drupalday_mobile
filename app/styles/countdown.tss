@@ -1,0 +1,57 @@
+"#logoCountdown" : {
+  images: [
+  	"/images/countdown/1.png",
+  	"/images/countdown/2.png",
+  	"/images/countdown/3.png",
+  	"/images/countdown/4.png",
+  	"/images/countdown/5.png",
+  	"/images/countdown/6.png",
+  	"/images/countdown/7.png",
+  	"/images/countdown/8.png",
+  	"/images/countdown/9.png",
+  	"/images/countdown/10.png",
+  	"/images/countdown/11.png",
+  	"/images/countdown/12.png",
+  	"/images/countdown/13.png",
+  	"/images/countdown/14.png"
+  ],
+  width: "50%",
+  duration:700
+}
+"Label" : {
+	font : {
+		fontSize : "20sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	},
+	textAlign: "center"
+}
+"#countdown" : {
+	width: "100%",
+}
+"#drupalday" : {
+	width: Ti.UI.SIZE,
+	height: Ti.UI.SIZE,
+}
+"#drupal" : {
+	color: "#0e9fcf",
+	title: 'Drupal'
+}
+"#day" : {
+	color: "#ea415e",
+	title: 'Day'
+}
+"#location" : {
+	color: "#0e9fcf",
+	title: 'Milano'
+}
+"#date" : {
+	color: "#ea415e",
+	title: '14-15 Novembre 2014'
+}
+"#time" : {
+	color: "#0e9fcf",
+}
+"#address" : {
+	color: "#bbbbbb",
+	title: "Università degli Studi di Milano-Bicocca"
+}

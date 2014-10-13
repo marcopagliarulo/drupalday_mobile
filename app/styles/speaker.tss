@@ -1,0 +1,11 @@
+".listImage" : {
+	width: "25%",
+	left : "5%"  
+},
+".listTitle" : {
+	left : "35%",
+	backgroundColor : "transparent"
+}
+"TableView" : {
+	separatorColor : "#139ad4"
+}

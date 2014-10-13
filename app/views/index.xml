@@ -1,0 +1,13 @@
+<Alloy>
+	<Window class="container" layout="vertical" exitOnClose="true" navBarHidden="true">
+		<View id="header">
+			<ImageView id="menuButton"></ImageView>
+			<Label id="headerTitle">DRUPALDAY 2014</Label>
+		</View>
+		<View id="wrapperContainer" layout="absolute">
+			<View id="container" layout="vertical">
+			</View>
+			<Require type="widget" src="com.morpheus.sliderMenu" id="SliderMenuContainer"></Require>
+		</View>
+	</Window>
+</Alloy>

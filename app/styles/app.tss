@@ -1,0 +1,28 @@
+"Window": {
+    navBarHidden: true
+}
+".listTitle" : {
+	font: {
+		fontSize : "25sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	},
+	backgroundColor : "#ffffff",
+	color : "#139ad4",
+	left: "0"
+}
+".listDate" : {
+	font: {
+		fontSize : "25sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	},
+	backgroundColor : "#139ad4",
+	color : "#ffffff",
+	left: "0"
+}
+"WebView" : {
+	width : Ti.UI.SIZE
+}
+"ImageView" : {
+	width : Alloy.Globals.deviceWidth,
+	height: "auto"
+}

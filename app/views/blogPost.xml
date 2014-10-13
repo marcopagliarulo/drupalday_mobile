@@ -1,0 +1,6 @@
+<Alloy>
+    <View id="blogPost" layout="vertical" width="Ti.UI.SIZE">
+        <View layout="absolute" width="Ti.UI.FILL" height="Ti.UI.SIZE" top="0" id="headerBlog" >
+        </View>
+    </View>
+</Alloy>

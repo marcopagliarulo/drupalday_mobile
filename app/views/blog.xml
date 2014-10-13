@@ -1,0 +1,6 @@
+<Alloy>
+	<View id="blog" layout="vertical">
+        <ScrollView id="scrollViewblog" layout="vertical">
+        </ScrollView>
+    </View>
+</Alloy>

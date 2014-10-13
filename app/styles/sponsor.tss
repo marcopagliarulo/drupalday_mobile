@@ -1,0 +1,24 @@
+".sponsorType" : {
+	font: {
+		fontSize : "25sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	},
+	color : "#ffffff",
+	textAlign : "center"
+},
+".headerViewElement" : {
+	backgroundColor : "#ea415e",
+	height: Ti.UI.SIZE
+},
+".diamond" : {
+	width : "100%"
+},
+".gold" : {
+	width : "85%"
+},
+".silver" : {
+	width : "70%"
+},
+".mediapartner" : {
+	width : "50%"
+},

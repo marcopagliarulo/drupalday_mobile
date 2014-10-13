@@ -1,0 +1,39 @@
+".headerSession" : {
+	backgroundColor : "#eeeeee",
+	height : Titanium.UI.SIZE
+},
+".rowView" : {
+	backgroundColor : "#ffffff",
+},
+".scheduleDate" : {
+	font: {
+		fontSize : "15sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	},
+	color : "#ea415e",
+	left: "5%",
+	top : "5%s",
+},
+".listSpeaker" : {
+	font: {
+		fontSize : "15sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	},
+	color : "#ea415e",
+	left: "5%",
+},
+".listTitle" : {
+	left: "5%",
+},
+
+".favorite" : {
+	right: "5%"
+},
+".emptyFavotires" : {
+	font: {
+		fontSize : "25sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	},
+	color : "#139ad4",
+	textAlign : "center"
+},

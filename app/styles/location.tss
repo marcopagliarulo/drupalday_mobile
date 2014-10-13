@@ -1,0 +1,17 @@
+"#mapview" : {
+   mapType: Alloy.Globals.Map.NORMAL_TYPE,
+   region : {
+        latitude:45.523703,
+        longitude:9.219591,
+        latitudeDelta:0.01,
+        longitudeDelta:0.01
+    }
+},
+"#appcHQ" : {
+    latitude: 45.523703,
+    longitude: 9.219591,
+    title: "DISCo - Dipartimento di Informatica Sistemistica e Comunicazione",
+    subtitle: "Viale Sarca, 336 - Edificio U14",
+    image : '/images/pindrupal.png',
+    showInfoWindow : true
+}
