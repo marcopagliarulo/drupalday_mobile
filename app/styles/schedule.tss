@@ -1,49 +1,10 @@
-".headerSession" : {
-	backgroundColor : "#eeeeee",
-	height : Ti.UI.SIZE
-},
-".rowView" : {
-	backgroundColor : "#ffffff",
-},
-".tab" : {
-	borderWidth: "1dp",
-	borderColor: "#fff",
-	backgroundColor: "#139ad4",
-	
-},
-".labelTab" : {
+"#schedule_switch" : {
+	backgroundColor : "#ea415e",
 	color : "#ffffff",
 	font: {
-		fontSize : "25sp",
-		fontFamily : Alloy.Globals.museo_slab_300
-	},
-},
-".tabActive" : {
-	backgroundColor: "#ea415e",
-	borderWidth: "1dp",
-	borderColor: "#fff",
-},
-".scheduleDate" : {
-	font: {
-		fontSize : "15sp",
+		fontSize : "20sp",
 		fontFamily : Alloy.Globals.museo_slab_700
 	},
-	color : "#ea415e",
-	left: "5%",
-	top: "5%"
-},
-".listSpeaker" : {
-	font: {
-		fontSize : "15sp",
-		fontFamily : Alloy.Globals.museo_slab_700
-	},
-	color : "#ea415e",
-	left: "5%",
-},
-".listTitle" : {
-	left: "5%",
-},
-
-".favorite" : {
-	right: "5%"
-},
+	width : Ti.UI.FILL,
+	textAlign: "center"
+}

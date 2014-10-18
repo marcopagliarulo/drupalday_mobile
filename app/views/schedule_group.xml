@@ -1,0 +1,18 @@
+<Alloy>
+	<View id="schedule_group" layout="vertical">
+		<View layout="horizontal" height="Ti.UI.SIZE">
+			<View class="tabActive" width="50%" height="Ti.UI.SIZE" id="code">
+				<Label class="labelTab" touchEnabled="false">\nCode\n</Label>
+			</View>
+			<View class="tab" width="50%" height="Ti.UI.SIZE" id="biz">
+				<Label class="labelTab" touchEnabled="false">\nBiz\n</Label>
+			</View>
+		</View>
+		<View layout="absolute">
+			<View id="codeView">
+			</View>
+			<View id="bizView" visible="false">
+			</View>
+		</View>
+	</View>
+</Alloy>

@@ -1,6 +1,5 @@
 ".headerSession" : {
 	backgroundColor : "#eeeeee",
-	height : Ti.UI.SIZE,
 },
 ".rowView" : {
 	backgroundColor : "#ffffff",
@@ -30,7 +29,8 @@
 	},
 	color : "#ea415e",
 	left: "5%",
-	top : "5%",
+	top: "5dp",
+	bottom: "5dp"
 },
 ".listSpeaker" : {
 	font: {
@@ -39,11 +39,28 @@
 	},
 	color : "#ea415e",
 	left: "5%",
+	bottom : "5dp",
 },
+".listTrack" : {
+	font: {
+		fontSize : "15sp",
+		fontFamily : Alloy.Globals.museo_slab_500
+	},
+	width: Ti.UI.FILL,
+	textAlign: "center",
+	bottom : "5dp",
+	color: "#139ad4"
+}
 ".listTitle" : {
 	left: "5%",
+	top : "10dp",
+	font: {
+		fontSize : "22sp",
+	},
 },
 
 ".favorite" : {
-	right: "5%"
+	right: "5%",
+	top : "5dp",
+	width : "80%"
 },
