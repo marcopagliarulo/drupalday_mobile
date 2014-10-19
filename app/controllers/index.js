@@ -11,7 +11,6 @@ var menuItems = [
     { id: 4, controller : "sponsor" , title: "Sponsor", image: "/images/diamond.png" , font: defaultFont , callback : function(e){openMenuItem(e);} },
     { id: 5, controller : "blog" , title: "Blog", image: "/images/pen.png" , font: defaultFont , callback : function(e){openMenuItem(e);} },
     { id: 6, controller : "location" , title: "Location", image: "/images/pin.png" , font: defaultFont , callback : function(e){openMenuItem(e);} },
-    { id: 7, controller : "schedulev2" , title: "Sessioni V2", image: "/images/clock.png" , font: defaultFont , callback : function(e){openMenuItem(e);}},
 ];
 function openMenuItem(event){
 	if(typeof event.source.id != 'undefined'){

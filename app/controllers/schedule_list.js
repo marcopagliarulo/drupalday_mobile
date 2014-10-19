@@ -1,4 +1,3 @@
-
 openTalk = function(e){
 	if(typeof e.source.nid != 'undefined'){
 		var nid = e.source.nid;
@@ -35,7 +34,7 @@ function createRow(talkHoursList,talkData){
 		$.addClass(time,"scheduleDate");
 		headerViewElement.add(time);
 		hoursIndexes[talkHoursList[i].start + "-" + talkHoursList[i].end] = i;
-		tableViewSections[i] = Ti.UI.createView({layout: "vertical", height : Ti.UI.SIZE, left: Alloy.Globals.deviceWidth});
+		tableViewSections[i] = Ti.UI.createView({layout: "vertical", height : Ti.UI.SIZE});
 		tableViewSections[i].add(headerViewElement);
 	}
 	var tableView = Ti.UI.createScrollView({layout: "vertical", scrollType : "vertical"});
@@ -93,8 +92,16 @@ function createRow(talkHoursList,talkData){
 		tableViewSections[hoursIndex].add(tableViewRow);
 	}
 	for(var i = 0; i < tableViewSections.length; i++){
+		if(tableViewSections[i].children.length > 1){
+			for(var j = 0; j < tableViewSections[i].children.length; j++){
+				if(j != 0 && j != (tableViewSections[i].children.length-1)){
+					var rowSeparator = Ti.UI.createView();
+					$.addClass(rowSeparator,"rowSeparator");
+					tableViewSections[i].children[j].children[0].add(rowSeparator);
+				}
+			}
+		}
 		tableView.add(tableViewSections[i]);
-		tableViewSections[i].animate({left:0,duration:300});
 	}
 	return tableView;
 }

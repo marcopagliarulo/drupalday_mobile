@@ -21,7 +21,9 @@
 },
 
 ".favorite" : {
-	right: "5%"
+	right: "5%",
+	width: "15%",
+	top: "5dp"
 },
 
 ".body" : {
@@ -40,8 +42,17 @@
 	},
 	color : "#139ad4",
 	left: "5%",
+	width : "55%"
 },
 ".viewLevel" : {
-	right: "5%",
-	width: Ti.UI.SIZE,
+	width: "40%",
 },
+".levelLabel" : {
+	font: {
+		fontSize : "15sp",
+		fontFamily : Alloy.Globals.museo_slab_500
+	},
+	width: Ti.UI.FILL,
+	textAlign: "center",
+	color: "#139ad4"
+}

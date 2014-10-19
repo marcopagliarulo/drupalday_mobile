@@ -17,7 +17,9 @@
 	},
 	backgroundColor : "#139ad4",
 	color : "#ffffff",
-	left: "0"
+	left: "0",
+	top: "5dp",
+	bottom : "5dp"
 }
 "WebView" : {
 	width : Ti.UI.SIZE

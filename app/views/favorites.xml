@@ -1,4 +1,9 @@
 <Alloy>
-	<View id="favorites" layout="vertical">
+	<View id="favorites" layout="absolute">
+		<View id="nofavorites" layout="vertical">
+			<ImageView image="/images/favOn.png" width="20%"></ImageView>
+			<Label class="emptyFavotires">Non hai salvato nessuna sessione tra i tuoi favoriti.</Label>
+			<Label class="emptyFavoritesDetail">Per creare la tua lista clicca sulle stelle nella lista delle sessioni.</Label>
+		</View>
 	</View>
 </Alloy>
