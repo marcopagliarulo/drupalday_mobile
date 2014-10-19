@@ -63,7 +63,13 @@ function createRow(talkData){
 		$.addClass(headerViewElement,"headerSession");
 		var time = Ti.UI.createLabel({touchEnabled : false, text : talk.time});
 		$.addClass(time,"scheduleDate");
+		var headerSeparatorTop = Ti.UI.createView();
+		$.addClass(headerSeparatorTop,"headerSeparatorTop");
+		var headerSeparatorBottom = Ti.UI.createView();
+		$.addClass(headerSeparatorBottom,"headerSeparatorBottom");
+		headerViewElement.add(headerSeparatorTop);
 		headerViewElement.add(time);
+		headerViewElement.add(headerSeparatorBottom);
 		var tableViewRow = Ti.UI.createView({nid : talk.nid, height: Ti.UI.SIZE});
 		tableViewRow.addEventListener('click',function(e){
 			openTalk(e);

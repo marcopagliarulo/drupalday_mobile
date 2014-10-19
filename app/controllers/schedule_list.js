@@ -32,7 +32,13 @@ function createRow(talkHoursList,talkData){
 		$.addClass(headerViewElement,"headerSession");
 		var time = Ti.UI.createLabel({touchEnabled : false, text : talkHoursList[i] .time});
 		$.addClass(time,"scheduleDate");
+		var headerSeparatorTop = Ti.UI.createView();
+		$.addClass(headerSeparatorTop,"headerSeparatorTop");
+		var headerSeparatorBottom = Ti.UI.createView();
+		$.addClass(headerSeparatorBottom,"headerSeparatorBottom");
+		headerViewElement.add(headerSeparatorTop);
 		headerViewElement.add(time);
+		headerViewElement.add(headerSeparatorBottom);
 		hoursIndexes[talkHoursList[i].start + "-" + talkHoursList[i].end] = i;
 		tableViewSections[i] = Ti.UI.createView({layout: "vertical", height : Ti.UI.SIZE});
 		tableViewSections[i].add(headerViewElement);
