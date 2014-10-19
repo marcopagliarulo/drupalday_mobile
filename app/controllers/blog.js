@@ -4,7 +4,7 @@ openBlogPost = function(e){
 		openController('blogPost',nid);
 	}
 };
-var blog = Alloy.createCollection('blog');
+var blog = Alloy.Collections.instance('blog');
 blog.fetch({query : "select * from blog order by date DESC"});
 var blogPost = blog.toJSON();
 for(var i = 0; i < blogPost.length; i++){

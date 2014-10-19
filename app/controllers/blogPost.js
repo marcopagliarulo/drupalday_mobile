@@ -8,7 +8,7 @@ transformFunction = function(model) {
 	return transform;
 };
 var args = arguments[0] || {};
-var blog = Alloy.createCollection('blog');
+var blog = Alloy.Collections.instance('blog');
 blog.fetch();
 blogPost = blog.get(args);
 blogPost = transformFunction(blogPost);

@@ -62,7 +62,7 @@ updateData = function(type){
 			var data = JSON.parse(this.responseText);
 			var ids = new Array();
 			if(typeof data.nodes != 'undefined'){
-				var collection = Alloy.createCollection(type);
+				var collection = Alloy.Collections.instance(type);
 				collection.fetch();
 				for(var i = 0; i < data.nodes.length; i++){
 					if(typeof data.nodes[i].node != 'undefined'){
@@ -307,7 +307,7 @@ updateLocalData = function(type){
 	var data = JSON.parse(jsondata);
 	var ids = new Array();
 	if(typeof data.nodes != 'undefined'){
-		var collection = Alloy.createCollection(type);
+		var collection = Alloy.Collections.instance(type);
 		collection.fetch();
 		for(var i = 0; i < data.nodes.length; i++){
 			if(typeof data.nodes[i].node != 'undefined'){

@@ -12,7 +12,7 @@ $.addClass(title,"listTitle");
 var speaker = Ti.UI.createLabel({touchEnabled : false, text : speakerData.get('name') + " " + speakerData.get('surname')});
 $.addClass(speaker,"listSpeaker");
 var rowViewLeft = Ti.UI.createView({touchEnabled : false, layout : "vertical", width: "80%", height: Ti.UI.SIZE});
-var favorites = Alloy.createCollection('favorites');
+var favorites = Alloy.Collections.instance('favorites');
 favorites.fetch();
 var favoritesData = favorites.get(talkItem.get('nid'));
 var inFavorite = (typeof favoritesData == 'undefined') ? 0 : favoritesData.get('nid');
@@ -20,7 +20,7 @@ var imagePath = (inFavorite) ? '/images/favOn.png' : '/images/favOff.png';
 var favorite = Ti.UI.createImageView({image : imagePath, nid : talkItem.get('nid'), bubbleParent : false});
 $.addClass(favorite,"favorite");
 favorite.addEventListener('click',function(e){
-	var favorites = Alloy.createCollection('favorites');
+	var favorites = Alloy.Collections.instance('favorites');
 	favorites.fetch();
 	var favoritesData = favorites.get(e.source.nid);
 	var inFavorite = (typeof favoritesData == 'undefined') ? 0 : favoritesData.get('nid');

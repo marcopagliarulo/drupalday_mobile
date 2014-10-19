@@ -6,7 +6,7 @@ openSpeaker = function(e){
 };
 
 
-var speaker = Alloy.createCollection('speaker');
+var speaker = Alloy.Collections.instance('speaker');
 speaker.fetch({query : "select * from speaker order by surname ASC"});
 var speakerData = speaker.toJSON();
 

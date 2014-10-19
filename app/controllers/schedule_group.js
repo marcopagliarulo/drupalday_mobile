@@ -33,7 +33,7 @@ openTalk = function(e){
 	}
 };
 transformFunction = function(transform){
-	var speaker = Alloy.createCollection('speaker');
+	var speaker = Alloy.Collections.instance('speaker');
 	speaker.fetch();
 	speakerData = speaker.get(transform.uid);
 	if(typeof speakerData != 'undefined'){
@@ -55,7 +55,7 @@ function createRow(talkData){
 	var tableView = Ti.UI.createScrollView({layout: "vertical", scrollType : "vertical"});
 	for(var i = 0; i < talkData.length; i++){
 		var talk =  transformFunction(talkData[i]);
-		var favorites = Alloy.createCollection('favorites');
+		var favorites = Alloy.Collections.instance('favorites');
 		favorites.fetch();
 		var favoritesData = favorites.get(talk.nid);
 		var inFavorite = (typeof favoritesData == 'undefined') ? 0 : favoritesData.get('nid');
@@ -84,7 +84,7 @@ function createRow(talkData){
 		var favorite = Ti.UI.createImageView({image : imagePath, nid : talk.nid, bubbleParent : false});
 		$.addClass(favorite,"favorite");
 		favorite.addEventListener('click',function(e){
-			var favorites = Alloy.createCollection('favorites');
+			var favorites = Alloy.Collections.instance('favorites');
 			favorites.fetch();
 			var favoritesData = favorites.get(e.source.nid);
 			var inFavorite = (typeof favoritesData == 'undefined') ? 0 : favoritesData.get('nid');

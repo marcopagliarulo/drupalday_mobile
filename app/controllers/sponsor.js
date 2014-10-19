@@ -3,7 +3,7 @@ transformFunction = function(transform){
   return transform;
 };
 var TableViewSections = new Array();
-var sponsor = Alloy.createCollection('sponsor');
+var sponsor = Alloy.Collections.instance('sponsor');
 sponsor.fetch({query : "select type from sponsor group by type order by type ASC"});
 var sponsorTypes = sponsor.toJSON();
 for(var i = 0; i < sponsorTypes.length; i++){
@@ -17,7 +17,6 @@ for(var i = 0; i < sponsorTypes.length; i++){
 	TableViewSections[sponsorType.type].add(headerViewElement);
 }
 
-var sponsor = Alloy.createCollection('sponsor');
 sponsor.fetch({query : "select * from sponsor order by type ASC"});
 var sponsorData = sponsor.toJSON();
 for(var i = 0; i < sponsorData.length; i++){

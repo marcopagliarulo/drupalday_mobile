@@ -1,5 +1,5 @@
 var args = arguments[0] || {};
-var speaker = Alloy.createCollection('speaker');
+var speaker = Alloy.Collections.instance('speaker');
 speaker.fetch();
 speakerData = speaker.get(args);
 
