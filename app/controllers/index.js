@@ -45,7 +45,7 @@ $.SliderMenuContainer.init({
 var startdate = new Date(Alloy.CFG.startdate);
 var now = new Date();
 var difference = startdate - now;
-if(difference){
+if(difference > 0){
 	openController('countdown');
 }
 else{

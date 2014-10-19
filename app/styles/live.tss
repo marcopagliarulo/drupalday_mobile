@@ -1,4 +1,77 @@
+".headerSession" : {
+	backgroundColor : "#eeeeee",
+},
+".headerSeparatorTop" : {
+	width: "100%",
+	height : "1dp",
+	backgroundColor : "#dddddd",
+},
+".headerSeparatorBottom" : {
+	top: "3dp",
+	width: "100%",
+	height : "1dp",
+	backgroundColor : "#dddddd",
+},
+".rowView" : {
+	backgroundColor : "#ffffff",
+},
+".rowSeparator" : {
+	width: "100%",
+	height : "1dp",
+	backgroundColor : "#139ad4"
+}
+".scheduleDate" : {
+	font: {
+		fontSize : "15sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	},
+	color : "#ea415e",
+	left: "5%",
+	top: "5dp",
+},
+".listSpeaker" : {
+	font: {
+		fontSize : "15sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	},
+	color : "#ea415e",
+	left: "5%",
+	bottom : "5dp",
+},
+".listTrack" : {
+	font: {
+		fontSize : "15sp",
+		fontFamily : Alloy.Globals.museo_slab_500
+	},
+	width: Ti.UI.FILL,
+	textAlign: "center",
+	bottom : "5dp",
+	color: "#139ad4"
+}
+".listTitle" : {
+	left: "5%",
+	top : "10dp",
+	font: {
+		fontSize : "22sp",
+	},
+},
 
-".container" : {
-  
+".favorite" : {
+	right: "5%",
+	top : "5dp",
+	width: "80%"
+},
+"Label" : {
+	font: {
+		fontSize : "20sp",
+		fontFamily :Alloy.Globals.museosans_700
+	},
+	textAlign : "center",
+	color: "#139ad4"
+}
+".link" : {
+	color : "#ea415e",
+}
+"ImageView" : {
+  width: "50%",
 }
