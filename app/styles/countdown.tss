@@ -55,3 +55,20 @@
 	color: "#bbbbbb",
 	title: "Università degli Studi di Milano-Bicocca"
 }
+".hashtag" : {
+	font : {
+		fontSize : "20sp",
+		fontFamily : Alloy.Globals.museosans_700
+	},
+	textAlign: "center",
+	color : "#ea415e",
+}
+".socialLink" : {
+	width : "15%",
+	left : "14%"
+}
+"#social" : {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	top: "10dp",
+}

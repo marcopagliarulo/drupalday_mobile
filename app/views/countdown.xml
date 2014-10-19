@@ -9,5 +9,12 @@
 		<Label id="location">MILANO</Label>
 		<Label id="date">14-15 NOVEMBRE 2014</Label>
 		<Label id="address">Università degli Studi\ndi Milano-Bicocca</Label>
+		<View id="social" layout="horizontal">
+			<ImageView class="socialLink" image="/images/facebook.png" onClick="openUrl" url="http://www.facebook.com/drupalday"></ImageView>
+			<ImageView class="socialLink" image="/images/twitter.png" onClick="openUrl" url="https://twitter.com/drupalday"></ImageView>
+			<ImageView class="socialLink" image="/images/vimeo.png" onClick="openUrl" url="http://vimeo.com/drupaldayitaly"></ImageView>
+		</View>
+		<Label class="hashtag">#drupalday</Label>
+		<Label class="hashtag">#dday2014</Label>
 	</View>
 </Alloy>

@@ -33,7 +33,8 @@ var countDown = function(d, h, m , s, fn_tick, fn_end) {
 };
 var startdate = new Date(Alloy.CFG.startdate).getTime();
 var now = new Date().getTime();
-var difference = Math.abs((startdate - now)/1000);
+
+var difference = Math.abs(startdate/1000) - Math.abs(now/1000);
 var my_timer = new countDown(Math.floor(difference / 86400), Math.floor((difference % 86400) / 3600),  Math.floor(((difference % 86400) % 3600) / 60), Math.floor(((difference % 86400) % 3600) % 60), 
 	function()	{
 		$.time.text = my_timer.time.d + " Giorni " + ("0" + my_timer.time.h).slice(-2) + ":" + ("0" + my_timer.time.m).slice(-2) + ":" + ("0" + my_timer.time.s).slice(-2);
