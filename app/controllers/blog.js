@@ -15,10 +15,7 @@ for(var i = 0; i < blogPost.length; i++){
 	var image = Ti.UI.createImageView({image : blogPost[i].image, touchEnabled : false, width : Ti.UI.FILL});
 	var viewLabel = Ti.UI.createView({layout : 'vertical', height : Ti.UI.SIZE, width : Ti.UI.FILL, top : "15%", touchEnabled : false});
 	var label = Ti.UI.createLabel({touchEnabled : false, text : blogPost[i].title});
-	var style = $.createStyle({
-	    classes: "listTitle",
-	});
-	label.applyProperties(style);
+	$.addClass(label,"listTitle");
 	viewLabel.add(label);
 	view.add(image);
 	view.add(viewLabel);

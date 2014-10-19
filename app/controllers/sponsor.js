@@ -1,9 +1,3 @@
-openUrl = function(e){
-	if( typeof e.source.url != 'undefined'){
-		Titanium.Platform.openURL(e.source.url);
-	}
-};
-
 transformFunction = function(transform){
   transform.typeLabel = Alloy.CFG.sponsorType[transform.type];
   return transform;
@@ -15,15 +9,9 @@ var sponsorTypes = sponsor.toJSON();
 for(var i = 0; i < sponsorTypes.length; i++){
 	var sponsorType = transformFunction(sponsorTypes[i]);
 	var headerViewElement = Ti.UI.createView();
-	var style = $.createStyle({
-	    classes: "headerViewElement",
-	});
-	headerViewElement.applyProperties(style);
+	$.addClass(headerViewElement,"headerViewElement");
 	var headerLabel = Ti.UI.createLabel({touchEnabled : false, text : sponsorType.typeLabel});
-	var style = $.createStyle({
-	    classes: "sponsorType",
-	});
-	headerLabel.applyProperties(style);
+	$.addClass(headerLabel,"sponsorType");
 	headerViewElement.add(headerLabel);
 	TableViewSections[sponsorType.type] = Ti.UI.createView({layout : "vertical", height: Ti.UI.SIZE});
 	TableViewSections[sponsorType.type].add(headerViewElement);
@@ -39,10 +27,7 @@ for(var i = 0; i < sponsorData.length; i++){
 		openUrl(e);
 	});
 	var ImageView = Ti.UI.createImageView({image: sponsorItem.image, touchEnabled: false, width: Ti.UI.FILL, top: "5dp"});
-	var style = $.createStyle({
-	    classes: Alloy.CFG.sponsorType[sponsorItem.type].toLowerCase().replace(" ",""),
-	});
-	ImageView.applyProperties(style);
+	$.addClass(ImageView,Alloy.CFG.sponsorType[sponsorItem.type].toLowerCase().replace(" ",""));
 	
 	TableViewRow.add(ImageView);
 	TableViewSections[sponsorItem.type].add(TableViewRow);

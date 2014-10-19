@@ -28,17 +28,11 @@ var viewLabel = Ti.UI.createView({
 var labelTitle = Ti.UI.createLabel({
 	text : blogPost.title
 });
-var style = $.createStyle({
-	classes : "listTitle",
-});
-labelTitle.applyProperties(style);
+$.addClass(labelTitle,"listTitle");
 var labelDate = Ti.UI.createLabel({
 	text : blogPost.date
 });
-var style = $.createStyle({
-	classes : "listDate",
-});
-labelDate.applyProperties(style);
+$.addClass(labelDate,"listDate");
 viewLabel.add(labelTitle);
 viewLabel.add(labelDate);
 $.headerBlog.add(image);
