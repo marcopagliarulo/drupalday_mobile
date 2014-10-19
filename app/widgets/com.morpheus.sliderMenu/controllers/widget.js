@@ -51,6 +51,21 @@ $.init = function(params) {
 			$.sliderMenu.left = "-80%";
 		}
 	});
+	var touchstart = false;
+	$.sliderMenu.parent.addEventListener('touchstart', function(e){
+		touchstart = e.x;
+	});
+	$.sliderMenu.parent.addEventListener('swipe', function(e){
+		var maxX = Alloy.Globals.deviceWidth*0.25;
+		if(e.direction == 'right' && !menuOpen && touchstart < maxX){
+			$.showMenu();
+		}
+	});
+	$.sliderMenu.parent.addEventListener('swipe', function(e){
+		if(e.direction == 'left' && menuOpen){
+			$.hideMenu();
+		}
+	});
 };
 
 /**
@@ -110,7 +125,6 @@ function buildMenu(items, parent) {
 				height: "47dp",
 				backgroundcolor: itemBackground,
 				backgroundSelectedColor: itemSelectedBackground,
-				selectedBackgroundColor: itemSelectedBackground,
 			});
 	
 			var label = Ti.UI.createLabel({
