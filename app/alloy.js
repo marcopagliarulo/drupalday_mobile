@@ -11,6 +11,7 @@
 // Alloy.Globals.someGlobalFunction = function(){};
 Alloy.Globals.Map = require('ti.map');
 Alloy.Globals.osName = Ti.Platform.osname;
+Alloy.Globals.filesDownload = {};
 switch(Alloy.Globals.osName){
 	case 'android':
 		Alloy.Globals.museo_slab_500 = 'museo_slab_500';
@@ -45,7 +46,9 @@ openController = function(controller,args){
 	args = args || {};
 	var container = Alloy.Globals.container;
 	if(container.children.length){
-		container.remove(container.children[0]);
+		var previousView = container.children[0];
+		container.remove(previousView);
+		previousView = null;
 	}
 	if(typeof Alloy.Globals.previousController != 'undefined'){
 		Alloy.Globals.previousController.destroy();
@@ -62,7 +65,7 @@ updateData = function(type){
 			var data = JSON.parse(this.responseText);
 			var ids = new Array();
 			if(typeof data.nodes != 'undefined'){
-				var collection = Alloy.Collections.instance(type);
+				var collection = Alloy.createCollection(type);
 				collection.fetch();
 				for(var i = 0; i < data.nodes.length; i++){
 					if(typeof data.nodes[i].node != 'undefined'){
@@ -79,7 +82,8 @@ updateData = function(type){
 										files[files.length] = {
 											'value' : node[key],
 											'callback' : mapping[key]['callback'],
-											'field' : mapping[key]['field']
+											'field' : mapping[key]['field'],
+											'data' : object
 										};
 									}
 									else if(node[key] != ""){
@@ -91,16 +95,15 @@ updateData = function(type){
 						var model = Alloy.createModel(type);
 						var id = model.idAttribute;
 						var currentCollection = collection.get(object[id]);
-						if(typeof object['changed'] == 'undefined' || (typeof currentCollection != 'undefined' && object['changed'] > currentCollection.get('changed'))){
+						if(typeof object['changed'] == 'undefined' || (typeof currentCollection != 'undefined' && object['changed'] > currentCollection.get('changed')) || typeof currentCollection == 'undefined'){
 							ids[ids.length] = object[id];
-	
+							var row = Alloy.createModel(type,object);
+							row.save();
 							if(file){
-								var currentFile = files.shift();
-								currentFile.callback(currentFile.value, object, currentFile.field, type, files);
-							}
-							else{
-								var row = Alloy.createModel(type,object);
-								row.save();
+								if(typeof Alloy.Globals.filesDownload[type] == 'undefined'){
+									Alloy.Globals.filesDownload[type] = new Array();
+								}
+								Alloy.Globals.filesDownload[type][Alloy.Globals.filesDownload[type].length] = files;
 							}
 						}
 					}
@@ -113,6 +116,9 @@ updateData = function(type){
 					collection.at(0).destroy();
 				}
 			}
+			event = {};
+			event.type = type;
+			Ti.App.fireEvent('updateDataEnd',event);
 		},
 		onerror : function(e) {
 			return Array();
@@ -133,6 +139,9 @@ function getImageBlob(url, data, field, type, files){
 			if(files.length == 0){
 				var row = Alloy.createModel(type,data);
 				row.save();
+				event = {};
+				event.type = type;
+				Ti.App.fireEvent('updateDataEnd',event);
 			}
 			else{
 				var currentFile = files.shift();
@@ -140,7 +149,9 @@ function getImageBlob(url, data, field, type, files){
 			}
 		},
 		onerror : function(e) {
-			return null;
+			event = {};
+			event.type = type;
+			Ti.App.fireEvent('updateDataEnd',event);
 		},
 	});
 	
@@ -307,7 +318,7 @@ updateLocalData = function(type){
 	var data = JSON.parse(jsondata);
 	var ids = new Array();
 	if(typeof data.nodes != 'undefined'){
-		var collection = Alloy.Collections.instance(type);
+		var collection = Alloy.createCollection(type);
 		collection.fetch();
 		for(var i = 0; i < data.nodes.length; i++){
 			if(typeof data.nodes[i].node != 'undefined'){
@@ -316,6 +327,8 @@ updateLocalData = function(type){
 				var mapping = mappingField(type);
 				var file = false;
 				var files = new Array();
+				var model = Alloy.createModel(type);
+				var id = model.idAttribute;
 				if(typeof mapping != 'undefined'){
 					for(var key in node){
 						if(typeof mapping[key] != 'undefined'){
@@ -324,7 +337,8 @@ updateLocalData = function(type){
 								files[files.length] = {
 									'value' : node[key],
 									'callback' : mapping[key]['callback'],
-									'field' : mapping[key]['field']
+									'field' : mapping[key]['field'],
+									'data' : object
 								};
 							}
 							else if(node[key] != ""){
@@ -333,19 +347,16 @@ updateLocalData = function(type){
 						}
 					}
 				}
-				var model = Alloy.createModel(type);
-				var id = model.idAttribute;
 				var currentCollection = collection.get(object[id]);
-				if(typeof object['changed'] == 'undefined' || (typeof currentCollection != 'undefined' && object['changed'] > currentCollection.get('changed'))){
+				if(typeof object['changed'] == 'undefined' || (typeof currentCollection != 'undefined' && object['changed'] > currentCollection.get('changed')) || typeof currentCollection == 'undefined'){
 					ids[ids.length] = object[id];
-	
+					var row = Alloy.createModel(type,object);
+					row.save();
 					if(file){
-						var currentFile = files.shift();
-						currentFile.callback(currentFile.value, object, currentFile.field, type, files);
-					}
-					else{
-						var row = Alloy.createModel(type,object);
-						row.save();
+						if(typeof Alloy.Globals.filesDownload[type] == 'undefined'){
+							Alloy.Globals.filesDownload[type] = new Array();
+						}
+						Alloy.Globals.filesDownload[type][Alloy.Globals.filesDownload[type].length] = files;
 					}
 				}
 			}
@@ -358,12 +369,23 @@ updateLocalData = function(type){
 			collection.at(0).destroy();
 		}
 	}
+	event = {};
+	event.type = type;
+	Ti.App.fireEvent('updateDataEnd',event);
 };
 
 
 if(Titanium.Network.networkType != Titanium.Network.NETWORK_NONE){
-//	updateData('sponsor');
-//	updateData('blog');
-//	updateLocalData('speaker');
-//	updateLocalData('talk');
+	updateData('sponsor');
+	updateData('blog');
+	updateLocalData('speaker');
+	updateLocalData('talk');
 }
+
+Ti.App.addEventListener('updateDataEnd', function(e){
+	if(typeof Alloy.Globals.filesDownload[e.type] != 'undefined' && Alloy.Globals.filesDownload[e.type].length > 0){
+		var files = Alloy.Globals.filesDownload[e.type].shift();
+		var currentFile = files.shift();
+		currentFile.callback(currentFile.value, currentFile.data, currentFile.field, e.type, files);
+	}
+});
