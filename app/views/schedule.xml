@@ -1,6 +1,6 @@
 <Alloy>
 	<View id="schedule" layout="vertical">
-		<Label id ="schedule_switch" onClick="schedule_switch">Visualizza sale</Label>
+		<Label id ="schedule_switch" onClick="schedule_switch" height="Ti.UI.SIZE">Visualizza sale</Label>
 		<View id="schedule_container"></View>
 	</View>
 </Alloy>

@@ -123,9 +123,9 @@ function createRow(talkData){
 }
 
 var talk = Alloy.Collections.instance('talk');
-talk.fetch({query : "select * from talk where track IN ('all','code') order by start ASC"});
+talk.fetch({query : "select * from talk where track IN ('all','Sala 1') order by start ASC"});
 var talkCodeData = talk.toJSON();
 $.codeView.add(createRow(talkCodeData));
-talk.fetch({query : "select * from talk where track IN ('all','biz') order by start ASC"});
+talk.fetch({query : "select * from talk where track IN ('all','Sala 2') order by start ASC"});
 var talkBizData = talk.toJSON();
 $.bizView.add(createRow(talkBizData));

@@ -6,5 +6,5 @@
 		fontFamily : Alloy.Globals.museo_slab_700
 	},
 	width : Ti.UI.FILL,
-	textAlign: "center"
+	textAlign: "center",
 }

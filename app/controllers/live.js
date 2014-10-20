@@ -19,8 +19,8 @@ transformFunction = function(transform){
 	}
 	return transform;
 };
-function createRow(talkHoursList,talkData){
-	var tableViewSections = new Array();
+function createRow(talkHoursList){
+	var tableView = Ti.UI.createScrollView({layout: "vertical", scrollType : "vertical"});
 	var hoursIndexes = new Array();
 	for(var i = 0; i < talkHoursList.length; i++){
 		if(parseInt(talkHoursList[i].end) < now){
@@ -49,54 +49,47 @@ function createRow(talkHoursList,talkData){
 		headerViewElement.add(timeContainer);
 		headerViewElement.add(headerSeparatorBottom);
 		hoursIndexes[talkHoursList[i].start + "-" + talkHoursList[i].end] = i;
-		tableViewSections[i] = Ti.UI.createView({layout: "vertical", height : Ti.UI.SIZE, start : talkHoursList[i].start, end : talkHoursList[i].end});
-		tableViewSections[i].add(headerViewElement);
-	}
-	var tableView = Ti.UI.createScrollView({layout: "vertical", scrollType : "vertical"});
-	for(var i = 0; i < talkData.length; i++){
-		if(parseInt(talkData[i].end) < now){
-			continue;
-		}
-		var talk =  transformFunction(talkData[i]);
-		var tableViewRow = Ti.UI.createView({nid : talk.nid, height: Ti.UI.SIZE});
-		tableViewRow.addEventListener('click',function(e){
-			openTalk(e);
-		});
-	    var rowView = Ti.UI.createView({touchEnabled : false, layout : "horizontal", width: Ti.UI.FILL, height: Ti.UI.SIZE});
-		$.addClass(rowView,"rowView");
-		var title = Ti.UI.createLabel({touchEnabled : false, text : talk.title});
-		$.addClass(title,"listTitle");
-		var speaker = Ti.UI.createLabel({touchEnabled : false, text : talk.name + " " + talk.surname});
-		$.addClass(speaker,"listSpeaker");
-		
-		var track = Ti.UI.createLabel({touchEnabled : false, text : talk.track});
-		$.addClass(track,"listTrack");
-	    var rowViewLeft = Ti.UI.createView({touchEnabled : false, layout : "vertical", width: "80%", height: Ti.UI.SIZE});
-	    var rowViewRight = Ti.UI.createView({touchEnabled : false, layout : "vertical", width: "20%", height: Ti.UI.SIZE});
-		
-		rowViewLeft.add(title);
-		rowViewLeft.add(speaker);
-//		rowViewRight.add(twitter);
-		rowViewRight.add(track);
-		rowView.add(rowViewLeft);
-		rowView.add(rowViewRight);
-		tableViewRow.add(rowView);
-		hoursIndex = hoursIndexes[talk.start + "-" + talk.end];
-		tableViewSections[hoursIndex].add(tableViewRow);
-	}
-	for(var i = 0; i < tableViewSections.length; i++){
-		if(typeof tableViewSections[i] != 'undefined' && tableViewSections[i].children.length > 1){
-			for(var j = 0; j < tableViewSections[i].children.length; j++){
-				if(j != 0 && j != (tableViewSections[i].children.length-1)){
-					var rowSeparator = Ti.UI.createView();
-					$.addClass(rowSeparator,"rowSeparator");
-					tableViewSections[i].children[j].children[0].add(rowSeparator);
-				}
+		var tableViewSection = Ti.UI.createView({layout: "vertical", height : Ti.UI.SIZE, start : talkHoursList[i].start, end : talkHoursList[i].end});
+		tableViewSection.add(headerViewElement);
+		var talk = Alloy.Collections.instance('talk');
+		talk.fetch({query : "select * from talk where start = " + talkHoursList[i].start + " and end = " + talkHoursList[i].end});
+		var talkData = talk.toJSON();
+		for(var j = 0; j < talkData.length; j++){
+			if(parseInt(talkData[j].end) < now){
+				continue;
 			}
+			var talk =  transformFunction(talkData[j]);
+			var tableViewRow = Ti.UI.createView({nid : talk.nid, height: Ti.UI.SIZE});
+			tableViewRow.addEventListener('click',function(e){
+				openTalk(e);
+			});
+			var rowView = Ti.UI.createView({touchEnabled : false, layout : "horizontal", width: Ti.UI.FILL, height: Ti.UI.SIZE});
+			$.addClass(rowView,"rowView");
+			var title = Ti.UI.createLabel({touchEnabled : false, text : talk.title});
+			$.addClass(title,"listTitle");
+			var speaker = Ti.UI.createLabel({touchEnabled : false, text : talk.name + " " + talk.surname});
+			$.addClass(speaker,"listSpeaker");
+		
+			var track = Ti.UI.createLabel({touchEnabled : false, text : talk.track});
+			$.addClass(track,"listTrack");
+			var rowViewLeft = Ti.UI.createView({touchEnabled : false, layout : "vertical", width: "80%", height: Ti.UI.SIZE});
+			var rowViewRight = Ti.UI.createView({touchEnabled : false, layout : "vertical", width: "20%", height: Ti.UI.SIZE});
+		
+			rowViewLeft.add(title);
+			rowViewLeft.add(speaker);
+	//		rowViewRight.add(twitter);
+			rowViewRight.add(track);
+			rowView.add(rowViewLeft);
+			rowView.add(rowViewRight);
+			tableViewRow.add(rowView);
+			if(j != 0 && j != (talkData.length-1)){
+				var rowSeparator = Ti.UI.createView();
+				$.addClass(rowSeparator,"rowSeparator");
+				tableViewRow.add(rowSeparator);
+			}
+			tableViewSection.add(tableViewRow);
 		}
-		if(typeof tableViewSections[i] != 'undefined'){
-			tableView.add(tableViewSections[i]);
-		}
+		tableView.add(tableViewSection);
 	}
 	return tableView;
 }
@@ -137,9 +130,7 @@ var now = new Date().getTime()/1000;
 var talk = Alloy.Collections.instance('talk');
 talk.fetch({query : "select start, end from talk group by start,end order by start, end ASC"});
 var talkHoursList = talk.toJSON();
-talk.fetch({query : "select * from talk order by start ASC"});
-var talkList = talk.toJSON();
-$.schedule_live.add(createRow(talkHoursList,talkList));
+$.schedule_live.add(createRow(talkHoursList));
 updateView();
 setInterval(function(){
 	updateView();
