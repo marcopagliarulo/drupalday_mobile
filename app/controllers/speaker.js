@@ -11,7 +11,7 @@ speaker.fetch({query : "select * from speaker order by surname ASC"});
 var speakerData = speaker.toJSON();
 
 
-var tableView = Ti.UI.createView({layout: "vertical"});
+var tableView = Ti.UI.createScrollView({layout: "vertical", scrolltype: "vertical"});
 for(var i = 0; i < speakerData.length; i++){
 	var speaker =  speakerData[i];
 
