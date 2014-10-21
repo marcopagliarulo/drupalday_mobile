@@ -58,6 +58,14 @@ openController = function(controller,args){
 	container.add(controllerView);
 };
 
+Ti.App.addEventListener('updateDataEnd', function(e){
+	if(typeof Alloy.Globals.filesDownload[e.type] != 'undefined' && Alloy.Globals.filesDownload[e.type].length > 0){
+		var files = Alloy.Globals.filesDownload[e.type].shift();
+		var currentFile = files.shift();
+		currentFile.callback(currentFile.value, currentFile.data, currentFile.field, e.type, files);
+	}
+});
+
 updateData = function(type){
 	var url = "http://drupalday.it/services/" + type + ".json";
 	var client = Ti.Network.createHTTPClient({
@@ -97,13 +105,15 @@ updateData = function(type){
 						var currentCollection = collection.get(object[id]);
 						if(typeof object['changed'] == 'undefined' || (typeof currentCollection != 'undefined' && object['changed'] > currentCollection.get('changed')) || typeof currentCollection == 'undefined'){
 							ids[ids.length] = object[id];
-							var row = Alloy.createModel(type,object);
-							row.save();
 							if(file){
 								if(typeof Alloy.Globals.filesDownload[type] == 'undefined'){
 									Alloy.Globals.filesDownload[type] = new Array();
 								}
 								Alloy.Globals.filesDownload[type][Alloy.Globals.filesDownload[type].length] = files;
+							}
+							else{
+								var row = Alloy.createModel(type,object);
+								row.save();
 							}
 						}
 					}
@@ -131,21 +141,28 @@ updateData = function(type){
 function getImageBlob(url, data, field, type, files){
 	var xhr = Titanium.Network.createHTTPClient({
 		onload : function(e){
-			var data = this._properties['data'];
-			var field = this._properties['field'];
-			var files = this._properties['files'];
-			var type = this._properties['type'];
-			data[field] = this.responseData;
-			if(files.length == 0){
-				var row = Alloy.createModel(type,data);
-				row.save();
+ 			if (xhr.status == 200 ) {
+	 			var data = this._properties['data'];
+				var field = this._properties['field'];
+				var files = this._properties['files'];
+				var type = this._properties['type'];
+				data[field] = this.responseData;
+				if(files.length == 0){
+					var row = Alloy.createModel(type,data);
+					row.save();
+					event = {};
+					event.type = type;
+					Ti.App.fireEvent('updateDataEnd',event);
+				}
+				else{
+					var currentFile = files.shift();
+					currentFile.callback(currentFile.value, data, currentFile.field, type, files);
+				}
+			}
+			else{
 				event = {};
 				event.type = type;
 				Ti.App.fireEvent('updateDataEnd',event);
-			}
-			else{
-				var currentFile = files.shift();
-				currentFile.callback(currentFile.value, data, currentFile.field, type, files);
 			}
 		},
 		onerror : function(e) {
@@ -161,8 +178,8 @@ function getImageBlob(url, data, field, type, files){
 		'type' : type,
 		'files' : files
 	});
-	xhr.open('GET',url, false);  
-	xhr.send();  
+	xhr.open('GET',url);  
+	xhr.send();
 }
 function getSponsorType(sponsorType){
 	var sponsorTypes = {
@@ -294,10 +311,15 @@ function mappingField(type){
 			'Bio' : {
 				'field' : 'bio'
 			},
+
 			'Avatar' : {
 				'field' : 'avatar',
 				'callback' : getImageBlob,
 				'type' : 'file'
+			},
+			'Updated date' : {
+				'field' : 'changed',
+				'callback' : getChangedTimestamp
 			}
 		},
 	};																																																																																																																																						
@@ -340,6 +362,7 @@ updateLocalData = function(type){
 									'field' : mapping[key]['field'],
 									'data' : object
 								};
+								object[mapping[key]['field']] = null;
 							}
 							else if(node[key] != ""){
 								object[mapping[key]['field']] = (typeof mapping[key]['callback'] != 'undefined') ? mapping[key]['callback'](node[key]) : node[key];
@@ -350,13 +373,15 @@ updateLocalData = function(type){
 				var currentCollection = collection.get(object[id]);
 				if(typeof object['changed'] == 'undefined' || (typeof currentCollection != 'undefined' && object['changed'] > currentCollection.get('changed')) || typeof currentCollection == 'undefined'){
 					ids[ids.length] = object[id];
-					var row = Alloy.createModel(type,object);
-					row.save();
 					if(file){
 						if(typeof Alloy.Globals.filesDownload[type] == 'undefined'){
 							Alloy.Globals.filesDownload[type] = new Array();
 						}
 						Alloy.Globals.filesDownload[type][Alloy.Globals.filesDownload[type].length] = files;
+					}
+					else{
+						var row = Alloy.createModel(type,object);
+						row.save();
 					}
 				}
 			}
@@ -381,11 +406,3 @@ if(Titanium.Network.networkType != Titanium.Network.NETWORK_NONE){
 	updateLocalData('speaker');
 	updateLocalData('talk');
 }
-
-Ti.App.addEventListener('updateDataEnd', function(e){
-	if(typeof Alloy.Globals.filesDownload[e.type] != 'undefined' && Alloy.Globals.filesDownload[e.type].length > 0){
-		var files = Alloy.Globals.filesDownload[e.type].shift();
-		var currentFile = files.shift();
-		currentFile.callback(currentFile.value, currentFile.data, currentFile.field, e.type, files);
-	}
-});
