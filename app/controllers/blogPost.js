@@ -34,10 +34,10 @@ var labelDate = Ti.UI.createLabel({
 	text : blogPost.date
 });
 $.addClass(labelDate,"listDate");
-viewLabel.add(labelTitle);
 viewLabel.add(labelDate);
 $.headerBlog.add(image);
 $.headerBlog.add(viewLabel);
+$.blogPost.add(labelTitle);
 var webView = Ti.UI.createWebView({
 	html : blogPost.body,
 	enableZoomControls : false,
