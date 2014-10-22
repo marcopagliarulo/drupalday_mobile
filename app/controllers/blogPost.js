@@ -12,9 +12,10 @@ var blog = Alloy.Collections.instance('blog');
 blog.fetch();
 blogPost = blog.get(args);
 blogPost = transformFunction(blogPost);
+var blogPostImage = (blogPost.image != null) ? blogPost.image : '/images/blog.png';
 
 var image = Ti.UI.createImageView({
-	image : blogPost.image,
+	image : blogPostImage,
 	width : Ti.UI.FILL,
 	top : 0
 });
