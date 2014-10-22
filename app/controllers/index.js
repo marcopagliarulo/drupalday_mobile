@@ -1,3 +1,4 @@
+Alloy.Globals.currentControllerName = 'index';
 Alloy.Globals.container = $.container;
 var defaultFont = {
 	fontSize : "20sp",
@@ -15,7 +16,7 @@ var menuItems = [
 function openMenuItem(event){
 	if(typeof event.source.id != 'undefined'){
 		for(var i = 0; i < menuItems.length; i++) {
-			if(menuItems[i].id == event.source.id){
+			if(menuItems[i].id == event.source.id && menuItems[i].controller != Alloy.Globals.currentControllerName){
 				openController(menuItems[i].controller);
 				$.headerTitle.text = menuItems[i].title.toUpperCase();
 				return;
@@ -53,3 +54,25 @@ else{
 }
 $.index.open();
 Alloy.Globals.current = $;
+if(Alloy.Globals.osName == 'android'){
+	$.index.addEventListener('androidback', function(e) {
+		if(typeof Alloy.Globals.prevController[Alloy.Globals.prevController.length-2] != 'undefined'){
+		    e.cancelBubble = true;
+		    var last = Alloy.Globals.prevController.pop();
+		    var controller = Alloy.Globals.prevController.pop();
+		    Alloy.Globals.prevController[Alloy.Globals.prevController.length] = controller;
+			for(var i = 0; i < menuItems.length; i++){
+				if(menuItems[i].controller == controller.controllerName){
+					$.headerTitle.text = menuItems[i].title.toUpperCase();
+				}
+			}
+			if(controller.controllerName == 'countdown' || controller.controllerName == 'live'){
+				$.headerTitle.text = 'DRUPALDAY 2014';
+			}
+		    openController(controller.controllerName,controller.args,true);
+		}
+		else{
+			$.index.close();
+		}
+	});
+}

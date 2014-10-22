@@ -9,6 +9,7 @@
 // object. For example:
 //
 // Alloy.Globals.someGlobalFunction = function(){};
+Alloy.Globals.prevController = new Array();
 Alloy.Globals.Map = require('ti.map');
 Alloy.Globals.osName = Ti.Platform.osname;
 Alloy.Globals.filesDownload = {};
@@ -42,8 +43,10 @@ openUrl = function(e){
 	}
 };
 
-openController = function(controller,args){
+openController = function(controller,args,back){
+	Alloy.Globals.currentControllerName = controller;
 	args = args || {};
+	back = back || false;
 	var container = Alloy.Globals.container;
 	if(container.children.length){
 		var previousView = container.children[0];
@@ -56,6 +59,9 @@ openController = function(controller,args){
 	Alloy.Globals.previousController = Alloy.createController(controller,args);
 	var controllerView = Alloy.Globals.previousController.getView();
 	container.add(controllerView);
+    if(!back){
+		Alloy.Globals.prevController[Alloy.Globals.prevController.length] = {"controllerName" : controller, "args" : args};
+    }
 };
 
 Ti.App.addEventListener('updateDataEnd', function(e){
