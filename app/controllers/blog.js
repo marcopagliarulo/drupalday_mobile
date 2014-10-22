@@ -13,12 +13,10 @@ for(var i = 0; i < blogPost.length; i++){
 		openBlogPost(e);
 	});
 	var blogPostImage = (blogPost[i].image != null) ? blogPost[i].image : '/images/blog.png';
-	var image = Ti.UI.createImageView({image : blogPostImage, touchEnabled : false, width : Ti.UI.FILL, top: 0});
-	var viewLabel = Ti.UI.createView({layout : 'vertical', height : Ti.UI.FILL, width : Ti.UI.FILL, top : "15%", touchEnabled : false});
-	var label = Ti.UI.createLabel({touchEnabled : false, text : blogPost[i].title});
+	var image = Ti.UI.createImageView({image : blogPostImage, touchEnabled : false, width : "100%", top: 0});
+	var label = Ti.UI.createLabel({touchEnabled : false, text : blogPost[i].title, top: "15dp"});
 	$.addClass(label,"listTitle");
-	viewLabel.add(label);
 	view.add(image);
-	view.add(viewLabel);
+	view.add(label);
 	$.scrollViewblog.add(view);
 }
