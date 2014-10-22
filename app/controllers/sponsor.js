@@ -25,7 +25,8 @@ for(var i = 0; i < sponsorData.length; i++){
 	TableViewRow.addEventListener('click', function(e){
 		openUrl(e);
 	});
-	var ImageView = Ti.UI.createImageView({image: sponsorItem.image, touchEnabled: false, width: Ti.UI.FILL, top: "5dp"});
+	var sponsorImage = (sponsorItem.image != null) ? sponsorItem.image : '/images/sponsor.png';
+	var ImageView = Ti.UI.createImageView({image: sponsorImage, touchEnabled: false, width: Ti.UI.FILL, top: "5dp"});
 	$.addClass(ImageView,Alloy.CFG.sponsorType[sponsorItem.type].toLowerCase().replace(" ",""));
 	
 	TableViewRow.add(ImageView);
