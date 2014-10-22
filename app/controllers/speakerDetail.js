@@ -5,7 +5,8 @@ speakerData = speaker.get(args);
 
 var title = Ti.UI.createLabel({touchEnabled : false, text : speakerData.get('name') + " " + speakerData.get('surname')});
 $.addClass(title,"listTitle");
-var image= Ti.UI.createImageView({touchEnabled : false, image : speakerData.get('avatar')});
+var speakerImage = (speakerData.get('avatar') != null) ? speakerData.get('avatar') : '/images/speaker.png';
+var image= Ti.UI.createImageView({touchEnabled : false, image : speakerImage});
 $.addClass(image,"listImage");
 
 var headerView = Ti.UI.createView({layout: "absolute"});

@@ -10,8 +10,7 @@ var speaker = Alloy.Collections.instance('speaker');
 speaker.fetch({query : "select * from speaker order by surname ASC"});
 var speakerData = speaker.toJSON();
 
-
-var tableView = Ti.UI.createScrollView({layout: "vertical", scrolltype: "vertical"});
+var tableView = Ti.UI.createScrollView({layout: "vertical", scrollType: "vertical"});
 for(var i = 0; i < speakerData.length; i++){
 	var speaker =  speakerData[i];
 
@@ -21,7 +20,8 @@ for(var i = 0; i < speakerData.length; i++){
 	});
     var rowView = Ti.UI.createView({touchEnabled : false, layout : "horizontal", width: Ti.UI.FILL, height: Ti.UI.SIZE});
 	$.addClass(rowView,"rowView");
-	var image= Ti.UI.createImageView({touchEnabled : false, image : speaker.avatar});
+	var speakerImage = (speaker.avatar != null) ? speaker.avatar : '/images/speaker.png';
+	var image= Ti.UI.createImageView({touchEnabled : false, image : speakerImage});
 	$.addClass(image,"listImage");
 	var title = Ti.UI.createLabel({touchEnabled : false, text : speaker.name + "\n" + speaker.surname});
 	$.addClass(title,"listTitle");
