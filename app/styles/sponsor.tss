@@ -3,11 +3,11 @@
 		fontSize : "25sp",
 		fontFamily : Alloy.Globals.museo_slab_700
 	},
-	color : "#ffffff",
+	color : Alloy.CFG.colors.third,
 	textAlign : "center"
 },
 ".headerViewElement" : {
-	backgroundColor : "#ea415e",
+	backgroundColor : Alloy.CFG.colors.second,
 	height: Ti.UI.SIZE
 },
 ".diamond" : {

@@ -1,0 +1,204 @@
+{
+  "nodes" : [
+    {
+      "node" : {
+        "Nid" : "138",
+        "Nome" : "Alessandro",
+        "Cognome" : "Capra",
+        "Bio" : "Mi occupo di realizzare e gestire progetti della pubblica amministrazione nell'ambito del turismo in Sardegna.\nAppassionato Drupal da tempi non sospetti, pratico di metodologie Agile, fautore sino alla morte dell'opendata, mi piace pensare che ad ogni problema esistano sempre almeno due soluzioni.",
+        "Avatar" : "http://www.drupalday.it/sites/default/files/speaker-avatars/acapra.jpg",
+        "Updated date" : "15/10/2014 - 18:58"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "136",
+        "Nome" : "Paolo",
+        "Cognome" : "Libanore",
+        "Bio" : "...",
+        "Avatar" : "",
+        "Updated date" : "15/10/2014 - 18:58"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "129",
+        "Nome" : "Luca",
+        "Cognome" : "Lusso",
+        "Bio" : "Sviluppatore Java per formazione, arrivo al web e al PHP/Drupal dopo diverse esperienze che spaziano dalla grossa società di consulenza informatica alla gestione della rete di un centro di formazione professionale di provincia.\n\nSenior software architect e Drupal expert in Wellnet, conosco Objective-C, Javascript, come fare un plugin per Eclipse e altre pratiche di voodoo (oltre a Drupal ovviamente).\nSono Acquia certified developer e mantainer dei moduli webprofiler e xhprof per Drupal8.\nMi interessano l'arte digitale e l'interaction design. Mi piace studiare per essere sempre aggiornato, lo scoutismo e le gite in montagna.",
+        "Avatar" : "",
+        "Updated date" : "15/10/2014 - 18:58"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "127",
+        "Nome" : "Evan",
+        "Cognome" : "Butera",
+        "Bio" : "Ho incontrato il web quando le table erano il metodo più evoluto per strutturare il DOM e la connessione, se ti diceva bene, arrivava a picchi ipersonici di 13kbps.\nHo iniziato a lavorare in Friuli per piccole aziende facendomi le ossa, finchè non sono approdato a Milano, dove, sgomitando, ho assunto il ruolo di developer per alcune grosse web agency del settore publishing.\nWellnet nel maggio del 2014 è apparsa nella mia vita e mi ha catapultato nel mondo di Drupal.\n\nAdoro Sass, HAML, node, javascript, AngularJS ed ogni giorno trovo un nuovo giocattolo da aggiungere alla lista (si, baconjs, parlo di te).\n\nFuori dall'ufficio sono un praticante di scherma medievale, un amante del black metal e della musica classica moderna nonchè un discreto cuoco.",
+        "Avatar" : "",
+        "Updated date" : "15/10/2014 - 18:58"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "125",
+        "Nome" : "Michel ",
+        "Cognome" : "Morelli",
+        "Bio" : "Sviluppatore Senior Drupal con alle spalle siti di piccole medie e grandi dimensioni, nonché portali nazionali. Ultimamente si occupa di sviluppare per una migliore integrazione con il mondo mobile utilizzando strumenti quali angularjs, nodejs e ionic framework",
+        "Avatar" : "",
+        "Updated date" : "15/10/2014 - 18:58"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "123",
+        "Nome" : "Giovanni",
+        "Cognome" : "Tufo",
+        "Bio" : "Web developer presso l'università LUISS Guido Carli. Mi occupo dello sviluppo di temi per drupal (6 e 7) per i siti dell'università e dei moduli che permettono di integrare in drupal informazioni che vengono da diverse fonti esterne (sistemi amministrativi e accademici, sistemi di pagamento).",
+        "Avatar" : "",
+        "Updated date" : "15/10/2014 - 18:58"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "120",
+        "Nome" : "Pina",
+        "Cognome" : "Civitella",
+        "Bio" : "Responsabile della manutenzione e sviluppo dei servizi applicativi per il Comune di Bologna, per cui lavoro dal 2000. Ho maturato un'elevata esperienza nell'ambito Pubblica Amministrazione e in particolare nei sistemi informativi che ormai sovrintendono tutti i processi di un Comune medio/grande come quello di Bologna. Svolgo il mio lavoro con passione, alla continua ricerca di nuove aree da innovare e digitalizzare. Nel mio lavoro sono chiamata a seguire argomenti tra loro eterogenei, tra i progetti più significativi di cui sono responsabile: la digitalizzazione della gestione dei servizi in ambito welfare, ammodernamento dall’analogico al digitale del sistema di Videosorveglianza cittadino, l’Open Data, la completa dematerializzazione delle pratiche edilizie, lo sviluppo della nuova piattaforma di rete civica. ",
+        "Avatar" : "http://www.drupalday.it/sites/default/files/speaker-avatars/fotot3.jpg",
+        "Updated date" : "15/10/2014 - 18:58"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "114",
+        "Nome" : "Davide",
+        "Cognome" : "Morelli",
+        "Bio" : "Freelancer di lungo corso, si destreggia tra PHP5, Drupal e con un pizzico di AngularJS e nodeJS riesce a realizzare siti HTML5/CSS3 da vero cappellaio matto.",
+        "Avatar" : "",
+        "Updated date" : "15/10/2014 - 18:58"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "112",
+        "Nome" : "Gianfranco",
+        "Cognome" : "Fedele",
+        "Bio" : "Web Software Engineer presso la Insem SpA dove riveste il ruolo di Web Architect, si occupa della realizzazione di portali web, web services, mobile app e UX design. Esperto di integrazione e normalizzazione dei sistemi complessi. Speaker presso alcuni eventi nazionali dedicati a Drupal, Linux ed il software libero.",
+        "Avatar" : "",
+        "Updated date" : "15/10/2014 - 18:58"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "108",
+        "Nome" : "Gianfranco",
+        "Cognome" : "Fedele",
+        "Bio" : "Web Software Engineer presso la Insem SpA dove riveste il ruolo di Web Architect, si occupa della realizzazione di portali web, web services, mobile app e UX design. Esperto di integrazione e normalizzazione dei sistemi complessi. Speaker presso alcuni eventi nazionali dedicati a Drupal, Linux ed il software libero.",
+        "Avatar" : "http://www.drupalday.it/sites/default/files/speaker-avatars/gianfrasoft_0.png",
+        "Updated date" : "15/10/2014 - 18:58"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "106",
+        "Nome" : "Gianfranco",
+        "Cognome" : "Fedele",
+        "Bio" : "Web Software Engineer presso la Insem SpA dove riveste il ruolo di Web Architect, si occupa della realizzazione di portali web, web services, mobile app e UX design. Esperto di integrazione e normalizzazione dei sistemi complessi. Speaker presso alcuni eventi nazionali dedicati a Drupal, Linux ed il software libero.",
+        "Avatar" : "http://www.drupalday.it/sites/default/files/speaker-avatars/gianfrasoft.png",
+        "Updated date" : "15/10/2014 - 18:58"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "104",
+        "Nome" : "Marco",
+        "Cognome" : "Pagliarulo",
+        "Bio" : "Dal 2008 sono un appassionato sviluppatore Drupal, con Drupal ho realizzato interessanti prodotti per Virgilio come ad esempio xoom.virgilio.it e contest.virgilio.it, negli anni a seguire sono stato team leader di un altrettanto appassionato gruppo di sviluppatori, anni in cui ho potuto guidarli (spero bene) nell'apprendimento di Drupal. Con Drupal ho realizzato negli ultimi anni progetti interessanti come www.sdabocconi.it ed i siti del Gruppo Bracco, multinazionale farmaceutica italiana. L'esperienza sul progetto Bracco nel 2012 fu di ispirazione per il talk presentato al drupalday. Ho da poco avviato una nuova entusiasmante collaborazione professionale con Twinbit, avendo la possibilità di collaborare con dei grandi professionisti nonchè grandi persone. ",
+        "Avatar" : "http://www.drupalday.it/sites/default/files/speaker-avatars/312515_2382697924468_1161304197_32789507_215849539_n.jpg",
+        "Updated date" : "15/10/2014 - 18:58"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "102",
+        "Nome" : "marco",
+        "Cognome" : "pardo",
+        "Bio" : "Sartriano, sono nato a Brescia nel 1973. Ho vissuto 11 anni a Orano (la città di Camus!) in Algeria e 2 anni a Kinshasa nella Repubblica Democratica del Congo. Tra Apple e Windows ho scelto decisamente Apple. Adoro il granchio del pacifico, saltare sul primo aereo, i pini marittimi di Marinella di Sarzana, il tramonto sulla costa orientale della Francia e le lunghe letture. Da sempre, infatti, spendo buona parte dei miei pochi risparmi in libri e in viaggi! Da laureato in ingegneria gestionale, ho fondato una casa editrice indipendente con il mio ex professore di filosofia del liceo e una società che si occupa di tecnologia. Ho un incarico di Direzione presso Sistemi Fomrativi Aziendali di confindustria Bergamo, sono presidente di un'importante associazione di promozione sociale, collaboraro come Business Model Desginer con il coworking Fabbrica dei Mestieri. Sono profondamente attratto dal mondo delle start up, soprattutto quelle che hanno una forte impatto sociale. Seguo vari progetti in fase di lancio, alcuni dei quali su piattaforma drupal. Partecipo da 5 anni ad convegni e festiaval sulle startup a livello globale.\n",
+        "Avatar" : "http://www.drupalday.it/sites/default/files/speaker-avatars/img_8657.jpg",
+        "Updated date" : "15/10/2014 - 18:58"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "97",
+        "Nome" : "Paolo",
+        "Cognome" : "Cotti Cometti",
+        "Bio" : "Migrante digitale e Drupal addicted, curo i progetti web per Venis SpA, la società ICT del Comune di Venezia.",
+        "Avatar" : "http://www.drupalday.it/sites/default/files/speaker-avatars/540680_10201151650261105_1881341119_n.jpg",
+        "Updated date" : "15/10/2014 - 18:58"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "89",
+        "Nome" : "Giuseppe",
+        "Cognome" : "Stefini",
+        "Bio" : "Giuseppe Stefini nasce in un piccolo paesino sulle sponde del lago di Iseo in provincia di Brescia, all'inizio degli anni settanta. Già da piccolo rivela la sua vocazione di sperimentatore, mosso dalla curiosità, nei confronti di tutto ciò che é tecnologico. Già alle scuole elementari utilizza una vecchia macchina da scrivere, facendo finta che fosse un personal computer, per scrivere listati di codice “basic”. Desiderato da tanto tempo, i genitori finalmente gli regalano un commodore 64 col quale produrrà la tesina dell'esame di terza media; si trattava di un gioco che simulava le sale di dadi, slot machine e roulette di un semplice casinò.\n\nSegue con passione l'evoluzione dell'informatica, dai primi personal computer con sistemi operativi dos fino all'avvento del software libero di cui è un fautore.\n\nDopo una laurea in Ingegneria, l'esperienza di ricerca presso l'Università degli Studi di Brescia rivela all'ingegnere la forza dell'open source nei servizi IT. \nNegli anni da ricercatore, Stefini si occupa di sistemi informativi territoriali e applicazioni software legate ai GIS ed al posizionamento satellitare globale e, una volta esaurita l'esperienza universitaria, fonda con l'amico Roberto Cantoni “Topoteck Geomatica”.\n\nL'azienda lavora con l'open source e promuove innovazione e diffusione dei Sistemi Informativi Geografici. Ben presto però il raggio d'interesse si allarga all'intero campo dell'IT e Topoteck Geomatica lascia il posto a Invisiblefarm.\n\nInvisiblefarm nasce nel 2011 e sviluppa information tecnology, lavorando con strumenti in prevalenza open source: Stefini ne è cofondatore e presidente.\nIn Invisiblefarm, continua il lavoro di incontro tra i prodotti open source e le esigenze dei clienti del settore pubblico e delle imprese, applicando la metodologia “agile” nello sviluppo dei suoi progetti. \n\nStefini ha utilizzato Drupal fin dalla versione 4 e continua tutt'oggi ad utilizzarlo per lo sviluppo di piattaforme web di sistemi informativi e gestionali per la sanità. Con Drupal ha anche sviluppato la piattaforma per di gestione del server OpenPass, progetto di Regione Lombardia e ANEF, cruscotti di monitoraggio per la Business Intelligenze, sistemi di gestione per i centri di referenza nazionali che si occupano di sorvegliare la diffusione di epidemie nelle specie animali di suini e bovini.",
+        "Avatar" : "",
+        "Updated date" : "15/10/2014 - 18:58"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "87",
+        "Nome" : "Roberto",
+        "Cognome" : "Peruzzo",
+        "Bio" : "Dottore in Informatica nel 2003 presso l'Università Ca' Foscari.\nLavorando per la società informatica dei suoi ex-professori universitari, ha acquisito conoscenze innovative su metodologie e processi per la realizzazione di web application.\nCo-fondatore di Studio Aqua nel 2005, matura l'abilità di analisi nel processo di realizzazione del software.\nNello stesso anno inizia a sviluppare i primi siti web con Drupal, strumento che lo accompagna ancora oggi anche nella realizzazione di e-commerce.\nConvito che idee giovani ed innovative affiancate alle nuove tecnologie siano il \"pane\" per il business del futuro.",
+        "Avatar" : "http://www.drupalday.it/sites/default/files/speaker-avatars/2212bn_phrobybragotto_peruzzo.jpg",
+        "Updated date" : "15/10/2014 - 18:58"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "81",
+        "Nome" : "Emanuele",
+        "Cognome" : "Rogledi",
+        "Bio" : "Emanuele Rogledi lavora nel settore IT da più di 20 anni.\nNel corso della sua carriera Emanuele ha lavorato come consulente IT per Pirelli, AstraZeneca, Teva e molte altre grandi realtà.\nInoltre, ha sviluppato circa 100 progetti indipendenti.\nEmanuele ha una esperienza decenale in Drupal.\nNegli ultimi 4 anni Emanuele è il CTO e fondatore di Keypic, Inc., ed è l'inventore della tecnologia antispam di Keypic.\nEmanuele è sempre stato uno self-starter che impara con la pratica e segue il progresso tecnologico.",
+        "Avatar" : "http://www.drupalday.it/sites/default/files/speaker-avatars/er.png",
+        "Updated date" : "15/10/2014 - 18:58"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "79",
+        "Nome" : "Andrea",
+        "Cognome" : "Pescetti",
+        "Bio" : "Andrea Pescetti lavora con Drupal dal 2006 e dirige il team di Nuvole, azienda specializzata nella comunicazione web per organizzazioni internazionali. Ha partecipato in qualità di speaker o trainer ai principali eventi Drupal italiani e internazionali, incluse le ultime edizioni della Drupal Conference in Europa e negli Stati Uniti.",
+        "Avatar" : "http://www.drupalday.it/sites/default/files/speaker-avatars/andrea-2010.jpg",
+        "Updated date" : "15/10/2014 - 18:58"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "74",
+        "Nome" : "Luca",
+        "Cognome" : "Mearelli",
+        "Bio" : "Sono un artigiano del software, e nonostante lavori in questo campo da parecchi anni mi ritengo ancora in cammino per migliorarmi nel lavoro che faccio e trovare gli strumenti ed i processi adatti ed utilizzarli per costruire 'cose' che siano davvero utili e piacevoli da usare.\n\nHo lavorato su progetti di vario genere: sistemi di telecomunicazioni, applicazioni di gestione aziendale, servizi web. L'ho fatto sia da solo che come parte di team piccoli e grandi, oltre che a vari livelli nell'organizzazione, da programmatore a direttore tecnico.",
+        "Avatar" : "",
+        "Updated date" : "15/10/2014 - 18:58"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "65",
+        "Nome" : "Fabio",
+        "Cognome" : "Borroni",
+        "Bio" : "Fabio Borroni iniziato come grafico pubblicitario e ha lavorato per molti anni come fotografo professionista per Senape Studio. Nel 2011 ha incanalato la sua passione creativa nel mondo di internet e dei codici come autodidatta, fondando LOOOL srl, una web agency giovane e dinamica che si stabilisce nella scena italiana. Un forte sostenitore dell'open source e sempre alla ricerca di nuovi modi di comunicazione e di sviluppo, Fabio è riuscito a creare un team affiatato e dinamico di professionisti del web, focalizzando la propria esperienza e sperimentazione su Drupal, con il quale il Team di LOOOL srl ha sviluppato gran parte dei progetti, dal sito ufficiale di Lorenzo Jovanotti Cherubini soleluna.com alla più recente startup loveyourpix.com",
+        "Avatar" : "",
+        "Updated date" : "15/10/2014 - 18:58"
+      }
+    }
+  ]
+}

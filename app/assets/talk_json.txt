@@ -1,0 +1,284 @@
+{
+  "nodes" : [
+    {
+      "node" : {
+        "Nid" : "139",
+        "Titolo" : "Rapporto tra PA, MEPA, società in house: nuove opportunità per la consulenza Drupal",
+        "Abstract" : "Il ruolo delle partecipate nell'ambito della PA sta cambiando rapidamente, sotto la spinta di un profondo rinnovamento dei meccanismi che regolamentano la spesa pubblica a vantaggio di un mercato sempre più agguerrito nel quale le aziende private trovano spesso difficoltà ad emergere. Se è sempre \nvera la massima \"grande è la confusione sotto il cielo: la situazione è eccellente\" quali sono allora le opportunità per le aziende e in che modo è possibile sviluppare i servizi basati su Drupal? Durante il talk verrà presentato un caso di successo realizzato per la Regione Sardegna nell'ambito del turismo.",
+        "nid_speaker" : "138",
+        "Livello" : "Intermedio",
+        "Categoria" : "Business",
+        "Updated date" : "15/10/2014 - 18:58",
+        "start" : "9:30",
+        "end" : "10:30",
+        "track" : "Sala 1"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "137",
+        "Titolo" : "Message Stack: gestire activity streams, notifiche, sottoscrizioni in a Drupal way",
+        "Abstract" : "Lo Stack Message è una serie di moduli che permettono di realizzare su Drupal evolute funzioni di social networking come activity streams, notifiche, sottoscrizioni a contenuti particolari.\n\nDurante la sessione saranno descritte le caratteristiche dei moduli principali:\n- Message\n- Message Notify\n- Message Subscribe\nquando e come usarli insieme e come personalizzare le loro funzionalità in base alle proprie esigenze.\n\nSaranno mostrati casi di applicazione reale dello stack per comprenderne meglio il funzionamento.\n\nSpeaker: Paolo Libanore e Italo Mairo",
+        "nid_speaker" : "136",
+        "Livello" : "Intermedio",
+        "Categoria" : "Building",
+        "Updated date" : "14/10/2014 - 19:01",
+        "start" : "9:30",
+        "end" : "10:30",
+        "track" : "Sala 2"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "130",
+        "Titolo" : "Performance in Drupal 8",
+        "Abstract" : "Probabilmente Drupal8 sarà la versione più performante di Drupal mai realizzata (o almeno questo è l'obiettivo). In questo talk vedremo alcune delle tecniche che sono state messe in campo per raggiungere questo risultato e vedremo come sfruttarle dentro ad un modulo custom. Vedremo come l'evoluzione degli strumenti di profiling (sia del codice PHP che di Drupal stesso) hanno aiutato i core developer a decidere quale versione di una certa patch dava le prestazioni migliori. Vedremo infine cosa resta da fare e quali saranno gli sviluppi futuri di questo argomento centrale nel web contemporaneo.",
+        "nid_speaker" : "129",
+        "Livello" : "Intermedio",
+        "Categoria" : "Development",
+        "Updated date" : "14/10/2014 - 07:52",
+        "start" : "10:30",
+        "end" : "11:30",
+        "track" : "Sala 1"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "128",
+        "Titolo" : "Drupal 7 non è mai cambiato, il fontend si",
+        "Abstract" : "Drupal 7 non è mai cambiato, il fontend si. Il layer di tema da la possibilità di fare grandi cose, se affiancato a moderni tool e metodologie. Con lo sguardo alla beta di drupal 8 e agli attuali standard questo talk si propone di introdurre BEM/SMACSS/OOCSS, SASS/LESS ed i tool NPM (grunt, gulp, bower) che possono migliorare e velocizzare il workflow di theming e la loro integrazione con Drupal7 e la documentazione del progetto.\n\nRiferimenti:\nsmacss - https://smacss.com/\noocss - http://oocss.org/\nBEM - https://bem.info/method/\nsass - http://sass-lang.com/\nless - http://lesscss.org/\ngrunt - http://gruntjs.com/\ngulp - http://gulpjs.com/\nbower - http://bower.io/",
+        "nid_speaker" : "127",
+        "Livello" : "Intermedio",
+        "Categoria" : "Theming",
+        "Updated date" : "14/10/2014 - 07:40",
+        "start" : "10:30",
+        "end" : "11:30",
+        "track" : "Sala 2"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "126",
+        "Titolo" : "Costruire una app mobile con Ionic, AngularJS ed ovviamente Drupal",
+        "Abstract" : "Il talk verterà sulla creazione di una semplice app mobile che sfrutti il framework ionic per quello che riguarda l'accesso al mobile, il MVVM AngualarJS per quello che concerne il collegamento tra mobile e Drupal ed il modulo Service per quello che riguarda il reperimento delle informazioni lato Server.",
+        "nid_speaker" : "125",
+        "Livello" : "Intermedio",
+        "Categoria" : "Development",
+        "Updated date" : "11/10/2014 - 23:48",
+        "start" : "11:30",
+        "end" : "12:30",
+        "track" : "Sala 1"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "124",
+        "Titolo" : "Costruire temi con Foundation: facile, riusabile, responsive.",
+        "Abstract" : "Dopo aver introdotto i vantaggi di usare un framework come Foundation per la realizzazione di un tema per drupal, si passerà in rassegna come configurare SASS e Compass per un nuovo progetto e a una dimostrazione pratica della creazione del tema.",
+        "nid_speaker" : "123",
+        "Livello" : "Base",
+        "Categoria" : "Theming",
+        "Updated date" : "10/10/2014 - 16:18",
+        "start" : "11:30",
+        "end" : "12:30",
+        "track" : "Sala 2"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "121",
+        "Titolo" : "Rete civica in Drupal: un bene comune digitale da costruire assieme ma quale futuro?",
+        "Abstract" : "Il Comune di Bologna sta per rilasciare una rinnovata versione della rete civica, frutto di un persorso di co-design all’interno del percorso di definizione dell’Agenda Digitale, che ha visto partecipi diversi settori dell’Amministrazione, cittadini, associazioni e imprese.\n\nTale piattaforma intende integrare i tre aspetti fondamentali dell'interazione col cittadino:\n- la comunicazione istituzionale di informazioni generate dall'ente;\n- la fornitura di servizi online profilati, attraverso i canali digitali;\n- l'innovativa area di Comunità partecipativa e di gestione dei beni comuni.\n\nQuesta impostazione nasce dalla consapevolezza che il web si configura sempre più come “spazio pubblico” ormai i cittadini usano il web per accedere ai servizi, per comunicare tra loro e per rendere ogni fase della propria giornata più facile.\n\nAll’interno dell’innovativo spazio di Comunità On e offline istituzioni, associazioni, cittadini e imprese potranno confrontarsi in modo simmetrico, paritetico, orizzontale, con l'obiettivo di elaborare le scelte e le decisioni migliori, all'interno di un perimetro che sarà di volta in volta indicato in modo trasparente (regole del gioco, contesto di applicazione, esito della coprogettazione) ma che partirà da un patto civico di collaborazione.\n\nNello spirito stesso che anima la piattaforma partecipativa, si prevede di pianificare l'apertura di una fase di raccolta commenti costruttivi, sull'efficacia e le funzionalità della piattaforma stessa, che culminerà in un evento in stile hackaton, per arricchire effettivamente la piattaforma delle caratteristiche richieste. Tale evento sarà aperto a raccogliere manifestazioni di interesse verso l’adozione del modello partecipativo anche nello sviluppo del codice della piattaforma di Comunità, che ambisce a diventare bene comune per eccellenza, nello spirito del regolamento “Bene Comune” di recente adozione.\n\n“Il Comune favorisce l’innovazione digitale attraverso interventi di partecipazione all’ideazione, al disegno e alla realizzazione di servizi e applicazioni per la rete civica da parte della comunità, con particolare attenzione all’uso di dati e infrastrutture aperti, in un’ottica di beni comuni digitali.”\n\nSulla linea tracciata dal regolamento il codice della rete civica sviluppato su Drupal sarà rilasciato con licenza open su un repository pubblico, per sperimentare la collaborazione con la comunità degli sviluppatori, aprendo un confronto su opportunità, rischi e competenze.\n",
+        "nid_speaker" : "120",
+        "Livello" : "",
+        "Categoria" : "PA",
+        "Updated date" : "06/10/2014 - 13:58",
+        "start" : "12:30",
+        "end" : "13:30",
+        "track" : "Sala 1"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "115",
+        "Titolo" : "Drupal ed angularjs: utenti, commenti e form di un'altra dimensione.",
+        "Abstract" : "Grazie all'utilizzo di AngularJS l'inserimento dei contenuti lato frontend non sarà più lo stesso. Nel talk verranno presentati i codici per gestire, tramite chiamate REST, l'inserimento e le problematiche relative alla creazione di nuovi utenti, il mantenimento dello stato di login, contenuti e commenti. ",
+        "nid_speaker" : "114",
+        "Livello" : "Intermedio",
+        "Categoria" : "Business, Development",
+        "Updated date" : "25/09/2014 - 14:22",
+        "start" : "12:30",
+        "end" : "13:30",
+        "track" : "Sala 2"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "113",
+        "Titolo" : "Come migliorare il posizionamento dei siti Drupal con Schema.org",
+        "Abstract" : "Schema.org permette di trasformare i contenuti del proprio sito web in qualcosa che può essere \"compreso\" dai motori di ricerca. Schema.org è riconosciuto ufficialmente da Google, Bing e Yahoo! come vocabolario per la ricerca semantica nell'ambito dei motori di ricerca. Per chi lavora nell'ambito del SEO è essenziale comprendere il significato di questo strumento e cogliere tutti i vantaggi.",
+        "nid_speaker" : "112",
+        "Livello" : "Intermedio",
+        "Categoria" : "Building, Development",
+        "Updated date" : "25/09/2014 - 12:50",
+        "start" : "14:30",
+        "end" : "15:30",
+        "track" : "Sala 1"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "109",
+        "Titolo" : "Context Driven Drupal",
+        "Abstract" : "I Context consentono di aumentare il controllo sulle componenti di un portale Drupal. Sulla base dei regole complesse che estendono le potenzialità offerte ad esempio dai sistemi di gestione dei blocchi e dei temi. I Context sono facilmente estendibili mediante la creazione di sottomoduli ad hoc e trovano applicazione in molti scenari: vedremo in particolare come gestire un multidominio utilizzando un sottomodulo di Context sviluppato in Italia.",
+        "nid_speaker" : "108",
+        "Livello" : "Intermedio",
+        "Categoria" : "Development, Theming",
+        "Updated date" : "24/09/2014 - 17:52",
+        "start" : "14:30",
+        "end" : "15:30",
+        "track" : "Sala 2"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "107",
+        "Titolo" : "I Bitcoin alla conquista del mondo",
+        "Abstract" : "I Bitcoin e le valute elettroniche sono il risultato di un complesso sistema crittografico che, operando su una rete peer-to-peer, si propone come nuovo mezzo di scambio alternativo alle valute ufficiali. Utilizzare i Bitcoin è altresì molto più semplice che operare su un home banking, i trasferimenti costano quasi zero e i sistemi di pagamento che accettano i Bitcoin sono sempre più numerosi. I Bitcoin potrebbero diventare presto la valuta economica più diffusa al mondo superando il Dollaro e l'Euro. Che cosa serve sapere per essere preparati al futuro?",
+        "nid_speaker" : "106",
+        "Livello" : "Base",
+        "Categoria" : "Business, Development",
+        "Updated date" : "24/09/2014 - 13:05",
+        "start" : "15:30",
+        "end" : "16:30",
+        "track" : "Sala 1"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "105",
+        "Titolo" : "Che la Forza di Drupal 8 sia con te - il potere del codice",
+        "Abstract" : "Drupal 8 come le precedenti versioni di Drupal si fa attendere e desiderare, ancora non è certa la data in cui verrà rilasciata la versione stabile, ma quel momento si avvicina sempre di più e noi sviluppatori dobbiamo essere pronti. Dovremo avere familiarità con Symfony2 e dovremo conoscere le nuove API. Nel talk entreremo nel codice di drupal per scoprirne le nuove API, le nuove best practics ed opportunità che ci offrirà Drupal 8.",
+        "nid_speaker" : "104",
+        "Livello" : "Avanzato",
+        "Categoria" : "Development",
+        "Updated date" : "23/09/2014 - 23:09",
+        "start" : "15:30",
+        "end" : "16:30",
+        "track" : "Sala 2"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "103",
+        "Titolo" : "IL PROSSIMO PASSO: DALL’IDEA ALLA STARTUP",
+        "Abstract" : "CONTESTO\nLe turbolenze del sistema economico, la facilità di accesso alle informazioni ed ai mercati globali, la continua perdita dei posti di lavoro nei settori su cui tradizionalmente si è retto il sistema produttivo, il basso costo di infrastrutture: sono alcuni elementi che delineano i tempi che stiamo vivendo. \nIl mondo intero è caratterizzato, da un lato, da una situazione stagnante, conseguente alla crisi finanziaria prima - e produttiva in seguito – e dall’altro da uno straordinario fermento imprenditoriale. Londra, Berlino, Stoccolma, New York, Tel Aviv e Nairobi – per citarne alcune – sono attraversate da un nuovo approccio all’imprenditorialità. Il tema delle startup è ormai al centro dello sviluppo economico mondiale, anche nella sua declinazione in termini sociali: sono sempre di più i progetti che nascono al fine di risolvere un problema in ambito sociale, piuttosto che culturale.\nBasti pensare al sistema Grameen del premio Nobel Muhammad Yunus che raggruppa realtà profit con un forte impatto sui problemi sociali, o a M-Pesa che consente trasferimenti di denaro e pagamenti in Kenia, Tanzania, Sudafrica, India e Afghanistan senza la necessità di possedere un conto corrente, ma solo con un sistema legato agli sms su telefoni cellulari di prima generazione. \nChe cos’è una startup? Il progetto startup genone sta mappando a livello mondiale circa 50.000 startup per costruire, se esiste, un paradigma. \nOggi definiamo startup “un’organizzazione temporanea alla ricerca di un modello di business scalabile, ripetitivo e redditizio, ovvero un’istituzione umana studiata per creare nuovi prodotti e servizi in condizione di estrema incertezza”. (Blank e Dorf) Tali condizioni di incertezza estrema mettono in evidenza aspetti legati all’ innovazione, allo sviluppo di nuovi mercati, alla ricerca di nuove problematiche e di nuove soluzioni. \n OBIETTIVO\n\nIl seminario ha lo scopo di avvicinare i partecipanti alle seguenti tematiche:\n-\tIdee e innovazione\n-\tgenerazione e valutazione di business model\n-\tstrategia innovativa e sviluppo del mercato\n-\tstrumenti di gestione del progetto in condivisione e sviluppo agile\n\n1.\tUn mondo di opportunità?\nFotografia della situazione economica e trend futuri\nStartup: definizione\nLe startup: dalla Silicon Valley agli hotspot distribuiti\nGli ecosistemi\nLa nuova cultura imprenditoriale\nLa situazione italiana\nUn nuovo stimolo per l’innovazione\n\n2.\tLean startup: disegna il tuo progetto\nL’approccio scientifico: ipotesi e test\nTools: il business model canvas\nLa value proposition: i vantaggi competitivi\nMVP: il prodotto/servizio con le caratteristiche minime\nRevenue model design\n\n3. Lo sviluppo del mercato: convalida il tuo progetto\nCustomer development model: scopri il tuo mercato\nDisruptive innovation\nIl ciclo di sviluppo\nPivoting\n\n4.\tStrumenti di gestione e funding\nStrumenti di gestione e condivisione progetti e cloud\nPreparare un pitch\nCome si finanzia una startup?",
+        "nid_speaker" : "102",
+        "Livello" : "Base",
+        "Categoria" : "Business",
+        "Updated date" : "20/09/2014 - 18:08",
+        "start" : "16:30",
+        "end" : "17:30",
+        "track" : "Sala 1"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "98",
+        "Titolo" : "Drupal & Venezia: cinque anni dopo",
+        "Abstract" : "Una panoramica dei progetti web realizzati dal 2009 a oggi per la PA a Venezia: integrazione di sistemi, intranet, portali istituzionali, servizi ai cittadini, e-commerce turistico.\n\nProblemi (alcuni), opportunità (molte), soluzioni (Drupal).",
+        "nid_speaker" : "97",
+        "Livello" : "Intermedio",
+        "Categoria" : "PA",
+        "Updated date" : "14/09/2014 - 11:27",
+        "start" : "16:30",
+        "end" : "17:30",
+        "track" : "Sala 2"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "90",
+        "Titolo" : "Drupal come framework per la creazione di sistemi gestionali complessi, un case study di successo",
+        "Abstract" : "Le potenzialità di Drupal offrono opportunità che vanno molto al di là della creazione e gestione di siti web: il famoso CMS può essere utilizzato come Framework avanzato per la costruzione di software complessi.\n\nIl case study presentato riguarda la creazione di un sistema per la gestione della banca dati Porpora Trombotica Trombocitopenica della Fondazione IRCCS Ca' Granda Ospedale Maggiore Policlinico di Milano, progetto realizzato da Invisiblefarm a seguito della vittoria di una gara pubblica; un parametro importante, che ha permesso la vincita della gara, è stato l'abbattimento dei costi reso possibile dall'utilizzo della licenza GNU GPL di Drupal.\n\nI requisiti della committenza erano quelli di creare un software a supporto della ricerca scientifica, che non fosse un semplice registro di ambulatorio, ma che fornisse ai ricercatori uno strumento per analizzare, scoprire ed elaborare nuovi protocolli medici per la cura di una malattia rara.\n\nLa struttura del software e le sue funzionalità lo hanno reso pienamente riutilizzabile in situazioni analoghe; la stessa fondazione committente ha infatti richiesto la replica per un'altra malattia rara da loro indagata: la mastocistosi.\n\nI principali oggetti gestiti nel sistema sono i pazienti con tutto ciò che ne ruota attorno. Su queste informazioni sono stati studiati e sviluppati report utili alla clinica del paziente e report di analisi per la ricerca scientifica. Da un punto di vista più operativo sono state creati alert per la gestione dei follow up e dei richiami di visita dei pazienti.\n\nIl software è stato sviluppato creando un nuovo modulo di Drupal 7 con le dipendenze ai moduli schema , date_popup, login_destination, libraries , phpexcel, ctools, sticky_columns, views; l'installazione del modulo prevede l'automatismo per la creazione di nuove tabella nel database. La logica applicativa ha sfruttato le regole di creazione, validate e submit dei form di Drupal e le potenzialità di jQuery. La navigazione è stata sviluppata effettuando un lavoro di customizzazione del tema “seven” abbinata alla creazione di nuova porzione di software deputata a tale scopo.\n\nL'utilizzo di Drupal come framework per lo sviluppo di software applicativi offre molteplici vantaggi: ACL completo e pronto all'uso, interfaccia grafica facilmente customizzabile, processo di creazione dei moduli immediato e veloce.\n\nIl lavoro è stato sviluppato con metodologia AGILE, realizzando run di due settimane che hanno permesso feed back molto ravvicinati nel tempo con il cliente, evitando fuori tema progettuali in perfetto stile “Lean Thinking” ",
+        "nid_speaker" : "89",
+        "Livello" : "Intermedio",
+        "Categoria" : "Development",
+        "Updated date" : "31/08/2014 - 14:49",
+        "start" : "17:30",
+        "end" : "18:30",
+        "track" : "Sala 1"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "88",
+        "Titolo" : "Software Developer",
+        "Abstract" : "Nella mia esperienza di sviluppatore ho imparato che quando si vuole utilizzare un componente software di terze parti è necessario chiedersi: 1. Fa tutto quello che ti serve? 2. Quanto ne sai su di esso? 3. É un componente \"maturo\"? 4 C'è una buona documentazione? Questo è quello che faccio ogni volta che ho dovuto affrontare un nuovo progetto. Vorrei comunicare l'importanza di questo approccio e di raccontare la mia esperienza di come ho trovato Drupal Commerce nella mia strada e perché l’ho ​​scelto. \nVorrei introdurre inoltre i concetti di “variante di prodotto”: quando si deve costruire un e-commerce, la gestione delle varianti è una delle parti più complesse da gestire, quindi voglio sottolineare come Drupal Commerce risolvere questo problema rendendolo uno strumento flessibile per adattarsi ai diversi tipi di business. \nI partecipanti avranno un motivo in più per credere che Drupal sia un framework eccellente per lo sviluppo di e-commerce.",
+        "nid_speaker" : "87",
+        "Livello" : "Base",
+        "Categoria" : "Building",
+        "Updated date" : "29/08/2014 - 09:03",
+        "start" : "17:30",
+        "end" : "18:30",
+        "track" : "Sala 2"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "82",
+        "Titolo" : "Una analisi comparativa degli strumenti antispam alternativi ai CAPTCHA. Keypic - una soluzione antispam, un plugin per Drupal che ti permette di non utilizzare i CAPTCHA.",
+        "Abstract" : "...Secondo delle statistiche sull’utilizzo di Drupal, più di 200.000 utenti utilizzano una delle varietà di CAPTCHA, creando un ostacolo per gli utenti finali che vogliono solo registrarsi su qualche sito web, completare un acquisto, o inviare un commento. Perché devono essere i vostri utenti a dover provare che non hanno delle intenzioni cattive?.. Non volete aver a che fare con lo spam? - allora, utilizzate una barriera efficace ma user-friendly, dando ai vostri utenti una esperienza più soddisfacente e così aumentando la loro loyalty. E chiaro che CAPTCHA non è una soluzione, ma un problema. Quindi oggi diamo un occhiata alle soluzioni esistenti che pretendono di risolvere questo problema, e vediamo insieme perché non sono capaci di farlo. E vi presenterò Keypic una soluzione innovativa che ha un approccio completamente diverso.",
+        "nid_speaker" : "81",
+        "Livello" : "Avanzato",
+        "Categoria" : "Business, Development",
+        "Updated date" : "18/08/2014 - 12:38",
+        "start" : "18:30",
+        "end" : "19:30",
+        "track" : "Sala 1"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "80",
+        "Titolo" : "Features per Drupal 8",
+        "Abstract" : "Drupal 8 è in arrivo. Il nuovo Configuration Management è valido sotto molti punti di vista, ma non renderà Features del tutto obsoleto. La parte più scomoda e peggiore di Features diventerà obsoleta, ma la parte migliore, quella che si occupa di modularizzare e riutilizzare la configurazione, sarà ancora attuale.\n\nInfatti Configuration Management non punta a sostituire Features: si occupa di rendere molto più semplice il trasporto delle modifiche di configurazione tra l'ambiente di sviluppo e quello di produzione. Tutti gli altri benefici di Features (modularizzare la configurazione, poterla riutilizzare, consentire a più sviluppatori di lavorare contemporaneamente a più parti dello stesso sito) rimangono da implementare. Vedremo come Configuration Management prepari la strada per altri moduli aggiuntivi che possano alla fine offrire gli stessi benefici offerti da Features in Drupal 7 con un approccio più pulito e più moderno.",
+        "nid_speaker" : "79",
+        "Livello" : "Avanzato",
+        "Categoria" : "Development",
+        "Updated date" : "14/08/2014 - 16:20",
+        "start" : "18:30",
+        "end" : "19:30",
+        "track" : "Sala 2"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "75",
+        "Titolo" : "Edgesense: Social network analysis per tutti",
+        "Abstract" : "Ogni conversazione ha una struttura. La rete formata dalle persone che iteragiscono nelle conversazioni di una comunità online può quindi essere analizzata con gli strumenti che la scienza delle reti per comprenderne le caratteristiche. Arricchendo la conversazioni online con l'analisi di rete, speriamo di permettere ai moderatori delle comunità che lo useranno di migliorare e guidare i processi di intelligenza collettiva. La grande visione dietro tutto questo è di contribuire alla costruzione degli strumenti che possano permettere di implementare in maniera efficace piattaforme di democrazia partecipativa (tutto questo è spiegato da Alberto Cottica in questo talk di TEDx: https://www.youtube.com/watch?v=KKrM2c-ww_k )\n\nEdgesense è il nostro tentativo di portare gli strumenti di analisi delle reti sociali alla portata di tutti quelli che potrebbero averne giovamento (ma magari non ne conoscono ancora le potenzialità.) Drupal rappresenta una delle migliori e più diffuse piattaforme per implementare forum o siti di comunità e per questo, nella sua incarnazione corrente, Edgesense è un modulo che implementa una dashboard di analisi della rete sociale applicata ad una istallazione Drupal. \n\nCon Edgesense i community manager possono per la prima volta vedere in un attimo chi sta parlando con chi, quali utenti sono centrali o periferici nelle conversazioni e quali fungono da punti di contatto tra sottocomunità differenti. Questo è molto utile per guidare il dibattito o per determinare quali utenti abbiano maggiore autorità (attraverso misure di centralita o \"pagerank\".)\n\nLa visualizzazione della rete permette di collegare tra di loro metriche altrimenti poco comprensibili e fa emergere i gruppi di utenti che in maniera naturale interagiscono di più tra di loro evidenziando le sottocomunità che si sono formate.\n\nAnche gli i singoli utenti potrebbero trovare utile la dashboard di Edgesense, perchè potrebbe aiutarli a comprendere quale è la loro posizione all'interno delle discussioni che si formano nella comunità online: Quali sono gli utenti che mi sono più vicini? Ci sono gruppi di utenti molto attivi con cui vale la pena interagire?\n\nNel talk vedremo quali sono le metriche implementate da Edgesense e come queste possano aiutare a comprendere la struttura della rete di relazioni che si sviluppa in una comunità ospitata su Drupal. Vedremo anche quali sono le sfide risolte e quelle che ci aspettano nell'integrazione degli algoritmi di analisi (che sono implementati in python) nell'ambiente Drupal.\n\nEdgesense è sviluppato da Wikitalia in maniera aperta, nel contesto del progetto CATALYST sull'intelligenza collettiva. Tutti sono invitati a partecipare: https://github.com/Wikitalia/edgesense\n",
+        "nid_speaker" : "74",
+        "Livello" : "Intermedio",
+        "Categoria" : "Building, Development",
+        "Updated date" : "05/08/2014 - 17:35",
+        "start" : "19:30",
+        "end" : "20:30",
+        "track" : "Sala 1"
+      }
+    },
+    {
+      "node" : {
+        "Nid" : "66",
+        "Titolo" : "Loveyourpix Case Study",
+        "Abstract" : "Loveyourpix.com è il nuovo punto di riferimento per le comunità fotografiche. Concorsi fotografici per gli appassionati così come un nuovo strumento di comunicazione per le imprese e per la foto-crowdsourcing. \nLoveyourpix è il primo mercato per i prodotti FineArt interamente realizzate a mano realizzati in Italia, dove il fotografo può decidere il loro profitto, il prezzo di vendita e l'opzione Limited Edition certificata da ANW certificato elettronico.\n\nIl cuore pulsante di loveyourpix.com è sviluppato su Drupal 7 e avremo il piacere di presentare il nostro case study.\n\nPerché è stato scelto Drupal? Qual'è stato l'approccio lavorativo e di sviluppo al progetto? Quali sono i moduli fondamentali della community Drupal che abbiamo utilizzato? Quali moduli abbiamo sviluppato noi per personalizzare l'e-commerce e tutto il sistema automatico di finalizzazioni dei contests? Come dialoga il sito con l'app iOS? E tanto altro.",
+        "nid_speaker" : "65",
+        "Livello" : "Avanzato",
+        "Categoria" : "Building, Development, Theming",
+        "Updated date" : "24/07/2014 - 15:28",
+        "start" : "19:30",
+        "end" : "20:30",
+        "track" : "Sala 2"
+      }
+    }
+  ]
+}

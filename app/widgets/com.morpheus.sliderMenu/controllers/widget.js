@@ -24,7 +24,7 @@ var elementShowHide;
  * @param {String} _params.color.headingText The text color for menu headers
  */
 $.init = function(params) {
-	itemColor = typeof params.itemColor !== "undefined" ? params.itemColor : "#ffffff";
+	itemColor = typeof params.itemColor !== "undefined" ? params.itemColor : Alloy.CFG.colors.third;
 	itemBackground = typeof params.itemBackground !== "undefined" ? params.itemBackground : "#000000";
 	itemSelectedBackground = typeof params.itemSelectedBackground !== "undefined" ? params.itemSelectedBackground : "#666666";
 	sectionColor = typeof params.sectionColor !== "undefined" ? params.sectionColor : "#666666";

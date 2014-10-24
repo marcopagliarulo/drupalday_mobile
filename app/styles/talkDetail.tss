@@ -11,7 +11,7 @@
 		fontSize : "15sp",
 		fontFamily : Alloy.Globals.museo_slab_700
 	},
-	color : "#ea415e",
+	color : Alloy.CFG.colors.second,
 	left: "5%",
 },
 ".listTitle" : {
@@ -33,14 +33,14 @@
 		fontSize : "20sp",
 		fontFamily : Alloy.Globals.museosans_300
 	},
-	color : "#139ad4",
+	color : Alloy.CFG.colors.first,
 },
 ".category" : {
 	font: {
 		fontSize : "20sp",
 		fontFamily : Alloy.Globals.museo_slab_700
 	},
-	color : "#139ad4",
+	color : Alloy.CFG.colors.first,
 	left: "5%",
 	width : "55%"
 },
@@ -54,5 +54,5 @@
 	},
 	width: Ti.UI.FILL,
 	textAlign: "center",
-	color: "#139ad4"
+	color: Alloy.CFG.colors.first
 }

@@ -6,8 +6,8 @@
 		fontSize : "25sp",
 		fontFamily : Alloy.Globals.museo_slab_700
 	},
-	backgroundColor : "#ffffff",
-	color : "#139ad4",
+	backgroundColor : Alloy.CFG.colors.third,
+	color : Alloy.CFG.colors.first,
 	left: "0"
 }
 ".listDate" : {
@@ -15,8 +15,8 @@
 		fontSize : "25sp",
 		fontFamily : Alloy.Globals.museo_slab_700
 	},
-	backgroundColor : "#139ad4",
-	color : "#ffffff",
+	backgroundColor : Alloy.CFG.colors.first,
+	color : Alloy.CFG.colors.third,
 	left: "0",
 	top: "5dp",
 	bottom : "5dp"

@@ -37,10 +37,10 @@ function openIndex(event){
 // Initialize the slide menu
 $.SliderMenuContainer.init({
     items: menuItems,
-    itemColor: '#ffffff',
-    itemBackground : '#ffffff',
-    background : '#139ad4',
-    itemSelectedBackground : '#ea415e',
+    itemColor: Alloy.CFG.colors.third,
+    itemBackground : Alloy.CFG.colors.third,
+    background : Alloy.CFG.colors.first,
+    itemSelectedBackground : Alloy.CFG.colors.second,
     elementShowHide : $.header
 });
 var startdate = new Date(Alloy.CFG.startdate);

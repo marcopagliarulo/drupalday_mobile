@@ -1,5 +1,5 @@
 "#container" : {
-	backgroundColor: "#ffffff",
+	backgroundColor: Alloy.CFG.colors.third,
 	backgroundImage: "/images/background.png",
 	backgroundRepeat: true
 }
@@ -19,11 +19,11 @@
 "#header" : {
 	width: Titanium.UI.FILL,
 	height:Titanium.UI.SIZE,
-	backgroundColor:"#139ad4",
+	backgroundColor:Alloy.CFG.colors.first,
 	height: "50dp",
 }
 "#headerTitle" : {
-	color : "#ffffff",
+	color : Alloy.CFG.colors.third,
 	left: "15%",
 	font : {
 		fontSize : "25sp",

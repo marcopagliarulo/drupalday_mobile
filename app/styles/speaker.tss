@@ -7,10 +7,10 @@
 	backgroundColor : "transparent"
 }
 "TableView" : {
-	separatorColor : "#139ad4"
+	separatorColor : Alloy.CFG.colors.first
 }
 ".rowSeparator" : {
 	width: "100%",
 	height : "1dp",
-	backgroundColor : "#139ad4"
+	backgroundColor : Alloy.CFG.colors.first
 }

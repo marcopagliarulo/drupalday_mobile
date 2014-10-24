@@ -37,7 +37,7 @@
 	title: 'Drupal'
 }
 "#day" : {
-	color: "#ea415e",
+	color: Alloy.CFG.colors.second,
 	title: 'Day'
 }
 "#location" : {
@@ -45,7 +45,7 @@
 	title: 'Milano'
 }
 "#date" : {
-	color: "#ea415e",
+	color: Alloy.CFG.colors.second,
 	title: '14-15 Novembre 2014'
 }
 "#time" : {
@@ -61,7 +61,7 @@
 		fontFamily : Alloy.Globals.museosans_700
 	},
 	textAlign: "center",
-	color : "#ea415e",
+	color : Alloy.CFG.colors.second,
 }
 ".socialLink" : {
 	width : "15%",

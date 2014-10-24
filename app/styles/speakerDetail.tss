@@ -18,5 +18,5 @@
 		fontSize : "20sp",
 		fontFamily : Alloy.Globals.museosans_300
 	},
-	color : "#139ad4",
+	color : Alloy.CFG.colors.first,
 },

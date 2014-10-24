@@ -9,6 +9,7 @@
 // object. For example:
 //
 // Alloy.Globals.someGlobalFunction = function(){};
+
 Alloy.Globals.prevController = new Array();
 Alloy.Globals.Map = require('ti.map');
 Alloy.Globals.osName = Ti.Platform.osname;

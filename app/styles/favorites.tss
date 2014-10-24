@@ -13,19 +13,19 @@
 	backgroundColor : "#dddddd",
 },
 ".rowView" : {
-	backgroundColor : "#ffffff",
+	backgroundColor : Alloy.CFG.colors.third,
 },
 ".rowSeparator" : {
 	width: "100%",
 	height : "1dp",
-	backgroundColor : "#139ad4"
+	backgroundColor : Alloy.CFG.colors.first
 }
 ".scheduleDate" : {
 	font: {
 		fontSize : "15sp",
 		fontFamily : Alloy.Globals.museo_slab_700
 	},
-	color : "#ea415e",
+	color : Alloy.CFG.colors.second,
 	left: "5%",
 	top: "5dp",
 },
@@ -34,7 +34,7 @@
 		fontSize : "15sp",
 		fontFamily : Alloy.Globals.museo_slab_700
 	},
-	color : "#ea415e",
+	color : Alloy.CFG.colors.second,
 	left: "5%",
 	bottom : "5dp",
 },
@@ -46,7 +46,7 @@
 	width: Ti.UI.FILL,
 	textAlign: "center",
 	bottom : "5dp",
-	color: "#139ad4"
+	color: Alloy.CFG.colors.first
 }
 ".listTitle" : {
 	left: "5%",
@@ -66,7 +66,7 @@
 		fontSize : "25sp",
 		fontFamily : Alloy.Globals.museo_slab_700
 	},
-	color : "#139ad4",
+	color : Alloy.CFG.colors.first,
 	textAlign : "center"
 },
 ".emptyFavoritesDetail" : {
@@ -74,6 +74,6 @@
 		fontSize : "15sp",
 		fontFamily : Alloy.Globals.museo_slab_700
 	},
-	color : "#139ad4",
+	color : Alloy.CFG.colors.first,
 	textAlign : "center"
 }

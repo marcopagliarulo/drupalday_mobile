@@ -1,6 +1,6 @@
 "#schedule_switch" : {
-	backgroundColor : "#ea415e",
-	color : "#ffffff",
+	backgroundColor : Alloy.CFG.colors.second,
+	color : Alloy.CFG.colors.third,
 	font: {
 		fontSize : "20sp",
 		fontFamily : Alloy.Globals.museo_slab_700

@@ -13,23 +13,23 @@
 	backgroundColor : "#dddddd",
 },
 ".rowView" : {
-	backgroundColor : "#ffffff",
+	backgroundColor : Alloy.CFG.colors.third,
 },
 ".tab" : {
 	borderWidth: "1dp",
 	borderColor: "#fff",
-	backgroundColor: "#139ad4",
+	backgroundColor: Alloy.CFG.colors.first,
 	
 },
 ".labelTab" : {
-	color : "#ffffff",
+	color : Alloy.CFG.colors.third,
 	font: {
 		fontSize : "25sp",
 		fontFamily : Alloy.Globals.museo_slab_300
 	},
 },
 ".tabActive" : {
-	backgroundColor: "#ea415e",
+	backgroundColor: Alloy.CFG.colors.second,
 	borderWidth: "1dp",
 	borderColor: "#fff",
 },
@@ -38,7 +38,7 @@
 		fontSize : "15sp",
 		fontFamily : Alloy.Globals.museo_slab_700
 	},
-	color : "#ea415e",
+	color : Alloy.CFG.colors.second,
 	left: "5%",
 	top: "5dp",
 },
@@ -47,7 +47,7 @@
 		fontSize : "15sp",
 		fontFamily : Alloy.Globals.museo_slab_700
 	},
-	color : "#ea415e",
+	color : Alloy.CFG.colors.second,
 	left: "5%",
 	bottom : "5dp",
 },
@@ -59,7 +59,7 @@
 	width: Ti.UI.FILL,
 	textAlign: "center",
 	bottom : "5dp",
-	color: "#139ad4"
+	color: Alloy.CFG.colors.first
 }
 ".listTitle" : {
 	left: "5%",
