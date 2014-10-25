@@ -1,0 +1,4 @@
+<Alloy>
+    <View id="infoPost" layout="vertical" width="Ti.UI.SIZE">
+    </View>
+</Alloy>

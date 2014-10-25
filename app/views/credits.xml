@@ -1,0 +1,10 @@
+<Alloy>
+	<View id="credits" layout="vertical" width="90%">
+    	<Label>Applicazione sviluppata da \nMarco Pagliarulo</Label>
+		<View id="social" layout="horizontal">
+			<ImageView class="socialLink" image="/images/twitter.png" onClick="openUrl" url="https://twitter.com/Morpheus80ta"></ImageView>
+			<ImageView class="socialLink" image="/images/github.png" onClick="openUrl" url="https://github.com/Morpheus80ta/drupalday_mobile"></ImageView>
+		</View>
+		<Label class="fontCredits">Icone realizzate da Freepik, Daniel Bruce, Elegant Themes, Heydon, Vectorgraphit, OCHA\ndistribuite da www.flaticon.com\nlicenza CC BY 3.0</Label>
+	</View>
+</Alloy>

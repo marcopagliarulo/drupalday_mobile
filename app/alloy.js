@@ -106,9 +106,6 @@ updateData = function(type){
 						var currentCollection = collection.get(object[id]);
 						if(typeof object['changed'] == 'undefined' || (typeof currentCollection != 'undefined' && object['changed'] > currentCollection.get('changed')) || typeof currentCollection == 'undefined'){
 							Ti.API.info(JSON.stringify(object));
-							if(typeof currentCollection != 'undefined'){
-								Ti.API.info(JSON.stringify(currentCollection.toJSON()));
-							}
 							ids[ids.length] = object[id];
 							if(file){
 								if(typeof Alloy.Globals.filesDownload[type] == 'undefined'){
@@ -173,8 +170,7 @@ function getImageBlob(url, data, field, type, files){
 			var field = this._properties['field'];
 			var files = this._properties['files'];
 			var type = this._properties['type'];
-			data[field] = "";
-			Ti.API.info(files.length);
+			data[field] = null;
 			if(files.length == 0){
 				var row = Alloy.createModel(type,data);
 				row.save();
@@ -352,6 +348,29 @@ function mappingField(type){
 				'field' : 'url',
 			}
 		},
+		'info' : {
+			'Nid' : {
+				'field' : 'nid',
+			},
+			'title' : {
+				'field' : 'title',
+			},
+			'Logo' : {
+				'field' : 'image',
+				'callback' : getImageBlob,
+				'type' : 'file'
+			},
+			'Corpo' : {
+				'field' : 'body'
+			},
+			'Updated date' : {
+				'field' : 'changed',
+				'callback' : getChangedTimestamp
+			},
+			'Percorso' : {
+				'field' : 'url',
+			}
+		},
 	};																																																																																																																																						
 	if(typeof mapping[type] != 'undefined'){
 		return mapping[type];
@@ -434,4 +453,5 @@ if(Titanium.Network.networkType != Titanium.Network.NETWORK_NONE){
 	updateData('blog');
 	updateData('speaker');
 	updateData('talk');
+	updateData('info');
 }

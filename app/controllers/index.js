@@ -12,6 +12,7 @@ var menuItems = [
     { id: 4, controller : "sponsor" , title: "Sponsor", image: "/images/diamond.png" , font: defaultFont , callback : function(e){openMenuItem(e);} },
     { id: 5, controller : "blog" , title: "Blog", image: "/images/pen.png" , font: defaultFont , callback : function(e){openMenuItem(e);} },
     { id: 6, controller : "location" , title: "Location", image: "/images/pin.png" , font: defaultFont , callback : function(e){openMenuItem(e);} },
+    { id: 7, controller : "info" , title: "Info", image: "/images/info.png" , font: defaultFont , callback : function(e){openMenuItem(e);} },
 ];
 function openMenuItem(event){
 	if(typeof event.source.id != 'undefined'){
@@ -38,7 +39,7 @@ function openIndex(event){
 $.SliderMenuContainer.init({
     items: menuItems,
     itemColor: Alloy.CFG.colors.third,
-    itemBackground : Alloy.CFG.colors.third,
+    itemBackground : Alloy.CFG.colors.first,
     background : Alloy.CFG.colors.first,
     itemSelectedBackground : Alloy.CFG.colors.second,
     elementShowHide : $.header

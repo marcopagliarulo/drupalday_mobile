@@ -1,0 +1,26 @@
+".socialLink" : {
+	width : "15%",
+	left : "23%"
+}
+"#social" : {
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE,
+	top: "10dp",
+}
+"Label" : {
+	top: "20dp",
+	font: {
+		fontSize : "25sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	},
+	color : Alloy.CFG.colors.first,
+	textAlign : "center"
+}
+".fontCredits" : {
+	font: {
+		fontSize : "15sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	},
+	color : Alloy.CFG.colors.first,
+	textAlign : "center"
+}
