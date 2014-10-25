@@ -4,13 +4,23 @@ talk.fetch();
 talkItem = talk.get(args);
 var speaker = Alloy.Collections.instance('speaker');
 speaker.fetch();
-speakerData = speaker.get(talkItem.get('uid'));
+var uids = talkItem.get('uid').split("|");
+var speakers = new Array();
+for(var i = 0; i < uids.length; i++){
+	speakerData = speaker.get(uids[i]);
+	if(typeof speakerData != 'undefined'){
+		speakers[speakers.length] = {
+			name : speakerData.get("name"),
+			surname : speakerData.get("surname")
+		};
+	}
+}
 
+var name = (typeof speakerData != "undefined") ? speakerData.get('name') : "";
+var surname = (typeof speakerData != "undefined") ? speakerData.get('surname') : "";
 
 var title = Ti.UI.createLabel({touchEnabled : false, text : talkItem.get('title')});
 $.addClass(title,"listTitle");
-var speaker = Ti.UI.createLabel({touchEnabled : false, text : speakerData.get('name') + " " + speakerData.get('surname')});
-$.addClass(speaker,"listSpeaker");
 var rowViewLeft = Ti.UI.createView({touchEnabled : false, layout : "vertical", width: "80%", height: Ti.UI.SIZE});
 var favorites = Alloy.Collections.instance('favorites');
 favorites.fetch();
@@ -39,7 +49,11 @@ favorite.addEventListener('click',function(e){
 var headerView = Ti.UI.createView({layout: "horizontal", width: Ti.UI.FILL});
 $.addClass(headerView,"headerView");
 rowViewLeft.add(title);
-rowViewLeft.add(speaker);
+for(var k = 0; k < speakers.length; k++){
+	var speaker = Ti.UI.createLabel({touchEnabled : false, text : speakers[k].name + " " + speakers[k].surname});
+	$.addClass(speaker,"listSpeaker");
+	rowViewLeft.add(speaker);
+}
 headerView.add(rowViewLeft);
 headerView.add(favorite);
 $.talkDetail.add(headerView);

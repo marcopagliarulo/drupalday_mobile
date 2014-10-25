@@ -7,15 +7,16 @@ openTalk = function(e){
 transformFunction = function(transform){
 	var speaker = Alloy.Collections.instance('speaker');
 	speaker.fetch();
-	speakerData = speaker.get(transform.uid);
-
-	if(typeof speakerData != 'undefined'){
-		transform.name = speakerData.get("name");
-		transform.surname = speakerData.get("surname");
-	}
-	else{
-		transform.name = "";
-		transform.surname = "";
+	var uids = transform.uid.split("|");
+	transform.speaker = new Array();
+	for(var i = 0; i < uids.length; i++){
+		speakerData = speaker.get(uids[i]);
+		if(typeof speakerData != 'undefined'){
+			transform.speaker[transform.speaker.length] = {
+				name : speakerData.get("name"),
+				surname : speakerData.get("surname")
+			};
+		}
 	}
 	return transform;
 };
@@ -24,9 +25,9 @@ function createRow(talkHoursList){
 	var hoursIndexes = new Array();
 	for(var i = 0; i < talkHoursList.length; i++){
 		var start = new Date(parseInt(talkHoursList[i].start) * 1000);
-		start = start.getHours() + ":" + start.getMinutes();
+		start = start.getHours() + ":" + ("0" + start.getMinutes()).slice(-2);
 		var end = new Date(parseInt(talkHoursList[i].end) * 1000);
-		end = end.getHours() + ":" + end.getMinutes();
+		end = end.getHours() + ":" + ("0" + end.getMinutes()).slice(-2);
 		talkHoursList[i].time = start + " - " + end;
 		var headerViewElement = Ti.UI.createView({layout: "vertical",height: Ti.UI.SIZE});
 		$.addClass(headerViewElement,"headerSession");
@@ -59,8 +60,6 @@ function createRow(talkHoursList){
 			$.addClass(rowView,"rowView");
 			var title = Ti.UI.createLabel({touchEnabled : false, text : talk.title});
 			$.addClass(title,"listTitle");
-			var speaker = Ti.UI.createLabel({touchEnabled : false, text : talk.name + " " + talk.surname});
-			$.addClass(speaker,"listSpeaker");
 			
 			var track = Ti.UI.createLabel({touchEnabled : false, text : talk.track});
 			$.addClass(track,"listTrack");
@@ -89,18 +88,22 @@ function createRow(talkHoursList){
 			});
 			
 			rowViewLeft.add(title);
-			rowViewLeft.add(speaker);
+			for(var k = 0; k < talk.speaker.length; k++){
+				var speaker = Ti.UI.createLabel({touchEnabled : false, text : talk.speaker[k].name + " " + talk.speaker[k].surname});
+				$.addClass(speaker,"listSpeaker");
+				rowViewLeft.add(speaker);
+			}
 			rowViewRight.add(favorite);
 			rowViewRight.add(track);
 			rowView.add(rowViewLeft);
 			rowView.add(rowViewRight);
 			tableViewRow.add(rowView);
-			if(j != 0 && j != (talkData.length-1)){
+			tableViewSection.add(tableViewRow);
+			if(j != (talkData.length-1)){
 				var rowSeparator = Ti.UI.createView();
 				$.addClass(rowSeparator,"rowSeparator");
-				tableViewRow.add(rowSeparator);
+				tableViewSection.add(rowSeparator);
 			}
-			tableViewSection.add(tableViewRow);
 		}
 		tableView.add(tableViewSection);
 	}

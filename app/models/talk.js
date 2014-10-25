@@ -4,13 +4,15 @@ exports.definition = {
 		    "nid": "INTEGER",
 		    "title": "TEXT",
 		    "body": "TEXT",
-		    "uid": "INTEGER",
+		    "uid": "TEXT",
 		    "start": "TEXT",
 		    "end": "TEXT",
 		    "level" : "INTEGER",
 		    "category" : "TEXT",
 		    "changed": "TEXT",
-		    "track" : "TEXT"
+		    "track" : "TEXT",
+		    "url" : "TEXT"
+
 		},
 		adapter: {
 			type: "sql",

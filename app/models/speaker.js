@@ -6,7 +6,8 @@ exports.definition = {
 		    "surname": "TEXT",
 		    "bio": "TEXT",
 		    "avatar": "BLOB",
-		    "changed": "TEXT"
+		    "changed": "TEXT",
+		    "url" : "TEXT"
 		},
 		adapter: {
 			type: "sql",

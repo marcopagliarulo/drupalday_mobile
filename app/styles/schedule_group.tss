@@ -19,7 +19,7 @@
 	borderWidth: "1dp",
 	borderColor: "#fff",
 	backgroundColor: Alloy.CFG.colors.first,
-	
+	width: "33%"
 },
 ".labelTab" : {
 	color : Alloy.CFG.colors.third,
@@ -32,6 +32,7 @@
 	backgroundColor: Alloy.CFG.colors.second,
 	borderWidth: "1dp",
 	borderColor: "#fff",
+	width: "33%"
 },
 ".scheduleDate" : {
 	font: {

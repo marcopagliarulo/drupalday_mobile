@@ -1,17 +1,22 @@
 <Alloy>
 	<View id="schedule_group" layout="vertical">
-		<View layout="horizontal" height="Ti.UI.SIZE">
-			<View class="tabActive" width="50%" height="Ti.UI.SIZE" id="code">
+		<View layout="horizontal" height="Ti.UI.SIZE" id="tabs">
+			<View class="tabActive" height="Ti.UI.SIZE" id="talk1" onClick="switchTab">
 				<Label class="labelTab" touchEnabled="false">\nSala 1\n</Label>
 			</View>
-			<View class="tab" width="50%" height="Ti.UI.SIZE" id="biz">
+			<View class="tab" height="Ti.UI.SIZE" id="talk2" onClick="switchTab">
 				<Label class="labelTab" touchEnabled="false">\nSala 2\n</Label>
 			</View>
-		</View>
-		<View layout="absolute">
-			<View id="codeView">
+			<View class="tab" height="Ti.UI.SIZE" id="talk3" onClick="switchTab">
+				<Label class="labelTab" touchEnabled="false">\nSala 3\n</Label>
 			</View>
-			<View id="bizView" visible="false">
+		</View>
+		<View layout="absolute" id="talksView">
+			<View id="talk1View">
+			</View>
+			<View id="talk2View" visible="false">
+			</View>
+			<View id="talk3View" visible="false">
 			</View>
 		</View>
 	</View>

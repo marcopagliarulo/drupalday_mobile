@@ -1,30 +1,19 @@
-$.code.addEventListener('click',function(e){
-	switchTab(e);
-});
-$.biz.addEventListener('click',function(e){
-	switchTab(e);
-});
-
 var switchTab = function(e){
-	var style = $.createStyle({
-	    classes: "tabActive",
-	});
-	e.source.applyProperties(style);
-	var styleBase = $.createStyle({
-	    classes: "tab",
-	});
-	switch(e.source.id){
-		case "code":
-			$.codeView.visible = true;
-			$.bizView.visible = false;
-			$.biz.applyProperties(styleBase);
-			break;
-		case "biz":
-			$.bizView.visible = true;
-			$.codeView.visible = false;
-			$.code.applyProperties(styleBase);
-			break;
+	if($.talksView.children.length > 0){
+		for(var i = 0; i < $.talksView.children.length; i++){
+			if($.talksView.children[i].id === e.source.id + 'View'){
+				$.talksView.children[i].visible = true;
+			}
+			else{
+				$.talksView.children[i].visible = false;
+				if(typeof $.tabs.children[i] != 'undefined'){
+					$.addClass($.tabs.children[i],"tab");
+					$.removeClass($.tabs.children[i],"tabActive");
+				}
+			}
+		}
 	}
+	$.addClass(e.source,"tabActive");
 };
 openTalk = function(e){
 	if(typeof e.source.nid != 'undefined'){
@@ -35,19 +24,21 @@ openTalk = function(e){
 transformFunction = function(transform){
 	var speaker = Alloy.Collections.instance('speaker');
 	speaker.fetch();
-	speakerData = speaker.get(transform.uid);
-	if(typeof speakerData != 'undefined'){
-		transform.name = speakerData.get("name");
-		transform.surname = speakerData.get("surname");
-	}
-	else{
-		transform.name = "";
-		transform.surname = "";
+	var uids = transform.uid.split("|");
+	transform.speaker = new Array();
+	for(var i = 0; i < uids.length; i++){
+		speakerData = speaker.get(uids[i]);
+		if(typeof speakerData != 'undefined'){
+			transform.speaker[transform.speaker.length] = {
+				name : speakerData.get("name"),
+				surname : speakerData.get("surname")
+			};
+		}
 	}
 	var start = new Date(parseInt(transform.start) * 1000);
-	transform.start = start.getHours() + ":" + start.getMinutes();
+	transform.start = start.getHours() + ":" + ("0" + start.getMinutes()).slice(-2);
 	var end = new Date(parseInt(transform.end) * 1000);
-	transform.end = end.getHours() + ":" + end.getMinutes();
+	transform.end = end.getHours() + ":" + ("0" + end.getMinutes()).slice(-2);
 	transform.time = transform.start + " - " + transform.end;
 	return transform;
 };
@@ -78,8 +69,6 @@ function createRow(talkData){
 		$.addClass(rowView,"rowView");
 		var title = Ti.UI.createLabel({touchEnabled : false, text : talk.title});
 		$.addClass(title,"listTitle");
-		var speaker = Ti.UI.createLabel({touchEnabled : false, text : talk.name + " " + talk.surname});
-		$.addClass(speaker,"listSpeaker");
 		
 //		var track = Ti.UI.createLabel({touchEnabled : false, text : talk.track});
 //		$.addClass(track,"listTrack");
@@ -109,7 +98,11 @@ function createRow(talkData){
 		
 		var tableViewSection = Ti.UI.createView({layout: "vertical", height : Ti.UI.SIZE});
 		rowViewLeft.add(title);
-		rowViewLeft.add(speaker);
+		for(var k = 0; k < talk.speaker.length; k++){
+			var speaker = Ti.UI.createLabel({touchEnabled : false, text : talk.speaker[k].name + " " + talk.speaker[k].surname});
+			$.addClass(speaker,"listSpeaker");
+			rowViewLeft.add(speaker);
+		}
 		rowViewRight.add(favorite);
 //		rowViewRight.add(track);
 		rowView.add(rowViewLeft);
@@ -123,9 +116,12 @@ function createRow(talkData){
 }
 
 var talk = Alloy.Collections.instance('talk');
-talk.fetch({query : "select * from talk where track IN ('all','Sala 1') order by start ASC"});
-var talkCodeData = talk.toJSON();
-$.codeView.add(createRow(talkCodeData));
-talk.fetch({query : "select * from talk where track IN ('all','Sala 2') order by start ASC"});
-var talkBizData = talk.toJSON();
-$.bizView.add(createRow(talkBizData));
+talk.fetch({query : "select * from talk where track IN ('Sala 1') order by start ASC"});
+var talk1 = talk.toJSON();
+$.talk1View.add(createRow(talk1));
+talk.fetch({query : "select * from talk where track IN ('Sala 2') order by start ASC"});
+var talk2 = talk.toJSON();
+$.talk2View.add(createRow(talk2));
+talk.fetch({query : "select * from talk where track IN ('Sala 3') order by start ASC"});
+var talk3 = talk.toJSON();
+$.talk3View.add(createRow(talk3));
