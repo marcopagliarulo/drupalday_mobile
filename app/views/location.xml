@@ -1,5 +1,4 @@
 <Alloy>
-        <Module id="mapview" module="ti.map" method="createView">
-            <Annotation id='appcHQ' myid='1' />
-        </Module>
+	<View id="mapContainer" height="Ti.UI.FILL" layout="vertical">
+    </View>
 </Alloy>
