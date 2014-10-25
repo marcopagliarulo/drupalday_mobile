@@ -3,7 +3,6 @@ transformFunction = function(model) {
 	var transform = model.toJSON();
 	var date = new Date(transform.date * 1000);
 	transform.date = "\t" + date.getDate() + ' ' + mounths[date.getMonth()] + ' ' + date.getFullYear() + "\t";
-	transform.title = "\t" + transform.title + "\t";
 	transform.body = Alloy.CFG.pageCss + transform.body;
 	return transform;
 };
