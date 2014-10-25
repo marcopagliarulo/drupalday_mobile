@@ -123,7 +123,7 @@ function buildMenu(items, parent) {
 			var item = Ti.UI.createTableViewRow({
 				id: items[i].id,
 				height: "47dp",
-				backgroundcolor: itemBackground,
+				backgroundColor: itemBackground,
 				backgroundSelectedColor: itemSelectedBackground,
 			});
 	
