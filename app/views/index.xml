@@ -1,14 +1,19 @@
 <Alloy>
-	<Window class="container" layout="vertical" exitOnClose="true" navBarHidden="true">
-		<View id="header">
-			<ImageView id="menuButton"></ImageView>
-			<Label id="headerTitle">DRUPALDAY 2014</Label>
-			<ImageView id="homeButton" onClick="openIndex" bubbleParent="false"></ImageView>
-		</View>
-		<View id="wrapperContainer" layout="absolute">
-			<View id="container" layout="vertical">
+	<Window class="container" layout="absolute" exitOnClose="true" navBarHidden="true">
+		<View id="container" layout="vertical">
+			<View id="header">
+				<ImageView id="menuButton"></ImageView>
+				<Label id="headerTitle">DRUPALDAY 2014</Label>
+				<ImageView id="homeButton" onClick="openIndex" bubbleParent="false"></ImageView>
 			</View>
-			<Require type="widget" src="com.morpheus.sliderMenu" id="SliderMenuContainer"></Require>
+			<View id="wrapperContainer" layout="absolute">
+				<View id="container" layout="vertical">
+				</View>
+				<Require type="widget" src="com.morpheus.sliderMenu" id="SliderMenuContainer"></Require>
+			</View>
+		</View>
+		<View id="loading" width="Ti.UI.FILL" height="Ti.UI.FILL">
+			<ImageView id="loadingImage"></ImageView>
 		</View>
 	</Window>
 </Alloy>

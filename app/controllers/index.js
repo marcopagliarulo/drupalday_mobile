@@ -76,3 +76,18 @@ if(Alloy.Globals.osName == 'android'){
 		}
 	});
 }
+if(Alloy.Globals.updateCount <= 0){
+	$.index.remove($.loading);
+}
+
+Ti.App.addEventListener('updateDataEnd', function(e){
+	if(typeof Alloy.Globals.filesDownload[e.type] != 'undefined' && Alloy.Globals.filesDownload[e.type].length > 0){
+		var files = Alloy.Globals.filesDownload[e.type].shift();
+		var currentFile = files.shift();
+		currentFile.callback(currentFile.value, currentFile.data, currentFile.field, e.type, files);
+	}
+	Alloy.Globals.updateCount--;
+	if(Alloy.Globals.updateCount <= 0){
+		$.index.remove($.loading);
+	}
+});

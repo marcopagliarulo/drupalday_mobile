@@ -14,6 +14,7 @@ Alloy.Globals.prevController = new Array();
 Alloy.Globals.Map = require('ti.map');
 Alloy.Globals.osName = Ti.Platform.osname;
 Alloy.Globals.filesDownload = {};
+Alloy.Globals.updateCount = 0;
 switch(Alloy.Globals.osName){
 	case 'android':
 		Alloy.Globals.museo_slab_500 = 'museo_slab_500';
@@ -65,15 +66,8 @@ openController = function(controller,args,back){
     }
 };
 
-Ti.App.addEventListener('updateDataEnd', function(e){
-	if(typeof Alloy.Globals.filesDownload[e.type] != 'undefined' && Alloy.Globals.filesDownload[e.type].length > 0){
-		var files = Alloy.Globals.filesDownload[e.type].shift();
-		var currentFile = files.shift();
-		currentFile.callback(currentFile.value, currentFile.data, currentFile.field, e.type, files);
-	}
-});
-
 updateData = function(type){
+	Alloy.Globals.updateCount++;
 	var url = "http://drupalday.it/services/" + type + ".json";
 	var client = Ti.Network.createHTTPClient({
 		onload : function(e) {
@@ -111,6 +105,10 @@ updateData = function(type){
 						var id = model.idAttribute;
 						var currentCollection = collection.get(object[id]);
 						if(typeof object['changed'] == 'undefined' || (typeof currentCollection != 'undefined' && object['changed'] > currentCollection.get('changed')) || typeof currentCollection == 'undefined'){
+							Ti.API.info(JSON.stringify(object));
+							if(typeof currentCollection != 'undefined'){
+								Ti.API.info(JSON.stringify(currentCollection.toJSON()));
+							}
 							ids[ids.length] = object[id];
 							if(file){
 								if(typeof Alloy.Globals.filesDownload[type] == 'undefined'){
@@ -133,11 +131,13 @@ updateData = function(type){
 					collection.at(0).destroy();
 				}
 			}
+			collection = null;
 			event = {};
 			event.type = type;
 			Ti.App.fireEvent('updateDataEnd',event);
 		},
 		onerror : function(e) {
+			Ti.App.fireEvent('updateDataEnd',event);
 			return Array();
 		},
 		timeout : 5000
@@ -146,6 +146,7 @@ updateData = function(type){
 	client.send();	
 };
 function getImageBlob(url, data, field, type, files){
+	Alloy.Globals.updateCount++;
 	var xhr = Titanium.Network.createHTTPClient({
 		onload : function(e){
  			if (xhr.status == 200 ) {
@@ -157,22 +158,31 @@ function getImageBlob(url, data, field, type, files){
 				if(files.length == 0){
 					var row = Alloy.createModel(type,data);
 					row.save();
-					event = {};
-					event.type = type;
-					Ti.App.fireEvent('updateDataEnd',event);
 				}
 				else{
 					var currentFile = files.shift();
 					currentFile.callback(currentFile.value, data, currentFile.field, type, files);
 				}
 			}
-			else{
-				event = {};
-				event.type = type;
-				Ti.App.fireEvent('updateDataEnd',event);
-			}
+			event = {};
+			event.type = type;
+			Ti.App.fireEvent('updateDataEnd',event);
 		},
 		onerror : function(e) {
+ 			var data = this._properties['data'];
+			var field = this._properties['field'];
+			var files = this._properties['files'];
+			var type = this._properties['type'];
+			data[field] = "";
+			Ti.API.info(files.length);
+			if(files.length == 0){
+				var row = Alloy.createModel(type,data);
+				row.save();
+			}
+			else{
+				var currentFile = files.shift();
+				currentFile.callback(currentFile.value, data, currentFile.field, type, files);
+			}
 			event = {};
 			event.type = type;
 			Ti.App.fireEvent('updateDataEnd',event);
@@ -267,6 +277,13 @@ function mappingField(type){
 			'Updated date' : {
 				'field' : 'changed',
 				'callback' : getChangedTimestamp
+			},
+			'Post date' : {
+				'field' : 'date',
+				'callback' : getChangedTimestamp
+			},
+			'Percorso' : {
+				'field' : 'url',
 			}
 		},
 		'talk' : {
@@ -301,8 +318,11 @@ function mappingField(type){
 				'field' : 'end',
 				'callback' : getEndStartTimestamp
 			},
-			'track' : {
+			'Sala' : {
 				'field' : 'track'
+			},
+			'Percorso' : {
+				'field' : 'url',
 			}
 		},
 		'speaker' : {
@@ -327,6 +347,9 @@ function mappingField(type){
 			'Updated date' : {
 				'field' : 'changed',
 				'callback' : getChangedTimestamp
+			},
+			'Percorso' : {
+				'field' : 'url',
 			}
 		},
 	};																																																																																																																																						
@@ -342,6 +365,7 @@ function mappingField(type){
 
 ///////////////fake
 updateLocalData = function(type){
+	Alloy.Globals.updateCount++;
 	var fileName = type + "_json.txt";
 	jsondata = Ti.Filesystem.getFile(fileName).read().toString();
 	var data = JSON.parse(jsondata);
@@ -405,11 +429,9 @@ updateLocalData = function(type){
 	event.type = type;
 	Ti.App.fireEvent('updateDataEnd',event);
 };
-
-
 if(Titanium.Network.networkType != Titanium.Network.NETWORK_NONE){
 	updateData('sponsor');
 	updateData('blog');
-	updateLocalData('speaker');
-	updateLocalData('talk');
+	updateData('speaker');
+	updateData('talk');
 }

@@ -1,3 +1,9 @@
+"#loading" : {
+	backgroundColor: Alloy.CFG.colors.first,
+}
+"#loadingImage" : {
+	image: "/images/loadingImage.png"
+}
 "#container" : {
 	backgroundColor: Alloy.CFG.colors.third,
 	backgroundImage: "/images/background.png",
