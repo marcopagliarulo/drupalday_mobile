@@ -7,9 +7,6 @@ openBlogPost = function(e){
 var blog = Alloy.Collections.instance('blog');
 blog.fetch({query : "select * from blog order by date DESC"});
 var blogPost = blog.toJSON();
-var rowSeparator = Ti.UI.createView();
-$.addClass(rowSeparator,"rowSeparator");
-$.scrollViewblog.add(rowSeparator);
 for(var i = 0; i < blogPost.length; i++){
 	var view = Ti.UI.createView({nid : blogPost[i].nid, layout : 'vertical', height : Ti.UI.SIZE});
 	view.addEventListener('click',function(e){
