@@ -45,34 +45,36 @@
     </ios>
     <android xmlns:android="http://schemas.android.com/apk/res/android">
         <manifest>
-	        <uses-permission android:name="android.permission.INTERNET"/>
-	        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-	        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-	        <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-	        <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
-	        <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
-	        <uses-permission android:name="it.drupalday.milano2014.permission.MAPS_RECEIVE"/>
-	        <permission
-	            android:name="it.drupalday.milano2014.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
-	        <application android:debuggable="true"
-	            android:icon="@drawable/appicon" android:label="Drupal Day" android:theme="@style/Theme.NoActionBar">
-        		<uses-sdk android:minSdkVersion="14" android:targetSdkVersion="19"/>
-        		<meta-data android:name="com.google.android.maps.v2.API_KEY" android:value="MAPSV2API"/>
-	            <activity android:configChanges="keyboardHidden"
-	                android:name="it.drupalday.milano2014.DrupaldayActivity" android:screenOrientation="sensorPortrait">
-	                <intent-filter>
-	                    <action android:name="android.intent.action.MAIN"/>
-	                    <category android:name="android.intent.category.LAUNCHER"/>
-	                </intent-filter>
-	            </activity>
-	            <activity android:configChanges="keyboardHidden"
-	                android:name="org.appcelerator.titanium.TiActivity" android:screenOrientation="sensorPortrait">
-	                <intent-filter>
-	                    <action android:name="android.intent.action.MAIN"/>
-	                </intent-filter>
-	            </activity>
-	        </application>
-	    </manifest>
+            <uses-permission android:name="android.permission.INTERNET"/>
+            <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+            <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+            <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+            <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
+            <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+            <uses-permission android:name="it.drupalday.milano2014.permission.MAPS_RECEIVE"/>
+            <permission
+                android:name="it.drupalday.milano2014.permission.MAPS_RECEIVE" android:protectionLevel="signature"/>
+            <application android:debuggable="true"
+                android:icon="@drawable/appicon"
+                android:label="Drupal Day" android:theme="@style/Theme.NoActionBar">
+                <uses-sdk android:minSdkVersion="14" android:targetSdkVersion="19"/>
+                <meta-data
+                    android:name="com.google.android.maps.v2.API_KEY" android:value="MAPSV2API"/>
+                <activity android:configChanges="keyboardHidden"
+                    android:name="it.drupalday.milano2014.DrupaldayActivity" android:screenOrientation="sensorPortrait">
+                    <intent-filter>
+                        <action android:name="android.intent.action.MAIN"/>
+                        <category android:name="android.intent.category.LAUNCHER"/>
+                    </intent-filter>
+                </activity>
+                <activity android:configChanges="keyboardHidden"
+                    android:name="org.appcelerator.titanium.TiActivity" android:screenOrientation="sensorPortrait">
+                    <intent-filter>
+                        <action android:name="android.intent.action.MAIN"/>
+                    </intent-filter>
+                </activity>
+            </application>
+        </manifest>
     </android>
     <mobileweb>
         <precache/>
@@ -84,6 +86,7 @@
     </mobileweb>
     <modules>
         <module platform="android">ti.map</module>
+        <module platform="android">facebook</module>
     </modules>
     <deployment-targets>
         <target device="iphone">false</target>
