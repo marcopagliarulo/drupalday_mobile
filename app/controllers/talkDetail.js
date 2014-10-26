@@ -22,13 +22,18 @@ var surname = (typeof speakerData != "undefined") ? speakerData.get('surname') :
 var title = Ti.UI.createLabel({touchEnabled : false, text : talkItem.get('title')});
 $.addClass(title,"listTitle");
 var rowViewLeft = Ti.UI.createView({touchEnabled : false, layout : "vertical", width: "80%", height: Ti.UI.SIZE});
+var rowViewRight = Ti.UI.createView({touchEnabled : false, layout : "vertical", width: "20%", height: Ti.UI.SIZE});
 var favorites = Alloy.Collections.instance('favorites');
 favorites.fetch();
 var favoritesData = favorites.get(talkItem.get('nid'));
 var inFavorite = (typeof favoritesData == 'undefined') ? 0 : favoritesData.get('nid');
 var imagePath = (inFavorite) ? '/images/favOn.png' : '/images/favOff.png';
-var favorite = Ti.UI.createImageView({image : imagePath, nid : talkItem.get('nid'), bubbleParent : false});
-$.addClass(favorite,"favorite");
+var favorite = Ti.UI.createImageView({
+	image : imagePath, 
+	nid : talkItem.get('nid'), 
+	bubbleParent : false,
+	top: "5dp"
+});
 favorite.addEventListener('click',function(e){
 	var favorites = Alloy.Collections.instance('favorites');
 	favorites.fetch();
@@ -46,6 +51,30 @@ favorite.addEventListener('click',function(e){
 		newFavorite.save();
 	}
 });
+var fb = Ti.UI.createImageView({
+	image : '/images/facebook.png',
+	top : "5dp",
+	bubbleParent : false
+});
+fb.addEventListener("click",function(e){
+	var data = {
+		link : talkItem.get('url'),
+		name : talkItem.get('title')
+	};
+	fbShare(data);
+});
+var twitter = Ti.UI.createImageView({
+	image : '/images/twitter.png',
+	top : "5dp",
+	bubbleParent : false
+});
+twitter.addEventListener("click",function(e){
+	var data = talkItem.get('url') + Alloy.CFG.hastag;
+	twitterShare(data);
+});
+rowViewRight.add(favorite);
+rowViewRight.add(fb);
+rowViewRight.add(twitter);
 var headerView = Ti.UI.createView({layout: "horizontal", width: Ti.UI.FILL});
 $.addClass(headerView,"headerView");
 rowViewLeft.add(title);
@@ -55,7 +84,7 @@ for(var k = 0; k < speakers.length; k++){
 	rowViewLeft.add(speaker);
 }
 headerView.add(rowViewLeft);
-headerView.add(favorite);
+headerView.add(rowViewRight);
 $.talkDetail.add(headerView);
 
 var subHeaderView = Ti.UI.createView({layout: "horizontal"});

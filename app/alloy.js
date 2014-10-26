@@ -455,3 +455,57 @@ if(Titanium.Network.networkType != Titanium.Network.NETWORK_NONE){
 	updateData('talk');
 	updateData('info');
 }
+
+
+function fbShare(data){
+	var fb = require('facebook');
+	fb.appid = Alloy.CFG.fbappid;
+	fb.permissions = ['publish_stream']; // Permissions your app needs
+	fb.forceDialogAuth = true;
+	fb.addEventListener('login', function(e) {
+	    if (e.success) {
+			fb.dialog("feed", data,function(e) {
+			    if(e.success && e.result) {
+			        alert("Il tuo post è stato pubblicato");
+			    } else {
+			        if(e.error) {
+			            alert(e.error);
+			        } else {
+			        }
+			    }
+			});
+	    } else if (e.error) {
+            alert('Si è verificato un errore, riprova più tardi');
+	    }
+	});
+	if (!fb.loggedIn) {
+	    fb.authorize();
+	}
+	else{
+		fb.dialog("feed", data,function(e) {
+		    if(e.success && e.result) {
+		        alert("Il tuo post è stato pubblicato");
+		    } else {
+		        if(e.error) {
+		            alert(e.error);
+		        } else {
+		        }
+		    }
+		});
+	}
+}
+
+function twitterShare(data){
+	Ti.include('/lib/birdhouse.js');
+	var BH = new BirdHouse({
+	    consumer_key: Alloy.CFG.twitterck,
+	    consumer_secret: Alloy.CFG.twittercs,
+	    callback_url: "http://www.drupalday.it",
+	    show_login_toolbar: false,
+	});
+	BH.authorize(function(e) {
+		if (e === true) {
+			BH.tweet(data);
+		}
+	});
+}

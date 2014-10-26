@@ -1,0 +1,15 @@
+".listDate" : {
+	top : "5%",
+	left : 0,
+	height : Ti.UI.SIZE,
+}
+".listTitle" : {
+	width: "80%"
+}
+".viewLabel" : {
+	backgroundColor : Alloy.CFG.colors.third,
+	
+}
+".social" : {
+	width: "20%"
+}

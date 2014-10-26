@@ -1,6 +1,10 @@
 {
     "global": {
-        "startdate": "2014-11-14 09:00:00",
+        "fbappid": "<FBAPPID>",
+        "twitterck" : "<TWITTERCONSUMERKEY>",
+        "twittercs" : "<TWITTERCONSUMESECRET>",
+        "hastag" : " #drupalday #dday2014 @drupalday",
+        "startdate": "2014-11-14 08:30:00",
         "sponsorType": {
             "1": "Diamond",
             "2": "Gold",

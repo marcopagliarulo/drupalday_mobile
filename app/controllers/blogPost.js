@@ -19,12 +19,12 @@ var image = Ti.UI.createImageView({
 	top : 0
 });
 var viewLabel = Ti.UI.createView({
-	layout : 'vertical',
+	layout : 'horizontal',
 	width : Ti.UI.FILL,
-	top : "5%",
 	height : Ti.UI.SIZE,
-	left : 0
 });
+$.addClass(viewLabel,"viewLabel");
+
 var labelTitle = Ti.UI.createLabel({
 	text : blogPost.title
 });
@@ -33,10 +33,9 @@ var labelDate = Ti.UI.createLabel({
 	text : blogPost.date
 });
 $.addClass(labelDate,"listDate");
-viewLabel.add(labelDate);
 $.headerBlog.add(image);
-$.headerBlog.add(viewLabel);
-$.blogPost.add(labelTitle);
+$.headerBlog.add(labelDate);
+viewLabel.add(labelTitle);
 var webView = Ti.UI.createWebView({
 	html : blogPost.body,
 	enableZoomControls : false,
@@ -57,4 +56,34 @@ webView.addEventListener('load', function(e) {
 		}
 	}
 });
+var social = Ti.UI.createView({
+	height : Ti.UI.SIZE,
+	layout : 'vertical'
+});
+$.addClass(social,"social");
+var fb = Ti.UI.createImageView({
+	image : '/images/facebook.png',
+	top : "5dp",
+	bubbleParent : false
+});
+fb.addEventListener("click",function(e){
+	var data = {
+		link : blogPost.url,
+		name : blogPost.title
+	};
+	fbShare(data);
+});
+social.add(fb);
+var twitter = Ti.UI.createImageView({
+	image : '/images/twitter.png',
+	top : "5dp",
+	bubbleParent : false
+});
+twitter.addEventListener("click",function(e){
+	var data = blogPost.url + Alloy.CFG.hastag;
+	twitterShare(data);
+});
+social.add(twitter);
+viewLabel.add(social);
+$.blogPost.add(viewLabel);
 $.blogPost.add(webView);

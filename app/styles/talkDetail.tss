@@ -20,11 +20,6 @@
 	backgroundColor : "transparent"
 },
 
-".favorite" : {
-	right: "5%",
-	width: "15%",
-	top: "5dp"
-},
 
 ".body" : {
 	width : "90%",
