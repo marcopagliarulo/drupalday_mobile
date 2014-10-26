@@ -1,11 +1,8 @@
 ".listTitle" : {
   top: "5dp",
-  color : Alloy.CFG.colors.first,
+  color : Alloy.CFG.colors.third,
   backgroundColor : "transparent"
 }
-".rowSeparator" : {
-  backgroundColor : Alloy.CFG.colors.first,
-  top: "5dp",
-  width: "100%",
-  height : "1dp",
+".blogView" : {
+  backgroundColor : Alloy.CFG.colors.first
 }
