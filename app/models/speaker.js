@@ -7,7 +7,8 @@ exports.definition = {
 		    "bio": "TEXT",
 		    "avatar": "BLOB",
 		    "changed": "TEXT",
-		    "url" : "TEXT"
+		    "url" : "TEXT",
+		    "twitter" : "TEXT"
 		},
 		adapter: {
 			type: "sql",

@@ -7,6 +7,7 @@ openTalk = function(e){
 transformFunction = function(transform){
 	var speaker = Alloy.Collections.instance('speaker');
 	speaker.fetch();
+	var uids = transform.uid.split("|");
 	transform.speaker = new Array();
 	for(var i = 0; i < uids.length; i++){
 		speakerData = speaker.get(uids[i]);
@@ -76,12 +77,26 @@ function createRow(talkHoursList){
 			var rowViewRight = Ti.UI.createView({touchEnabled : false, layout : "vertical", width: "20%", height: Ti.UI.SIZE});
 		
 			rowViewLeft.add(title);
+			var speakerTwitter = "";
 			for(var k = 0; k < talk.speaker.length; k++){
 				var speaker = Ti.UI.createLabel({touchEnabled : false, text : talk.speaker[k].name + " " + talk.speaker[k].surname});
+				if(talk.speaker[k].twitter != ""){
+					speakerTwitter = "@" + talk.speaker[k].twitter + " ";
+				}
 				$.addClass(speaker,"listSpeaker");
 				rowViewLeft.add(speaker);
 			}
-	//		rowViewRight.add(twitter);
+			var twitter = Ti.UI.createImageView({
+				image : '/images/twitter.png',
+				top : "5dp",
+				bubbleParent : false,
+				speaker : speakerTwitter
+			});
+			twitter.addEventListener("click",function(e){
+				var data = e.source.speaker + Alloy.CFG.hastag;
+				twitterShare(data);
+			});
+			rowViewRight.add(twitter);
 			rowViewRight.add(track);
 			rowView.add(rowViewLeft);
 			rowView.add(rowViewRight);

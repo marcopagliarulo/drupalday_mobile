@@ -40,7 +40,7 @@ var my_timer = new countDown(Math.floor(difference / 86400), Math.floor((differe
 		$.time.text = my_timer.time.d + " Giorni " + ("0" + my_timer.time.h).slice(-2) + ":" + ("0" + my_timer.time.m).slice(-2) + ":" + ("0" + my_timer.time.s).slice(-2);
 	},
 	function() {
-		
+		openController('live');
 	}
 );
  

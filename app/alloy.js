@@ -346,6 +346,9 @@ function mappingField(type){
 			},
 			'Percorso' : {
 				'field' : 'url',
+			},
+			'twitter' : {
+				'field' : 'twitter',
 			}
 		},
 		'info' : {
