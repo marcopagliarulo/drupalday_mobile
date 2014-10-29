@@ -7,7 +7,7 @@ openSpeaker = function(e){
 
 
 var speaker = Alloy.Collections.instance('speaker');
-speaker.fetch({query : "select * from speaker order by surname ASC"});
+speaker.fetch({query : "select * from speaker order by name ASC"});
 var speakerData = speaker.toJSON();
 
 var tableView = Ti.UI.createScrollView({layout: "vertical", scrollType: "vertical"});
