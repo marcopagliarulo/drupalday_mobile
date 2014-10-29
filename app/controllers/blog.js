@@ -17,7 +17,10 @@ for(var i = 0; i < blogPost.length; i++){
 	var image = Ti.UI.createImageView({image : blogPostImage, touchEnabled : false, width : "100%"});
 	var label = Ti.UI.createLabel({touchEnabled : false, text : blogPost[i].title});
 	$.addClass(label,"listTitle");
+	var rowSeparator = Ti.UI.createView();
+	$.addClass(rowSeparator,"rowSeparator");
 	view.add(label);
 	view.add(image);
+	view.add(rowSeparator);
 	$.scrollViewblog.add(view);
 }
