@@ -107,19 +107,23 @@ function BirdHouse(params) {
 	// --------------------------------------------------------
 	function get_request_token(callback) {
 		var url = 'https://api.twitter.com/oauth/request_token';
-
-		var params = (cfg.callback_url!="")?'oauth_callback='+escape(cfg.callback_url):'';
-
-		api(url,'POST',params,function(resp){
-			if (resp!=false) {
-				var responseParams = OAuth.getParameterMap(resp);
+        var message = set_message(url);
+        OAuth.SignatureMethod.sign(message, accessor);
+        client = Ti.Network.createHTTPClient({
+            onload: function() {
+                var responseParams = OAuth.getParameterMap(this.responseText);
 				cfg.request_token = responseParams['oauth_token'];
 				cfg.request_token_secret = responseParams['oauth_token_secret'];
 
 
 				get_request_verifier(callback);
-			}
-		},false,true,false);
+            },
+            onerror: function() {
+                Ti.API.error("Social.js: FAILED to getRequestToken!");
+                Ti.API.error(this.responseText);
+            }
+        });
+        client.open("POST", url), client.send(OAuth.getParameterMap(message.parameters));
 	}
 
 	// --------------------------------------------------------
@@ -136,7 +140,7 @@ function BirdHouse(params) {
 	//	  be executed until get_access_token()
 	// --------------------------------------------------------
 	function get_request_verifier(callback) {
-		var url = "http://api.twitter.com/oauth/authorize?oauth_token="+cfg.request_token;
+		var url = "https://api.twitter.com/oauth/authorize?oauth_token="+cfg.request_token;
 		var win = Ti.UI.createWindow({
 			top: 0,
 			modal: true,
@@ -297,7 +301,6 @@ function BirdHouse(params) {
 				cfg.user_id = responseParams['user_id'];
 				cfg.screen_name = responseParams['screen_name'];
 				accessor.tokenSecret = cfg.access_token_secret;
-
 
 				save_access_token();
 
@@ -464,7 +467,7 @@ function BirdHouse(params) {
 			}
 			// for all other requests only custom params need set in the URL
 			else {
-				finalUrl = OAuth.addToURL(message.action, initparams);
+				finalUrl = url;
 			}
 
 
@@ -489,10 +492,9 @@ function BirdHouse(params) {
 				}
 
 				return false;
-			}
+			};
 			
-			XHR.open(method, finalUrl, false);
-
+			XHR.open(method, finalUrl);
 			// if we are getting request tokens do not set the HTML header
 			if (typeof(setHeader)=='undefined' || setHeader==true) {
 				var init = true;
@@ -505,11 +507,9 @@ function BirdHouse(params) {
 					}
 					header = header + message.parameters[i][0] + '="' + escape(message.parameters[i][1]) + '"';
 				}
-
 				XHR.setRequestHeader("Authorization", header);
-			}
-			
-			XHR.send();
+			}			
+			XHR.send(OAuth.getParameterMap(message.parameters));
 		}
 	}
 
@@ -976,7 +976,7 @@ function BirdHouse(params) {
 				}
 				return false;
 			}
-		});
+		}, false, false, false);
 	}
 
 
