@@ -28,9 +28,9 @@ function createRow(talkHoursList){
 			continue;
 		}
 		var start = new Date(parseInt(talkHoursList[i].start) * 1000);
-		start = start.getHours() + ":" + start.getMinutes();
+		start = start.getHours() + ":" + ("0" + start.getMinutes()).slice(-2);
 		var end = new Date(parseInt(talkHoursList[i].end) * 1000);
-		end = end.getHours() + ":" + end.getMinutes();
+		end = end.getHours() + ":" + ("0" + end.getMinutes()).slice(-2);
 		talkHoursList[i].time = start + " - " + end;
 		var headerViewElement = Ti.UI.createView({layout: "vertical",height: Ti.UI.SIZE});
 		$.addClass(headerViewElement,"headerSession");
@@ -101,12 +101,12 @@ function createRow(talkHoursList){
 			rowView.add(rowViewLeft);
 			rowView.add(rowViewRight);
 			tableViewRow.add(rowView);
-			if(j != 0 && j != (talkData.length-1)){
+			tableViewSection.add(tableViewRow);
+			if(j != (talkData.length-1)){
 				var rowSeparator = Ti.UI.createView();
 				$.addClass(rowSeparator,"rowSeparator");
-				tableViewRow.add(rowSeparator);
+				tableViewSection.add(rowSeparator);
 			}
-			tableViewSection.add(tableViewRow);
 		}
 		tableView.add(tableViewSection);
 	}

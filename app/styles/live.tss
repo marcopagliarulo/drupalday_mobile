@@ -54,6 +54,7 @@
 	font: {
 		fontSize : "22sp",
 	},
+	textAlign : "left"
 },
 
 ".favorite" : {
