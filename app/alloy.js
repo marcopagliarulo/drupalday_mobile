@@ -71,69 +71,80 @@ updateData = function(type){
 	var url = "http://drupalday.it/services/" + type + ".json";
 	var client = Ti.Network.createHTTPClient({
 		onload : function(e) {
-			var data = JSON.parse(this.responseText);
-			var ids = new Array();
-			if(typeof data.nodes != 'undefined'){
-				var collection = Alloy.createCollection(type);
-				collection.fetch();
-				for(var i = 0; i < data.nodes.length; i++){
-					if(typeof data.nodes[i].node != 'undefined'){
-						var object = {};
-						var node = data.nodes[i].node;
-						var mapping = mappingField(type);
-						var file = false;
-						var files = new Array();
-						if(typeof mapping != 'undefined'){
-							for(var key in node){
-								if(typeof mapping[key] != 'undefined'){
-									if(typeof mapping[key]['type'] != 'undefined' && mapping[key]['type'] == 'file' && typeof mapping[key]['callback'] != 'undefined' && node[key] != ""){
-										file = true;
-										files[files.length] = {
-											'value' : node[key],
-											'callback' : mapping[key]['callback'],
-											'field' : mapping[key]['field'],
-											'data' : object
-										};
-									}
-									else if(node[key] != ""){
-										object[mapping[key]['field']] = (typeof mapping[key]['callback'] != 'undefined') ? mapping[key]['callback'](node[key]) : node[key];
+			try{
+				var data = JSON.parse(this.responseText);
+				var ids = new Array();
+				if(typeof data.nodes != 'undefined'){
+					var collection = Alloy.createCollection(type);
+					collection.fetch();
+					for(var i = 0; i < data.nodes.length; i++){
+						if(typeof data.nodes[i].node != 'undefined'){
+							var object = {};
+							var node = data.nodes[i].node;
+							var mapping = mappingField(type);
+							var file = false;
+							var files = new Array();
+							if(typeof mapping != 'undefined'){
+								for(var key in node){
+									if(typeof mapping[key] != 'undefined'){
+										if(typeof mapping[key]['type'] != 'undefined' && mapping[key]['type'] == 'file' && typeof mapping[key]['callback'] != 'undefined' && node[key] != ""){
+											file = true;
+											files[files.length] = {
+												'value' : node[key],
+												'callback' : mapping[key]['callback'],
+												'field' : mapping[key]['field'],
+												'data' : object
+											};
+										}
+										else if(node[key] != ""){
+											object[mapping[key]['field']] = (typeof mapping[key]['callback'] != 'undefined') ? mapping[key]['callback'](node[key]) : node[key];
+										}
 									}
 								}
 							}
-						}
-						var model = Alloy.createModel(type);
-						var id = model.idAttribute;
-						var currentCollection = collection.get(object[id]);
-						if(typeof object['changed'] == 'undefined' || (typeof currentCollection != 'undefined' && object['changed'] > currentCollection.get('changed')) || typeof currentCollection == 'undefined'){
-							Ti.API.info(JSON.stringify(object));
-							ids[ids.length] = object[id];
-							if(file){
-								if(typeof Alloy.Globals.filesDownload[type] == 'undefined'){
-									Alloy.Globals.filesDownload[type] = new Array();
-								}
-								Alloy.Globals.filesDownload[type][Alloy.Globals.filesDownload[type].length] = files;
+							var model = Alloy.createModel(type);
+							var id = model.idAttribute;
+							if(typeof object[id] == 'undefined' || typeof object[id] == ""){
+								continue;
 							}
-							else{
-								var row = Alloy.createModel(type,object);
-								row.save();
+							var currentCollection = collection.get(object[id]);
+							if(typeof object['changed'] == 'undefined' || (typeof currentCollection != 'undefined' && object['changed'] > currentCollection.get('changed')) || typeof currentCollection == 'undefined'){
+								ids[ids.length] = object[id];
+								if(file){
+									if(typeof Alloy.Globals.filesDownload[type] == 'undefined'){
+										Alloy.Globals.filesDownload[type] = new Array();
+									}
+									Alloy.Globals.filesDownload[type][Alloy.Globals.filesDownload[type].length] = files;
+								}
+								else{
+									var row = Alloy.createModel(type,object);
+									row.save();
+								}
 							}
 						}
 					}
 				}
-			}
-			if(ids.length){
-				collection.fetch({query : "select * from " + type + " where " + id + " NOT IN (" + ids.join(",") + ")"});
-				var collectionData = collection.toJSON();
-				while(collection.length){
-					collection.at(0).destroy();
+				if(ids.length){
+					collection.fetch({query : "select * from " + type + " where " + id + " NOT IN (" + ids.join(",") + ")"});
+					var collectionData = collection.toJSON();
+					while(collection.length){
+						collection.at(0).destroy();
+					}
 				}
+				collection = null;
+				event = {};
+				event.type = type;
+				Ti.App.fireEvent('updateDataEnd',event);
 			}
-			collection = null;
-			event = {};
-			event.type = type;
-			Ti.App.fireEvent('updateDataEnd',event);
+			catch(e){
+				event = {};
+				event.type = type;
+				Ti.App.fireEvent('updateDataEnd',event);
+			}
 		},
 		onerror : function(e) {
+			event = {};
+			event.type = type;
 			Ti.App.fireEvent('updateDataEnd',event);
 			return Array();
 		},
@@ -424,7 +435,7 @@ updateLocalData = function(type){
 					}
 				}
 				var currentCollection = collection.get(object[id]);
-				if(typeof object['changed'] == 'undefined' || (typeof currentCollection != 'undefined' && object['changed'] > currentCollection.get('changed')) || typeof currentCollection == 'undefined'){
+				if(typeof object[id] != "undefined" && typeof object['changed'] == 'undefined' || (typeof currentCollection != 'undefined' && object['changed'] > currentCollection.get('changed')) || typeof currentCollection == 'undefined'){
 					ids[ids.length] = object[id];
 					if(file){
 						if(typeof Alloy.Globals.filesDownload[type] == 'undefined'){
@@ -499,11 +510,25 @@ function fbShare(data){
 }
 
 function twitterShare(data){
-	Ti.include('/lib/birdhouse.js');
+	/*
+	var social = require('alloy/social').create({
+	    site: 'twitter',
+	    consumerSecret: Alloy.CFG.twittercs,
+	    consumerKey: Alloy.CFG.twitterck
+	});
+
+	social.share({
+	    message: data,
+	    success: function(e) {alert('Success!')},
+	    error: function(e) {alert('Error!')}
+	});
+*/
+
+ 	Ti.include('/lib/birdhouse.js');
 	var BH = new BirdHouse({
 	    consumer_key: Alloy.CFG.twitterck,
 	    consumer_secret: Alloy.CFG.twittercs,
-	    callback_url: "http://www.drupalday.it",
+	    callback_url: "http://www.drupalday.it/twitter_response.html",
 	    show_login_toolbar: false,
 	});
 	BH.authorize(function(e) {
@@ -511,4 +536,5 @@ function twitterShare(data){
 			BH.tweet(data);
 		}
 	});
+
 }
