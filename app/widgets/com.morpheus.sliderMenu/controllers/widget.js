@@ -51,21 +51,60 @@ $.init = function(params) {
 			$.sliderMenu.left = "-80%";
 		}
 	});
-	var touchstart = false;
+	var curX = false;
+	var curleft = -80;
+	var direction = 'right';
 	$.sliderMenu.parent.addEventListener('touchstart', function(e){
-		touchstart = e.x;
+		curX = e.x;
 	});
-	$.sliderMenu.parent.addEventListener('swipe', function(e){
-		var maxX = Alloy.Globals.deviceWidth*0.25;
-		if(e.direction == 'right' && !menuOpen && touchstart < maxX){
-			$.showMenu();
+	$.sliderMenu.parent.addEventListener('touchmove', function(e){
+		e.bubbleParent = false;
+	    var deltaX = e.x - curX;
+		deltaX = (deltaX*100)/Alloy.Globals.deviceWidth;
+		if(deltaX < 10 && deltaX > -10){
+			return;
+		}
+		direction = (e.x > curX) ? 'right' : 'left';
+		var left = $.sliderMenu.left;
+		if(typeof left == 'string'){
+			left = parseInt(left.replace("%",""));
+		}
+	    var newLeft = left+deltaX;
+		
+	    if(direction == 'right' && newLeft > 0){
+	    	newLeft = 0;
+	    	menuOpen = true;
+	    }
+	    if(direction == 'left' && newLeft < -80){
+	    	newLeft = -80;
+	    	menuOpen = false;
+	    }
+	    curleft = newLeft;
+	    $.sliderMenu.left = newLeft.toString() + "%";
+	});
+	$.sliderMenu.parent.addEventListener('touchend', function(e){
+		if(direction == 'right'){
+			if(curleft > -60){
+		    	menuOpen = true;
+			    $.animateMenu("0%",100);
+			}
+			else{
+		    	menuOpen = false;
+			    $.animateMenu("-80%",100);
+			}
+		}
+		if(direction == 'left' && curleft < -20){
+			if(curleft < -20){
+		    	menuOpen = false;
+			    $.animateMenu("-80%",100);
+			}
+			else{
+		    	menuOpen = true;
+			    $.animateMenu("0%",100);
+			}
 		}
 	});
-	$.sliderMenu.parent.addEventListener('swipe', function(e){
-		if(e.direction == 'left' && menuOpen){
-			$.hideMenu();
-		}
-	});
+
 };
 
 /**
@@ -191,10 +230,11 @@ $.setIndex = function(_index) {
 	$.Nodes.selectRow(_index);
 };
 
-$.animateMenu = function(moveTo){
+$.animateMenu = function(moveTo, durationValue){
+	durationValue = durationValue|| 300; 
 	$.sliderMenu.animate({
 		left:moveTo,
 		curve : Ti.UI.ANIMATION_CURVE_EASE_OUT,
-		duration:300
+		duration:durationValue
 	});
 };
