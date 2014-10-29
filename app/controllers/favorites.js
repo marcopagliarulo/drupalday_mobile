@@ -18,9 +18,9 @@ transformFunction = function(transform){
 		transform.surname = "";
 	}
 	var start = new Date(parseInt(transform.start) * 1000);
-	transform.start = start.getHours() + ":" + start.getMinutes();
+	transform.start = start.getHours() + ":" + ("0" + start.getMinutes()).slice(-2);
 	var end = new Date(parseInt(transform.end) * 1000);
-	transform.end = end.getHours() + ":" + end.getMinutes();
+	transform.end = end.getHours() + ":" + ("0" + end.getMinutes()).slice(-2);
 	transform.time = transform.start + " - " + transform.end;
 	return transform;
 };
