@@ -53,7 +53,7 @@ function createRow(talkHoursList){
 		var tableViewSection = Ti.UI.createView({layout: "vertical", height : Ti.UI.SIZE, start : talkHoursList[i].start, end : talkHoursList[i].end});
 		tableViewSection.add(headerViewElement);
 		var talk = Alloy.Collections.instance('talk');
-		talk.fetch({query : "select * from talk where start = " + talkHoursList[i].start + " and end = " + talkHoursList[i].end});
+		talk.fetch({query : "select * from talk where start = " + talkHoursList[i].start + " and end = " + talkHoursList[i].end + " order by track ASC"});
 		var talkData = talk.toJSON();
 		for(var j = 0; j < talkData.length; j++){
 			if(parseInt(talkData[j].end) < now){
