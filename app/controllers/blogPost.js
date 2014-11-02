@@ -2,7 +2,7 @@ transformFunction = function(model) {
 	var mounths = Array('Gen', 'Feb', 'Mar', 'Apr', 'Mag', 'Giu', 'Lug', 'Ago', 'Set', 'Ott', 'Nov', 'Dic');
 	var transform = model.toJSON();
 	var date = new Date(transform.date * 1000);
-	transform.date = "\t" + date.getDate() + ' ' + mounths[date.getMonth()] + ' ' + date.getFullYear() + "\t";
+	transform.date = "\t" + date.getDate() + ' ' + mounths[date.getMonth() - 1] + ' ' + date.getFullYear() + "\t";
 	transform.body = Alloy.CFG.pageCss + transform.body;
 	return transform;
 };
