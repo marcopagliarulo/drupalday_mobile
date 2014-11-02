@@ -119,7 +119,7 @@ function BirdHouse(params) {
 				get_request_verifier(callback);
             },
             onerror: function() {
-                Ti.API.error("Social.js: FAILED to getRequestToken!");
+                Ti.API.error("FAILED to getRequestToken!");
                 Ti.API.error(this.responseText);
             }
         });
