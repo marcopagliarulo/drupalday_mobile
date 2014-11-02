@@ -4,10 +4,7 @@ openInfo = function(e){
 		openController('infoDetail',nid);
 	}
 };
-var info = Alloy.Collections.instance('info');
-info.fetch();
-var infoItems = info.toJSON();
-for(var i = 0; i < infoItems.length; i++){
+createInfoItem = function(infoItem){
 	var item = Ti.UI.createTableViewRow({
 		nid: infoItems[i].nid,
 		height: "55dp",
@@ -17,7 +14,7 @@ for(var i = 0; i < infoItems.length; i++){
 	item.addEventListener('click',function(e){
 		openInfo(e);
 	});
-	var infoPostImage = (infoItems[i].image != null) ? infoItems[i].image : false;
+	var infoPostImage = (infoItem.image != null) ? infoItem.image : false;
 	if(infoPostImage){
 		var image = Ti.UI.createImageView({
 			touchEnabled : false, 
@@ -30,7 +27,7 @@ for(var i = 0; i < infoItems.length; i++){
 	else{
 		var label = Ti.UI.createLabel({
 			touchEnabled : false, 
-			text : infoItems[i].title,
+			text : infoItem.title,
 			font : {
 				fontSize : "20sp",
 				fontFamily : Alloy.Globals.museo_slab_700
@@ -39,9 +36,23 @@ for(var i = 0; i < infoItems.length; i++){
 		});
 		item.add(label);
 	}
-	
+	return item;
+};
+
+var info = Alloy.Collections.instance('info');
+info.fetch({query : "select * from info where type != 'Organizzatore'"});
+var infoItems = info.toJSON();
+for(var i = 0; i < infoItems.length; i++){
+	var item = createInfoItem(infoItems[i]);
 	$.tableViewinfo.appendRow(item);
 }
+info.fetch({query : "select * from info where type = 'Organizzatore' order by title desc"});
+var infoItems = info.toJSON();
+for(var i = 0; i < infoItems.length; i++){
+	var item = createInfoItem(infoItems[i]);
+	$.tableViewinfo.appendRow(item);
+}
+
 var item = Ti.UI.createTableViewRow({
 	height: "55dp",
 	backgroundColor: Alloy.CFG.colors.first,

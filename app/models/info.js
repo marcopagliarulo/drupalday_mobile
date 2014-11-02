@@ -6,7 +6,8 @@ exports.definition = {
 		    "body": "TEXT",
 		    "image": "BLOB",
 		    "changed": "TEXT",
-		    "url" : "TEXT"
+		    "url" : "TEXT",
+		    "type" : "TEXT"
 		},
 		adapter: {
 			type: "sql",
