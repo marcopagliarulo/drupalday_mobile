@@ -58,8 +58,18 @@ openController = function(controller,args,back){
 	if(typeof Alloy.Globals.previousController != 'undefined'){
 		Alloy.Globals.previousController.destroy();
 	}
+	if(typeof Alloy.Globals.loader != 'undefined'){
+		Alloy.Globals.loader.start();
+		Alloy.Globals.loader.visible = true;
+	} 
 	Alloy.Globals.previousController = Alloy.createController(controller,args);
 	var controllerView = Alloy.Globals.previousController.getView();
+	if(typeof Alloy.Globals.loader != 'undefined'){
+		controllerView.addEventListener('postlayout',function(){
+			Alloy.Globals.loader.stop();
+			Alloy.Globals.loader.visible = false;
+		});
+	}
 	container.add(controllerView);
     if(!back){
 		Alloy.Globals.prevController[Alloy.Globals.prevController.length] = {"controllerName" : controller, "args" : args};
@@ -383,6 +393,9 @@ function mappingField(type){
 			},
 			'Percorso' : {
 				'field' : 'url',
+			},
+			'Tipo' : {
+				'field' : 'type',
 			}
 		},
 	};																																																																																																																																						
@@ -462,13 +475,6 @@ updateLocalData = function(type){
 	event.type = type;
 	Ti.App.fireEvent('updateDataEnd',event);
 };
-if(Titanium.Network.networkType != Titanium.Network.NETWORK_NONE){
-	updateData('sponsor');
-	updateData('blog');
-	updateData('speaker');
-	updateData('talk');
-	updateData('info');
-}
 
 
 function fbShare(data){
@@ -510,20 +516,6 @@ function fbShare(data){
 }
 
 function twitterShare(data){
-	/*
-	var social = require('alloy/social').create({
-	    site: 'twitter',
-	    consumerSecret: Alloy.CFG.twittercs,
-	    consumerKey: Alloy.CFG.twitterck
-	});
-
-	social.share({
-	    message: data,
-	    success: function(e) {alert('Success!')},
-	    error: function(e) {alert('Error!')}
-	});
-*/
-
  	Ti.include('/lib/birdhouse.js');
 	var BH = new BirdHouse({
 	    consumer_key: Alloy.CFG.twitterck,
