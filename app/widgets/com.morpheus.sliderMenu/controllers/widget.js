@@ -51,58 +51,39 @@ $.init = function(params) {
 			$.sliderMenu.left = "-80%";
 		}
 	});
-	var curX = false;
-	var curleft = -80;
-	var direction = 'right';
+
+
+	var startX = 0;
+	var startY = 0;
+	var deltaX = 0;
+	var deltaY = 0;
 	$.sliderMenu.parent.addEventListener('touchstart', function(e){
-		curX = e.x;
-	});
-	$.sliderMenu.parent.addEventListener('touchmove', function(e){
-		e.bubbleParent = false;
-	    var deltaX = e.x - curX;
-		deltaX = (deltaX*100)/Alloy.Globals.deviceWidth;
-		if(deltaX < 10 && deltaX > -10){
-			return;
-		}
-		direction = (e.x > curX) ? 'right' : 'left';
-		var left = $.sliderMenu.left;
-		if(typeof left == 'string'){
-			left = parseInt(left.replace("%",""));
-		}
-	    var newLeft = left+deltaX;
-		
-	    if(direction == 'right' && newLeft > 0){
-	    	newLeft = 0;
-	    	menuOpen = true;
-	    }
-	    if(direction == 'left' && newLeft < -80){
-	    	newLeft = -80;
-	    	menuOpen = false;
-	    }
-	    curleft = newLeft;
-	    $.sliderMenu.left = newLeft.toString() + "%";
+		startX = e.x;
+		startY = e.y;
+		deltaX = 0;
+		deltaY = 0;
 	});
 	$.sliderMenu.parent.addEventListener('touchend', function(e){
-		if(direction == 'right'){
-			if(curleft > -60){
-		    	menuOpen = true;
-			    $.animateMenu("0%",100);
-			}
-			else{
-		    	menuOpen = false;
-			    $.animateMenu("-80%",100);
-			}
+	    deltaX = e.x - startX;
+	    deltaY = e.y - startY;
+	    Ti.API.info(deltaY);
+	    Ti.API.info(deltaX);
+		var deltaPosY = (deltaY > 0) ? deltaY : deltaY *-1;
+		var deltaPosX = (deltaX > 0) ? deltaX : deltaX *-1;
+		if(deltaPosY > deltaPosX){
+			startX = 0;
+			startY = 0;
+			return false;
 		}
-		if(direction == 'left' && curleft < -20){
-			if(curleft < -20){
-		    	menuOpen = false;
-			    $.animateMenu("-80%",100);
-			}
-			else{
-		    	menuOpen = true;
-			    $.animateMenu("0%",100);
-			}
+		var deltaPercent = 100*deltaX/Alloy.Globals.deviceWidth;
+		if(deltaPercent > 30){
+		    $.showMenu();
 		}
+		else if(deltaPercent < -30){
+		    $.hideMenu();
+		}
+		startX = 0;
+		startY = 0;
 	});
 
 };
