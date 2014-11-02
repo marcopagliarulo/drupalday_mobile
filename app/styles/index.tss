@@ -22,7 +22,7 @@
 		"/images/loadingWhite/7.png",
 		"/images/loadingWhite/8.png",
 		"/images/loadingWhite/9.png",
-		"/images/loadingWhite/10.png",
+		"/images/loadingWhite/10.png"
 	],
     width: "10%",
 	duration:200,
@@ -66,7 +66,7 @@
 		"/images/loadingBlue/7.png",
 		"/images/loadingBlue/8.png",
 		"/images/loadingBlue/9.png",
-		"/images/loadingBlue/10.png",
+		"/images/loadingBlue/10.png"
 	],
     width: "10%",
 	duration:200
