@@ -1,8 +1,83 @@
 "#loading" : {
 	backgroundColor: Alloy.CFG.colors.first,
 }
-"#loadingImage" : {
-	image: "/images/loadingImage.png"
+"#drupaldaylogo" : {
+	image: "/images/countdown.png",
+    width: "50%",
+    top: "30dp"
+}
+"#drupalday" : {
+	image: "/images/drupalday.png",
+    width: "61%",
+    top: "30dp"
+}
+"#dataLoader" : {
+	images: [
+		"/images/loadingWhite/1.png",
+		"/images/loadingWhite/2.png",
+		"/images/loadingWhite/3.png",
+		"/images/loadingWhite/4.png",
+		"/images/loadingWhite/5.png",
+		"/images/loadingWhite/6.png",
+		"/images/loadingWhite/7.png",
+		"/images/loadingWhite/8.png",
+		"/images/loadingWhite/9.png",
+		"/images/loadingWhite/10.png",
+	],
+    width: "10%",
+	duration:200,
+    top: "30dp"
+}
+"#logos" : {
+    top: "30dp",
+	backgroundColor: "#b8e5f8",
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE
+}
+"#wellnet" : {
+	left : "6%",
+	image: "/images/wellnet.png",
+    width: "25%",
+    top: "30dp",
+    bottom : "20dp"
+}
+"#twinbit" : {
+	left : "6%",
+	image: "/images/twinbit.png",
+    width: "25%",
+    top: "32dp",
+    bottom : "30dp"
+}
+"#bmeme" : {
+	left : "6%",
+	image: "/images/bmeme.png",
+    width: "25%",
+    top: "30dp",
+    bottom : "30dp"
+}
+"#loader" : {
+	images: [
+		"/images/loadingBlue/1.png",
+		"/images/loadingBlue/2.png",
+		"/images/loadingBlue/3.png",
+		"/images/loadingBlue/4.png",
+		"/images/loadingBlue/5.png",
+		"/images/loadingBlue/6.png",
+		"/images/loadingBlue/7.png",
+		"/images/loadingBlue/8.png",
+		"/images/loadingBlue/9.png",
+		"/images/loadingBlue/10.png",
+	],
+    width: "10%",
+	duration:200
+}
+"#loadingText" : {
+	color: Alloy.CFG.colors.third,
+	font : {
+		fontSize : "25sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	},
+    top: "30dp"
 }
 "#container" : {
 	backgroundColor: Alloy.CFG.colors.third,

@@ -1,3 +1,5 @@
+$.dataLoader.start();
+Alloy.Globals.loader = $.loader;
 Alloy.Globals.currentControllerName = 'index';
 Alloy.Globals.container = $.container;
 var defaultFont = {
@@ -77,6 +79,14 @@ if(Alloy.Globals.osName == 'android'){
 		}
 	});
 }
+if(Titanium.Network.networkType != Titanium.Network.NETWORK_NONE){
+	updateData('sponsor');
+	updateData('blog');
+	updateData('speaker');
+	updateData('talk');
+	updateData('info');
+}
+
 if(Alloy.Globals.updateCount <= 0){
 	$.index.remove($.loading);
 }
@@ -92,3 +102,6 @@ Ti.App.addEventListener('updateDataEnd', function(e){
 		$.index.remove($.loading);
 	}
 });
+$.loader.transform = Ti.UI.create2DMatrix().rotate(360);
+$.dataLoader.transform = Ti.UI.create2DMatrix().rotate(360);
+

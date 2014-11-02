@@ -9,11 +9,20 @@
 			<View id="wrapperContainer" layout="absolute">
 				<View id="container" layout="vertical">
 				</View>
+				<ImageView id="loader" visible="false"></ImageView>
 				<Require type="widget" src="com.morpheus.sliderMenu" id="SliderMenuContainer"></Require>
 			</View>
 		</View>
-		<View id="loading" width="Ti.UI.FILL" height="Ti.UI.FILL">
-			<ImageView id="loadingImage"></ImageView>
+		<View id="loading" layout="vertical">
+			<ImageView id="drupaldaylogo"></ImageView>
+			<ImageView id="drupalday"></ImageView>
+			<Label id="loadingText">CARICAMENTO DATI</Label>
+			<ImageView id="dataLoader"></ImageView>
+			<View id="logos" layout="horizontal">
+				<ImageView id="wellnet"></ImageView>
+				<ImageView id="twinbit"></ImageView>
+				<ImageView id="bmeme"></ImageView>
+			</View>
 		</View>
 	</Window>
 </Alloy>
