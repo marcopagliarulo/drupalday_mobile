@@ -22,10 +22,10 @@
 }
 ".scheduleDate" : {
 	font: {
-		fontSize : "15sp",
+		fontSize : "17sp",
 		fontFamily : Alloy.Globals.museo_slab_700
 	},
-	color : Alloy.CFG.colors.second,
+	color: "#000000",
 	left: "5%",
 	top: "5dp",
 },
