@@ -52,7 +52,16 @@ $.init = function(params) {
 		}
 	});
 
-
+/*
+	$.sliderMenu.parent.addEventListener('swipe', function(e){
+		Ti.API.info(e.direction);
+		if(e.direction == 'right' && !menuOpen){
+			$.showMenu();
+		}
+		else if(e.direction == 'left' && menuOpen){
+			$.hideMenu();
+		}
+	});
 	var startX = 0;
 	var startY = 0;
 	var deltaX = 0;
@@ -85,7 +94,7 @@ $.init = function(params) {
 		startX = 0;
 		startY = 0;
 	});
-
+*/
 };
 
 /**
