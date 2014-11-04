@@ -2,13 +2,13 @@
 	<View id="schedule_group" layout="vertical">
 		<View layout="horizontal" height="Ti.UI.SIZE" id="tabs">
 			<View class="tabActive" height="Ti.UI.SIZE" id="talk1" onClick="switchTab">
-				<Label class="labelTab" touchEnabled="false">\nSala 1\n</Label>
+				<Label class="labelTab" touchEnabled="false" bubbleParent="true">\nSala 1\n</Label>
 			</View>
 			<View class="tab" height="Ti.UI.SIZE" id="talk2" onClick="switchTab">
-				<Label class="labelTab" touchEnabled="false">\nSala 2\n</Label>
+				<Label class="labelTab" touchEnabled="false" bubbleParent="true">\nSala 2\n</Label>
 			</View>
 			<View class="tab" height="Ti.UI.SIZE" id="talk3" onClick="switchTab">
-				<Label class="labelTab" touchEnabled="false">\nSala 3\n</Label>
+				<Label class="labelTab" touchEnabled="false" bubbleParent="true">\nSala 3\n</Label>
 			</View>
 		</View>
 		<View layout="absolute" id="talksView">
