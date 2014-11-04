@@ -72,6 +72,14 @@ if(Alloy.Globals.osName == 'android'){
 			if(controller.controllerName == 'countdown' || controller.controllerName == 'live'){
 				$.headerTitle.text = 'DRUPALDAY 2014';
 			}
+			if(controller.controllerName == 'countdown'){
+				var startdate = new Date(Alloy.CFG.startdate);
+				var now = new Date();
+				var difference = startdate - now;
+				if(difference <= 0){
+					$.index.close();
+				}
+			}
 		    openController(controller.controllerName,controller.args,true);
 		}
 		else{
