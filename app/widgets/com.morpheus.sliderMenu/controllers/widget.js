@@ -62,6 +62,7 @@ $.init = function(params) {
 			$.hideMenu();
 		}
 	});
+*/
 	var startX = 0;
 	var startY = 0;
 	var deltaX = 0;
@@ -75,8 +76,6 @@ $.init = function(params) {
 	$.sliderMenu.parent.addEventListener('touchend', function(e){
 	    deltaX = e.x - startX;
 	    deltaY = e.y - startY;
-	    Ti.API.info(deltaY);
-	    Ti.API.info(deltaX);
 		var deltaPosY = (deltaY > 0) ? deltaY : deltaY *-1;
 		var deltaPosX = (deltaX > 0) ? deltaX : deltaX *-1;
 		if(deltaPosY > deltaPosX){
@@ -94,7 +93,6 @@ $.init = function(params) {
 		startX = 0;
 		startY = 0;
 	});
-*/
 };
 
 /**
