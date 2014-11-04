@@ -14,8 +14,8 @@ for(var i = 0; i < blogPost.length; i++){
 	});
 	$.addClass(view,"blogView");
 	var blogPostImage = (blogPost[i].image != null) ? blogPost[i].image : '/images/blog.png';
-	var image = Ti.UI.createImageView({image : blogPostImage, touchEnabled : false, width : "100%"});
-	var label = Ti.UI.createLabel({touchEnabled : false, text : blogPost[i].title});
+	var image = Ti.UI.createImageView({touchEnabled: false, bubbeParent: true, image : blogPostImage, width : "100%"});
+	var label = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : blogPost[i].title});
 	$.addClass(label,"listTitle");
 	var rowSeparator = Ti.UI.createView();
 	$.addClass(rowSeparator,"rowSeparator");

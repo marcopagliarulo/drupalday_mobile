@@ -79,7 +79,8 @@ if(Alloy.Globals.osName == 'android'){
 		}
 	});
 }
-if(Titanium.Network.networkType != Titanium.Network.NETWORK_NONE){
+
+if(Titanium.Network.networkType != Titanium.Network.NETWORK_NONE && Titanium.Network.networkType != Titanium.Network.NETWORK_UNKNOWN && Titanium.Network.online){
 	updateData('sponsor');
 	updateData('blog');
 	updateData('speaker');

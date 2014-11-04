@@ -17,7 +17,8 @@ createInfoItem = function(infoItem){
 	var infoPostImage = (infoItem.image != null) ? infoItem.image : false;
 	if(infoPostImage){
 		var image = Ti.UI.createImageView({
-			touchEnabled : false, 
+			touchEnabled: false,
+			bubbeParent: true, 
 			image : infoPostImage,
 			width : Ti.UI.FILL,
 			top : 0
@@ -26,7 +27,8 @@ createInfoItem = function(infoItem){
 	}
 	else{
 		var label = Ti.UI.createLabel({
-			touchEnabled : false, 
+			touchEnabled: false, 
+			bubbeParent: true, 
 			text : infoItem.title,
 			font : {
 				fontSize : "20sp",
@@ -62,7 +64,8 @@ item.addEventListener('click',function(e){
 	openController('credits');
 });
 var label = Ti.UI.createLabel({
-	touchEnabled : false, 
+	touchEnabled: false,
+	bubbeParent: true, 
 	text : "Crediti",
 	font : {
 		fontSize : "20sp",

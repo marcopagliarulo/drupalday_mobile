@@ -10,7 +10,7 @@ for(var i = 0; i < sponsorTypes.length; i++){
 	var sponsorType = transformFunction(sponsorTypes[i]);
 	var headerViewElement = Ti.UI.createView();
 	$.addClass(headerViewElement,"headerViewElement");
-	var headerLabel = Ti.UI.createLabel({touchEnabled : false, text : sponsorType.typeLabel});
+	var headerLabel = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : sponsorType.typeLabel});
 	$.addClass(headerLabel,"sponsorType");
 	headerViewElement.add(headerLabel);
 	TableViewSections[sponsorType.type] = Ti.UI.createView({layout : "vertical", height: Ti.UI.SIZE});
@@ -26,7 +26,7 @@ for(var i = 0; i < sponsorData.length; i++){
 		openUrl(e);
 	});
 	var sponsorImage = (sponsorItem.image != null) ? sponsorItem.image : '/images/sponsor.png';
-	var ImageView = Ti.UI.createImageView({image: sponsorImage, touchEnabled: false, width: Ti.UI.FILL, top: "5dp"});
+	var ImageView = Ti.UI.createImageView({touchEnabled: false, bubbeParent: true, image: sponsorImage, width: Ti.UI.FILL, top: "5dp"});
 	$.addClass(ImageView,Alloy.CFG.sponsorType[sponsorItem.type].toLowerCase().replace(" ",""));
 	
 	TableViewRow.add(ImageView);

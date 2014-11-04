@@ -18,12 +18,12 @@ for(var i = 0; i < speakerData.length; i++){
 	tableViewRow.addEventListener('click',function(e){
 		openSpeaker(e);
 	});
-    var rowView = Ti.UI.createView({touchEnabled : false, layout : "horizontal", width: Ti.UI.FILL, height: Ti.UI.SIZE});
+    var rowView = Ti.UI.createView({touchEnabled: false, bubbeParent: true, layout : "horizontal", width: Ti.UI.FILL, height: Ti.UI.SIZE});
 	$.addClass(rowView,"rowView");
 	var speakerImage = (speaker.avatar != null) ? speaker.avatar : '/images/speaker.png';
-	var image= Ti.UI.createImageView({touchEnabled : false, image : speakerImage});
+	var image= Ti.UI.createImageView({touchEnabled: false, bubbeParent: true, image : speakerImage});
 	$.addClass(image,"listImage");
-	var title = Ti.UI.createLabel({touchEnabled : false, text : speaker.name + "\n" + speaker.surname});
+	var title = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : speaker.name + "\n" + speaker.surname});
 	$.addClass(title,"listTitle");
 	
 	var tableViewSection = Ti.UI.createView({height : Ti.UI.SIZE, layout: "vertical"});

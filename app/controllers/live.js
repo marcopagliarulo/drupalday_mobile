@@ -34,8 +34,8 @@ function createRow(talkHoursList){
 		talkHoursList[i].time = start + " - " + end;
 		var headerViewElement = Ti.UI.createView({layout: "vertical",height: Ti.UI.SIZE});
 		$.addClass(headerViewElement,"headerSession");
-		var timeContainer = Ti.UI.createView({touchEnabled : false, layout: "absolute",height: Ti.UI.SIZE, width: Ti.UI.FILL});
-		var time = Ti.UI.createLabel({touchEnabled : false, text : talkHoursList[i] .time});
+		var timeContainer = Ti.UI.createView({touchEnabled: false, bubbeParent: true, layout: "absolute",height: Ti.UI.SIZE, width: Ti.UI.FILL});
+		var time = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : talkHoursList[i] .time});
 		$.addClass(time,"scheduleDate");
 		var headerSeparatorTop = Ti.UI.createView();
 		$.addClass(headerSeparatorTop,"headerSeparatorTop");
@@ -64,22 +64,22 @@ function createRow(talkHoursList){
 			tableViewRow.addEventListener('click',function(e){
 				openTalk(e);
 			});
-			var rowView = Ti.UI.createView({touchEnabled : false, layout : "horizontal", width: Ti.UI.FILL, height: Ti.UI.SIZE});
+			var rowView = Ti.UI.createView({touchEnabled: false, bubbeParent: true, layout : "horizontal", width: Ti.UI.FILL, height: Ti.UI.SIZE});
 			$.addClass(rowView,"rowView");
-			var title = Ti.UI.createLabel({touchEnabled : false, text : talk.title});
+			var title = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : talk.title});
 			$.addClass(title,"listTitle");
-			var speaker = Ti.UI.createLabel({touchEnabled : false, text : talk.name + " " + talk.surname});
+			var speaker = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : talk.name + " " + talk.surname});
 			$.addClass(speaker,"listSpeaker");
 		
-			var track = Ti.UI.createLabel({touchEnabled : false, text : talk.track});
+			var track = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : talk.track});
 			$.addClass(track,"listTrack");
-			var rowViewLeft = Ti.UI.createView({touchEnabled : false, layout : "vertical", width: "80%", height: Ti.UI.SIZE});
-			var rowViewRight = Ti.UI.createView({touchEnabled : false, layout : "vertical", width: "20%", height: Ti.UI.SIZE});
+			var rowViewLeft = Ti.UI.createView({touchEnabled: false, bubbeParent: true, layout : "vertical", width: "80%", height: Ti.UI.SIZE});
+			var rowViewRight = Ti.UI.createView({touchEnabled: false, bubbeParent: true, layout : "vertical", width: "20%", height: Ti.UI.SIZE});
 		
 			rowViewLeft.add(title);
 			var speakerTwitter = "";
 			for(var k = 0; k < talk.speaker.length; k++){
-				var speaker = Ti.UI.createLabel({touchEnabled : false, text : talk.speaker[k].name + " " + talk.speaker[k].surname});
+				var speaker = Ti.UI.createLabel({ttouchEnabled: false, bubbeParent: true, ext : talk.speaker[k].name + " " + talk.speaker[k].surname});
 				if(talk.speaker[k].twitter != ""){
 					speakerTwitter = "@" + talk.speaker[k].twitter + " ";
 				}

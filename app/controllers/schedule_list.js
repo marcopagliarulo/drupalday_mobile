@@ -31,7 +31,7 @@ function createRow(talkHoursList){
 		talkHoursList[i].time = start + " - " + end;
 		var headerViewElement = Ti.UI.createView({layout: "vertical",height: Ti.UI.SIZE});
 		$.addClass(headerViewElement,"headerSession");
-		var time = Ti.UI.createLabel({touchEnabled : false, text : talkHoursList[i] .time});
+		var time = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : talkHoursList[i] .time});
 		$.addClass(time,"scheduleDate");
 		var headerSeparatorTop = Ti.UI.createView();
 		$.addClass(headerSeparatorTop,"headerSeparatorTop");
@@ -56,15 +56,15 @@ function createRow(talkHoursList){
 			tableViewRow.addEventListener('click',function(e){
 				openTalk(e);
 			});
-		    var rowView = Ti.UI.createView({touchEnabled : false, layout : "horizontal", width: Ti.UI.FILL, height: Ti.UI.SIZE});
+		    var rowView = Ti.UI.createView({touchEnabled: false, bubbeParent: true, layout : "horizontal", width: Ti.UI.FILL, height: Ti.UI.SIZE});
 			$.addClass(rowView,"rowView");
-			var title = Ti.UI.createLabel({touchEnabled : false, text : talk.title});
+			var title = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : talk.title});
 			$.addClass(title,"listTitle");
 			
-			var track = Ti.UI.createLabel({touchEnabled : false, text : talk.track});
+			var track = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : talk.track});
 			$.addClass(track,"listTrack");
-		    var rowViewLeft = Ti.UI.createView({touchEnabled : false, layout : "vertical", width: "80%", height: Ti.UI.SIZE});
-		    var rowViewRight = Ti.UI.createView({touchEnabled : false, layout : "vertical", width: "20%", height: Ti.UI.SIZE});
+		    var rowViewLeft = Ti.UI.createView({touchEnabled: false, bubbeParent: true, layout : "vertical", width: "80%", height: Ti.UI.SIZE});
+		    var rowViewRight = Ti.UI.createView({touchEnabled: false, bubbeParent: true, layout : "vertical", width: "20%", height: Ti.UI.SIZE});
 			
 			var imagePath = (inFavorite) ? '/images/favOn.png' : '/images/favOff.png';
 			var favorite = Ti.UI.createImageView({image : imagePath, nid : talk.nid, bubbleParent : false});
@@ -89,7 +89,7 @@ function createRow(talkHoursList){
 			
 			rowViewLeft.add(title);
 			for(var k = 0; k < talk.speaker.length; k++){
-				var speaker = Ti.UI.createLabel({touchEnabled : false, text : talk.speaker[k].name + " " + talk.speaker[k].surname});
+				var speaker = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : talk.speaker[k].name + " " + talk.speaker[k].surname});
 				$.addClass(speaker,"listSpeaker");
 				rowViewLeft.add(speaker);
 			}

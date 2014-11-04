@@ -39,7 +39,7 @@ function createRow(talkData){
 		$.addClass(headerSeparatorTop,"headerSeparatorTop");
 		var headerSeparatorBottom = Ti.UI.createView();
 		$.addClass(headerSeparatorBottom,"headerSeparatorBottom");
-		var time = Ti.UI.createLabel({touchEnabled : false, text : talk.time});
+		var time = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : talk.time});
 		$.addClass(time,"scheduleDate");
 		headerViewElement.add(headerSeparatorTop);
 		headerViewElement.add(time);
@@ -47,17 +47,17 @@ function createRow(talkData){
 		tableViewRow.addEventListener('click',function(e){
 			openTalk(e);
 		});
-	    var rowView = Ti.UI.createView({touchEnabled : false, layout : "horizontal", width: Ti.UI.FILL, height: Ti.UI.SIZE});
+	    var rowView = Ti.UI.createView({touchEnabled: false, bubbeParent: true, layout : "horizontal", width: Ti.UI.FILL, height: Ti.UI.SIZE});
 		$.addClass(rowView,"rowView");
-		var title = Ti.UI.createLabel({touchEnabled : false, text : talk.title});
+		var title = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : talk.title});
 		$.addClass(title,"listTitle");
-		var speaker = Ti.UI.createLabel({touchEnabled : false, text : talk.name + " " + talk.surname});
+		var speaker = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : talk.name + " " + talk.surname});
 		$.addClass(speaker,"listSpeaker");
 		
-		var track = Ti.UI.createLabel({touchEnabled : false, text : talk.track});
+		var track = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : talk.track});
 		$.addClass(track,"listTrack");
-	    var rowViewLeft = Ti.UI.createView({touchEnabled : false, layout : "vertical", width: "80%", height: Ti.UI.SIZE});
-	    var rowViewRight = Ti.UI.createView({touchEnabled : false, layout : "vertical", width: "20%", height: Ti.UI.SIZE});
+	    var rowViewLeft = Ti.UI.createView({touchEnabled: false, bubbeParent: true, layout : "vertical", width: "80%", height: Ti.UI.SIZE});
+	    var rowViewRight = Ti.UI.createView({touchEnabled: false, bubbeParent: true, layout : "vertical", width: "20%", height: Ti.UI.SIZE});
 		
 		var favorite = Ti.UI.createImageView({image : '/images/favOn.png', nid : talk.nid, bubbleParent : false});
 		$.addClass(favorite,"favorite");

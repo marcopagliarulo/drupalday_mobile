@@ -19,10 +19,10 @@ for(var i = 0; i < uids.length; i++){
 var name = (typeof speakerData != "undefined") ? speakerData.get('name') : "";
 var surname = (typeof speakerData != "undefined") ? speakerData.get('surname') : "";
 
-var title = Ti.UI.createLabel({touchEnabled : false, text : talkItem.get('title')});
+var title = Ti.UI.createLabel({touchEnabled : false, bubbleParent: true, text : talkItem.get('title')});
 $.addClass(title,"listTitle");
-var rowViewLeft = Ti.UI.createView({touchEnabled : false, layout : "vertical", width: "80%", height: Ti.UI.SIZE});
-var rowViewRight = Ti.UI.createView({touchEnabled : false, layout : "vertical", width: "20%", height: Ti.UI.SIZE});
+var rowViewLeft = Ti.UI.createView({touchEnabled : false, bubbleParent: true, layout : "vertical", width: "80%", height: Ti.UI.SIZE});
+var rowViewRight = Ti.UI.createView({touchEnabled : false, bubbleParent: true, layout : "vertical", width: "20%", height: Ti.UI.SIZE});
 var favorites = Alloy.Collections.instance('favorites');
 favorites.fetch();
 var favoritesData = favorites.get(talkItem.get('nid'));
@@ -79,7 +79,7 @@ var headerView = Ti.UI.createView({layout: "horizontal", width: Ti.UI.FILL});
 $.addClass(headerView,"headerView");
 rowViewLeft.add(title);
 for(var k = 0; k < speakers.length; k++){
-	var speaker = Ti.UI.createLabel({touchEnabled : false, text : speakers[k].name + " " + speakers[k].surname});
+	var speaker = Ti.UI.createLabel({touchEnabled : false, bubbleParent: true, text : speakers[k].name + " " + speakers[k].surname});
 	$.addClass(speaker,"listSpeaker");
 	rowViewLeft.add(speaker);
 }
@@ -89,7 +89,7 @@ $.talkDetail.add(headerView);
 
 var subHeaderView = Ti.UI.createView({layout: "horizontal"});
 $.addClass(subHeaderView,"subHeaderView");
-var category = Ti.UI.createLabel({touchEnabled : false, text : talkItem.get('category')});
+var category = Ti.UI.createLabel({touchEnabled : false, bubbleParent: true, text : talkItem.get('category')});
 $.addClass(category,"category");
 subHeaderView.add(category);
 var viewLevel = Ti.UI.createView({layout: "vertical"});
@@ -109,7 +109,7 @@ subHeaderView.add(viewLevel);
 
 $.talkDetail.add(subHeaderView);
 
-var body = Ti.UI.createLabel({touchEnabled : false, text : talkItem.get('body')});
+var body = Ti.UI.createLabel({bubbleParent: true, text : talkItem.get('body')});
 $.addClass(body,"body");
 var scrollView = Ti.UI.createScrollView({layout: 'vertical', scrollType : 'vertical', top: "5%"});
 scrollView.add(body);
