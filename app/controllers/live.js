@@ -14,7 +14,8 @@ transformFunction = function(transform){
 		if(typeof speakerData != 'undefined'){
 			transform.speaker[transform.speaker.length] = {
 				name : speakerData.get("name"),
-				surname : speakerData.get("surname")
+				surname : speakerData.get("surname"),
+				twitter : speakerData.get("twitter")
 			};
 		}
 	}
@@ -79,8 +80,8 @@ function createRow(talkHoursList){
 			rowViewLeft.add(title);
 			var speakerTwitter = "";
 			for(var k = 0; k < talk.speaker.length; k++){
-				var speaker = Ti.UI.createLabel({ttouchEnabled: false, bubbeParent: true, ext : talk.speaker[k].name + " " + talk.speaker[k].surname});
-				if(talk.speaker[k].twitter != ""){
+				var speaker = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, ext : talk.speaker[k].name + " " + talk.speaker[k].surname});
+				if(talk.speaker[k].twitter != null && talk.speaker[k].twitter != ""){
 					speakerTwitter = "@" + talk.speaker[k].twitter + " ";
 				}
 				$.addClass(speaker,"listSpeaker");
