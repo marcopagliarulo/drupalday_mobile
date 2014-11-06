@@ -530,3 +530,4 @@ function twitterShare(data){
 	});
 
 }
+Alloy.Globals.isAndroidTablet = (Ti.Platform.osname == "android" && (Ti.Platform.Android.getPhysicalSizeCategory() == Ti.Platform.Android.PHYSICAL_SIZE_CATEGORY_LARGE || Ti.Platform.Android.getPhysicalSizeCategory() == Ti.Platform.Android.PHYSICAL_SIZE_CATEGORY_XLARGE)); 
