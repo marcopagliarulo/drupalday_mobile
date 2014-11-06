@@ -49,11 +49,24 @@ for(var i = 0; i < infoItems.length; i++){
 	$.tableViewinfo.appendRow(item);
 }
 info.fetch({query : "select * from info where type = 'Organizzatore' order by title desc"});
+var orgView = Ti.UI.createView({layout : "horizontal",width: Ti.UI.FILL,height: Ti.UI.SIZE});
 var infoItems = info.toJSON();
 for(var i = 0; i < infoItems.length; i++){
-	var item = createInfoItem(infoItems[i]);
-	$.tableViewinfo.appendRow(item);
+	var image = Ti.UI.createImageView({
+		image : infoItems[i].image,
+		nid: infoItems[i].nid,
+	});
+	image.addEventListener('click',function(e){
+		openInfo(e);
+	});
+	$.addClass(image,"logo");
+	orgView.add(image);
 }
+
+var orgTableViewRow = Ti.UI.createTableViewRow({backgroundColor: "#b8e5f8"});
+orgTableViewRow.add(orgView);
+
+$.tableViewinfo.appendRow(orgTableViewRow);
 
 var item = Ti.UI.createTableViewRow({
 	height: "55dp",

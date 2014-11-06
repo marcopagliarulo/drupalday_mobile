@@ -1,3 +1,12 @@
 "#tableViewinfo" : {
 	backgroundColor: Alloy.CFG.colors.first,
 }
+"#logos" : {
+	backgroundColor: "#b8e5f8",
+	width: Ti.UI.FILL,
+	height: Ti.UI.SIZE
+}
+".logo" : {
+	left : "6%",
+    width: "25%",
+}
