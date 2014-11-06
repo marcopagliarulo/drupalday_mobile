@@ -4,7 +4,7 @@ talk.fetch();
 talkItem = talk.get(args);
 var speaker = Alloy.Collections.instance('speaker');
 speaker.fetch();
-var uids = talkItem.get('uid').split("|");
+var uids = (typeof talkItem.get('uid') == "string") ? talkItem.get('uid').split("|") : new Array();
 var speakers = new Array();
 for(var i = 0; i < uids.length; i++){
 	speakerData = speaker.get(uids[i]);

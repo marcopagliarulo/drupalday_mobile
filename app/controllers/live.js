@@ -7,7 +7,7 @@ openTalk = function(e){
 transformFunction = function(transform){
 	var speaker = Alloy.Collections.instance('speaker');
 	speaker.fetch();
-	var uids = transform.uid.split("|");
+	var uids = (typeof transform.uid == "string") ? transform.uid.split("|") : new Array();
 	transform.speaker = new Array();
 	for(var i = 0; i < uids.length; i++){
 		speakerData = speaker.get(uids[i]);
