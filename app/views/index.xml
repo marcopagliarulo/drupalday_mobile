@@ -1,6 +1,6 @@
 <Alloy>
 	<Window class="container" layout="absolute" exitOnClose="true" navBarHidden="true">
-		<View id="container" layout="vertical">
+		<View id="globalContainer" layout="vertical">
 			<View id="header">
 				<ImageView id="menuButton"></ImageView>
 				<Label id="headerTitle">DRUPALDAY 2014</Label>
@@ -13,15 +13,17 @@
 				<Require type="widget" src="com.morpheus.sliderMenu" id="SliderMenuContainer"></Require>
 			</View>
 		</View>
-		<View id="loading" layout="vertical">
-			<ImageView id="drupaldaylogo"></ImageView>
-			<ImageView id="drupalday"></ImageView>
-			<Label id="loadingText">CARICAMENTO DATI</Label>
-			<ImageView id="dataLoader"></ImageView>
-			<View id="logos" layout="horizontal">
-				<ImageView id="wellnet"></ImageView>
-				<ImageView id="twinbit"></ImageView>
-				<ImageView id="bmeme"></ImageView>
+		<View id="loading" layout="absolute">
+			<View layout="vertical" height = "Ti.UI.SIZE">
+				<ImageView id="drupaldaylogo"></ImageView>
+				<ImageView id="drupalday"></ImageView>
+				<Label id="loadingText">CARICAMENTO DATI</Label>
+				<ImageView id="dataLoader"></ImageView>
+				<View id="logos" layout="horizontal">
+					<ImageView id="wellnet"></ImageView>
+					<ImageView id="twinbit"></ImageView>
+					<ImageView id="bmeme"></ImageView>
+				</View>
 			</View>
 		</View>
 	</Window>

@@ -2,22 +2,28 @@
 	<View id="live" layout="absolute">
 		<View id="schedule_live" layout="vertical">
 		</View>
-		<View id="conference" layout="vertical" visible="false">
-			<ImageView image="/images/conference.png"></ImageView>
-			<Label>La conference del Drupal Day è finita.</Label>
-			<Label>Ci vediamo domani per la Formazione ed il Drupal Sprint</Label>
+		<View id="conference" layout="absolute" visible="false">
+			<View layout="vertical" height="Ti.UI.SIZE">
+				<ImageView image="/images/conference.png"></ImageView>
+				<Label>La conference del Drupal Day è finita.</Label>
+				<Label>Ci vediamo domani per la Formazione ed il Drupal Sprint</Label>
+			</View>
 		</View>
-		<View id="formazione" layout="vertical" visible="false">
-			<ImageView image="/images/formazione.png"></ImageView>
-			<Label>Benvenuto alla giornata</Label>
-			<Label>di Formazione ed al Drupal Sprint</Label>
+		<View id="formazione" layout="absolute" visible="false">
+			<View layout="vertical" height="Ti.UI.SIZE">
+				<ImageView image="/images/formazione.png"></ImageView>
+				<Label>Benvenuto alla giornata</Label>
+				<Label>di Formazione ed al Drupal Sprint</Label>
+			</View>
 		</View>
-		<View id="grazie" layout="vertical" visible="false">
-			<ImageView image="/images/countdown.png"></ImageView>
-			<Label>Il Drupal Day 2014 si è concluso</Label>
-			<Label>grazie per aver partecipato.</Label>
-			<Label>Segui il post Drupal Day su</Label>
-			<Label onClick="openUrl" url="http://www.drupalday.it" class="link">http://www.drupalday.it</Label>
+		<View id="grazie" layout="absolute" visible="false">
+			<View layout="vertical" height="Ti.UI.SIZE">
+				<ImageView image="/images/countdown.png"></ImageView>
+				<Label>Il Drupal Day 2014 si è concluso</Label>
+				<Label>grazie per aver partecipato.</Label>
+				<Label>Segui il post Drupal Day su</Label>
+				<Label onClick="openUrl" url="http://www.drupalday.it" class="link">http://www.drupalday.it</Label>
+			</View>
 		</View>
 	</View>
 </Alloy>

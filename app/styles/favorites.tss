@@ -77,3 +77,6 @@
 	color : Alloy.CFG.colors.first,
 	textAlign : "center"
 }
+"#nofavorites" : {
+	height: Ti.UI.SIZE
+}

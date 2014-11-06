@@ -80,12 +80,13 @@
     top: "30dp"
 }
 "#container" : {
-	backgroundColor: Alloy.CFG.colors.third,
-	backgroundImage: "/images/background.png",
-	backgroundRepeat: true
+	height:Ti.UI.FILL,
 }
 "#wrapperContainer" : {
 	width: "100%",
+	backgroundColor: Alloy.CFG.colors.third,
+	backgroundImage: "/images/background.png",
+	backgroundRepeat: true
 }
 "#menuButton":{
 	image: '/images/menu.png',
