@@ -1,77 +1,24 @@
-".headerSession" : {
-	backgroundColor : "#eeeeee",
-},
-".headerSeparatorTop" : {
-	width: "100%",
-	height : "1dp",
-	backgroundColor : "#dddddd",
-},
-".headerSeparatorBottom" : {
-	top: "5dp",
-	width: "100%",
-	height : "1dp",
-	backgroundColor : "#dddddd",
-},
-".rowView" : {
-	backgroundColor : Alloy.CFG.colors.third,
-},
-".tab" : {
-	borderWidth: "1dp",
-	borderColor: "#fff",
-	backgroundColor: Alloy.CFG.colors.first,
-	width: "33%"
+".labelTab" : {
+       color : Alloy.CFG.colors.third,
+       font: {
+               fontSize : "25sp",
+               fontFamily : Alloy.Globals.museo_slab_300
+       },
+       borderWidth: "1dp",
+       borderColor: "#fff",
+       backgroundColor: Alloy.CFG.colors.first,
+       width: "33%"
 },
 ".labelTab" : {
-	color : Alloy.CFG.colors.third,
-	font: {
-		fontSize : "25sp",
-		fontFamily : Alloy.Globals.museo_slab_300
-	},
+       color : Alloy.CFG.colors.third,
+       font: {
+               fontSize : "25sp",
+               fontFamily : Alloy.Globals.museo_slab_300
+       },
 },
 ".tabActive" : {
-	backgroundColor: Alloy.CFG.colors.second,
-	borderWidth: "1dp",
-	borderColor: "#fff",
-	width: "33%"
-},
-".scheduleDate" : {
-	font: {
-		fontSize : "17sp",
-		fontFamily : Alloy.Globals.museo_slab_700
-	},
-	color: "#000000",
-	left: "5%",
-	top: "5dp",
-},
-".listSpeaker" : {
-	font: {
-		fontSize : "15sp",
-		fontFamily : Alloy.Globals.museo_slab_700
-	},
-	color : Alloy.CFG.colors.second,
-	left: "5%",
-	bottom : "5dp",
-},
-".listTrack" : {
-	font: {
-		fontSize : "15sp",
-		fontFamily : Alloy.Globals.museo_slab_500
-	},
-	width: Ti.UI.FILL,
-	textAlign: "center",
-	bottom : "5dp",
-	color: Alloy.CFG.colors.first
-}
-".listTitle" : {
-	left: "5%",
-	top : "10dp",
-	font: {
-		fontSize : "22sp",
-	},
-},
-
-".favorite" : {
-	right: "5%",
-	top : "5dp",
-	width : "80%"
+       backgroundColor: Alloy.CFG.colors.second,
+       borderWidth: "1dp",
+       borderColor: "#fff",
+       width: "33%"
 },

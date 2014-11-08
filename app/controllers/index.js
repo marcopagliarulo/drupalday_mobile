@@ -6,6 +6,12 @@ var defaultFont = {
 	fontSize : "20sp",
 	fontFamily : Alloy.Globals.museo_slab_700
 };
+if(Alloy.Globals.isAndroidTablet){
+	defaultFont = {
+		fontSize : "30sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	};
+}
 // Create our node items
 var menuItems = [
     { id: 1, controller : "schedule" , title: "Sessioni", image: "/images/clock.png" , font: defaultFont , callback : function(e){openMenuItem(e);}},

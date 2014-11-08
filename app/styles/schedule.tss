@@ -8,3 +8,9 @@
 	width : Ti.UI.FILL,
 	textAlign: "center",
 }
+"#schedule_switch[if=Alloy.Globals.isAndroidTablet]" : {
+	font : {
+		fontSize : "30sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	},
+}

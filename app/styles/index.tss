@@ -79,6 +79,12 @@
 	},
     top: "30dp"
 }
+"#loadingText[if=Alloy.Globals.isAndroidTablet]" : {
+	font : {
+		fontSize : "37sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	},
+}
 "#container" : {
 	height:Ti.UI.FILL,
 }
@@ -111,4 +117,10 @@
 		fontSize : "25sp",
 		fontFamily : Alloy.Globals.museo_slab_700
 	}
+}
+"#headerTitle[if=Alloy.Globals.isAndroidTablet]" : {
+	font : {
+		fontSize : "37sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	},
 }

@@ -16,6 +16,12 @@
 	color : Alloy.CFG.colors.first,
 	textAlign : "center"
 }
+"Label[if=Alloy.Globals.isAndroidTablet]" : {
+	font : {
+		fontSize : "37sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	},
+}
 ".fontCredits" : {
 	font: {
 		fontSize : "15sp",
@@ -23,4 +29,10 @@
 	},
 	color : Alloy.CFG.colors.first,
 	textAlign : "center"
+}
+".fontCredits[if=Alloy.Globals.isAndroidTablet]" : {
+	font : {
+		fontSize : "22sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	},
 }

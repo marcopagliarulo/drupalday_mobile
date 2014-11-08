@@ -25,6 +25,12 @@
 	},
 	textAlign: "center"
 }
+"Label[if=Alloy.Globals.isAndroidTablet]" : {
+	font : {
+		fontSize : "30sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	},
+}
 "#countdown" : {
 	width: "100%",
 	height: Ti.UI.SIZE,
@@ -63,6 +69,12 @@
 	},
 	textAlign: "center",
 	color : Alloy.CFG.colors.second,
+}
+".hashtag[if=Alloy.Globals.isAndroidTablet]" : {
+	font : {
+		fontSize : "30sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	},
 }
 ".socialLink" : {
 	width : "15%",

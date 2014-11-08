@@ -69,6 +69,7 @@ function createRow(talkHoursList){
 			$.addClass(rowView,"rowView");
 			var title = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : talk.title});
 			$.addClass(title,"listTitle");
+			$.addClass(title,"listTitleSession");
 			var speaker = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : talk.name + " " + talk.surname});
 			$.addClass(speaker,"listSpeaker");
 		

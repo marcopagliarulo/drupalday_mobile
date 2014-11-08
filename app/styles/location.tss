@@ -14,6 +14,12 @@
 	backgroundColor: Alloy.CFG.colors.first,
 	backgroundSelectedColor: Alloy.CFG.colors.second,
 }
+".button[if=Alloy.Globals.isAndroidTablet]" : {
+	font : {
+		fontSize : "30sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	},
+}
 ".error" : {
     textAlign : 'center',
 	font : {
@@ -21,4 +27,10 @@
 		fontFamily : Alloy.Globals.museo_slab_700
 	},
 	color : Alloy.CFG.colors.second,
+}
+".error[if=Alloy.Globals.isAndroidTablet]" : {
+	font : {
+		fontSize : "37sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	},
 }

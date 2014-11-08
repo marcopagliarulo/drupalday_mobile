@@ -1,3 +1,13 @@
+var defaultFont = {
+	fontSize : "20sp",
+	fontFamily : Alloy.Globals.museo_slab_700
+};
+if(Alloy.Globals.isAndroidTablet){
+	defaultFont = {
+		fontSize : "30sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	};
+}
 openInfo = function(e){
 	if(typeof e.source.nid != 'undefined'){
 		var nid = e.source.nid;
@@ -30,10 +40,7 @@ createInfoItem = function(infoItem){
 			touchEnabled: false, 
 			bubbeParent: true, 
 			text : infoItem.title,
-			font : {
-				fontSize : "20sp",
-				fontFamily : Alloy.Globals.museo_slab_700
-			},
+			font : defaultFont,
 			color : Alloy.CFG.colors.third
 		});
 		item.add(label);
@@ -80,10 +87,7 @@ var label = Ti.UI.createLabel({
 	touchEnabled: false,
 	bubbeParent: true, 
 	text : "Crediti",
-	font : {
-		fontSize : "20sp",
-		fontFamily : Alloy.Globals.museo_slab_700
-	},
+	font : defaultFont,
 	color : Alloy.CFG.colors.third
 });
 item.add(label);

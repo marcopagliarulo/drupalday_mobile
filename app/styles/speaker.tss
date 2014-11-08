@@ -9,8 +9,3 @@
 "TableView" : {
 	separatorColor : Alloy.CFG.colors.first
 }
-".rowSeparator" : {
-	width: "100%",
-	height : "1dp",
-	backgroundColor : Alloy.CFG.colors.first
-}

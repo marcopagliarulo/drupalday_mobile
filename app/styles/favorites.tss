@@ -1,66 +1,3 @@
-".headerSession" : {
-	backgroundColor : "#eeeeee",
-},
-".headerSeparatorTop" : {
-	width: "100%",
-	height : "1dp",
-	backgroundColor : "#dddddd",
-},
-".headerSeparatorBottom" : {
-	top: "5dp",
-	width: "100%",
-	height : "1dp",
-	backgroundColor : "#dddddd",
-},
-".rowView" : {
-	backgroundColor : Alloy.CFG.colors.third,
-},
-".rowSeparator" : {
-	width: "100%",
-	height : "1dp",
-	backgroundColor : Alloy.CFG.colors.first
-}
-".scheduleDate" : {
-	font: {
-		fontSize : "15sp",
-		fontFamily : Alloy.Globals.museo_slab_700
-	},
-	color: "#000000",
-	left: "5%",
-	top: "5dp",
-},
-".listSpeaker" : {
-	font: {
-		fontSize : "15sp",
-		fontFamily : Alloy.Globals.museo_slab_700
-	},
-	color : Alloy.CFG.colors.second,
-	left: "5%",
-	bottom : "5dp",
-},
-".listTrack" : {
-	font: {
-		fontSize : "15sp",
-		fontFamily : Alloy.Globals.museo_slab_500
-	},
-	width: Ti.UI.FILL,
-	textAlign: "center",
-	bottom : "5dp",
-	color: Alloy.CFG.colors.first
-}
-".listTitle" : {
-	left: "5%",
-	top : "10dp",
-	font: {
-		fontSize : "22sp",
-	},
-},
-
-".favorite" : {
-	right: "5%",
-	top : "5dp",
-	width: "80%"
-},
 ".emptyFavotires" : {
 	font: {
 		fontSize : "25sp",
@@ -69,6 +6,12 @@
 	color : Alloy.CFG.colors.first,
 	textAlign : "center"
 },
+".emptyFavorites[if=Alloy.Globals.isAndroidTablet]" : {
+	font : {
+		fontSize : "37sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	},
+}
 ".emptyFavoritesDetail" : {
 	font: {
 		fontSize : "15sp",
@@ -76,6 +19,12 @@
 	},
 	color : Alloy.CFG.colors.first,
 	textAlign : "center"
+}
+".emptyFavoritesDetail[if=Alloy.Globals.isAndroidTablet]" : {
+	font : {
+		fontSize : "22sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	},
 }
 "#nofavorites" : {
 	height: Ti.UI.SIZE
