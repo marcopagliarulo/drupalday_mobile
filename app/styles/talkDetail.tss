@@ -25,10 +25,10 @@
 	},
 	color : Alloy.CFG.colors.first,
 },
-".body[if=Alloy.Globals.isAndroidTablet]" : {
+".bodyTablet" : {
 	font : {
 		fontSize : "30sp",
-		fontFamily : Alloy.Globals.museo_slab_300
+		fontFamily : Alloy.Globals.museosans_300
 	},
 }
 ".category" : {
@@ -40,7 +40,7 @@
 	left: "5%",
 	width : "55%"
 },
-".category[if=Alloy.Globals.isAndroidTablet]" : {
+".categoryTablet" : {
 	font : {
 		fontSize : "30sp",
 		fontFamily : Alloy.Globals.museo_slab_700
@@ -58,7 +58,7 @@
 	textAlign: "center",
 	color: Alloy.CFG.colors.first
 }
-".levelLabel[if=Alloy.Globals.isAndroidTablet]" : {
+".levelLabelTablet" : {
 	font : {
 		fontSize : "22sp",
 		fontFamily : Alloy.Globals.museo_slab_500

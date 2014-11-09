@@ -6,8 +6,8 @@
 ".blogView" : {
   backgroundColor : Alloy.CFG.colors.first
 }
-".rowSeparator" : {
+".rowSeparatorBlog" : {
   backgroundColor : Alloy.CFG.colors.third,
-  width: "100%",
   height : "5dp",
+  width: "100%",
 }

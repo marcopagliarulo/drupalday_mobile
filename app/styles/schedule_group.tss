@@ -1,9 +1,4 @@
-".labelTab" : {
-       color : Alloy.CFG.colors.third,
-       font: {
-               fontSize : "25sp",
-               fontFamily : Alloy.Globals.museo_slab_300
-       },
+".tab" : {
        borderWidth: "1dp",
        borderColor: "#fff",
        backgroundColor: Alloy.CFG.colors.first,
@@ -13,9 +8,15 @@
        color : Alloy.CFG.colors.third,
        font: {
                fontSize : "25sp",
-               fontFamily : Alloy.Globals.museo_slab_300
+               fontFamily : Alloy.Globals.museosans_300
        },
 },
+".labelTab[if=Alloy.Globals.isAndroidTablet]" : {
+	font : {
+		fontSize : "37sp",
+		fontFamily : Alloy.Globals.museosans_300
+	},
+}
 ".tabActive" : {
        backgroundColor: Alloy.CFG.colors.second,
        borderWidth: "1dp",

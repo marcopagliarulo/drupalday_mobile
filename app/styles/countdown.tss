@@ -26,10 +26,10 @@
 	textAlign: "center"
 }
 "Label[if=Alloy.Globals.isAndroidTablet]" : {
-	font : {
-		fontSize : "30sp",
-		fontFamily : Alloy.Globals.museo_slab_700
-	},
+       font : {
+               fontSize : "30sp",
+               fontFamily : Alloy.Globals.museo_slab_700
+       },
 }
 "#countdown" : {
 	width: "100%",
@@ -71,10 +71,10 @@
 	color : Alloy.CFG.colors.second,
 }
 ".hashtag[if=Alloy.Globals.isAndroidTablet]" : {
-	font : {
-		fontSize : "30sp",
-		fontFamily : Alloy.Globals.museo_slab_700
-	},
+       font : {
+               fontSize : "30sp",
+               fontFamily : Alloy.Globals.museo_slab_700
+       },
 }
 ".socialLink" : {
 	width : "15%",

@@ -21,6 +21,9 @@ var surname = (typeof speakerData != "undefined") ? speakerData.get('surname') :
 
 var title = Ti.UI.createLabel({touchEnabled : false, bubbleParent: true, text : talkItem.get('title')});
 $.addClass(title,"listTitle");
+if(Alloy.Globals.isAndroidTablet){
+	$.addClass(title,"listTitleTablet");
+}
 var rowViewLeft = Ti.UI.createView({touchEnabled : false, bubbleParent: true, layout : "vertical", width: "80%", height: Ti.UI.SIZE});
 var rowViewRight = Ti.UI.createView({touchEnabled : false, bubbleParent: true, layout : "vertical", width: "20%", height: Ti.UI.SIZE});
 var favorites = Alloy.Collections.instance('favorites');
@@ -32,7 +35,8 @@ var favorite = Ti.UI.createImageView({
 	image : imagePath, 
 	nid : talkItem.get('nid'), 
 	bubbleParent : false,
-	top: "5dp"
+	top: "5dp",
+	width:"50%"
 });
 favorite.addEventListener('click',function(e){
 	var favorites = Alloy.Collections.instance('favorites');
@@ -54,7 +58,8 @@ favorite.addEventListener('click',function(e){
 var fb = Ti.UI.createImageView({
 	image : '/images/facebook.png',
 	top : "5dp",
-	bubbleParent : false
+	bubbleParent : false,
+	width:"50%"
 });
 fb.addEventListener("click",function(e){
 	var data = {
@@ -66,7 +71,8 @@ fb.addEventListener("click",function(e){
 var twitter = Ti.UI.createImageView({
 	image : '/images/twitter.png',
 	top : "5dp",
-	bubbleParent : false
+	bubbleParent : false,
+	width:"50%"
 });
 twitter.addEventListener("click",function(e){
 	var data = talkItem.get('url') + Alloy.CFG.hastag;
@@ -81,6 +87,9 @@ rowViewLeft.add(title);
 for(var k = 0; k < speakers.length; k++){
 	var speaker = Ti.UI.createLabel({touchEnabled : false, bubbleParent: true, text : speakers[k].name + " " + speakers[k].surname});
 	$.addClass(speaker,"listSpeaker");
+	if(Alloy.Globals.isAndroidTablet){
+		$.addClass(speaker,"listSpeakerTablet");
+	}
 	rowViewLeft.add(speaker);
 }
 headerView.add(rowViewLeft);
@@ -91,6 +100,9 @@ var subHeaderView = Ti.UI.createView({layout: "horizontal"});
 $.addClass(subHeaderView,"subHeaderView");
 var category = Ti.UI.createLabel({touchEnabled : false, bubbleParent: true, text : talkItem.get('category')});
 $.addClass(category,"category");
+if(Alloy.Globals.isAndroidTablet){
+	$.addClass(category,"categoryTablet");
+}
 subHeaderView.add(category);
 var viewLevel = Ti.UI.createView({layout: "vertical"});
 $.addClass(viewLevel,"viewLevel");
@@ -103,6 +115,9 @@ for(var i = 1; i < 4; i++){
 }
 levelLabel = Ti.UI.createLabel({text: "livello"});
 $.addClass(levelLabel,"levelLabel");
+if(Alloy.Globals.isAndroidTablet){
+	$.addClass(levelLabel,"levelLabelTablet");
+}
 viewLevel.add(viewLevelImages);
 viewLevel.add(levelLabel);
 subHeaderView.add(viewLevel);
@@ -111,6 +126,9 @@ $.talkDetail.add(subHeaderView);
 
 var body = Ti.UI.createLabel({bubbleParent: true, text : talkItem.get('body')});
 $.addClass(body,"body");
+if(Alloy.Globals.isAndroidTablet){
+	$.addClass(body,"bodyTablet");
+}
 var scrollView = Ti.UI.createScrollView({layout: 'vertical', scrollType : 'vertical', top: "5%"});
 scrollView.add(body);
 $.talkDetail.add(scrollView);

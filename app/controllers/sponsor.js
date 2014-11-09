@@ -12,6 +12,9 @@ for(var i = 0; i < sponsorTypes.length; i++){
 	$.addClass(headerViewElement,"headerViewElement");
 	var headerLabel = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : sponsorType.typeLabel});
 	$.addClass(headerLabel,"sponsorType");
+	if(Alloy.Globals.isAndroidTablet){
+		$.addClass(headerLabel,"sponsorTypeTablet");
+	}
 	headerViewElement.add(headerLabel);
 	TableViewSections[sponsorType.type] = Ti.UI.createView({layout : "vertical", height: Ti.UI.SIZE});
 	TableViewSections[sponsorType.type].add(headerViewElement);

@@ -20,7 +20,7 @@
 	},
 	color : Alloy.CFG.colors.first,
 },
-".body[if=Alloy.Globals.isAndroidTablet]" : {
+".bodyTablet" : {
 	font : {
 		fontSize : "30sp",
 		fontFamily : Alloy.Globals.museo_slab_700

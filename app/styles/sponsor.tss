@@ -6,7 +6,7 @@
 	color : Alloy.CFG.colors.third,
 	textAlign : "center"
 },
-".sponsorType[if=Alloy.Globals.isAndroidTablet]" : {
+".sponsorTypeTablet" : {
 	font : {
 		fontSize : "37sp",
 		fontFamily : Alloy.Globals.museo_slab_700

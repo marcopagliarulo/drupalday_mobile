@@ -28,7 +28,7 @@
 	},
 	color : Alloy.CFG.colors.second,
 }
-".error[if=Alloy.Globals.isAndroidTablet]" : {
+".errorTablet" : {
 	font : {
 		fontSize : "37sp",
 		fontFamily : Alloy.Globals.museo_slab_700

@@ -38,6 +38,9 @@ function createRow(talkHoursList){
 		var timeContainer = Ti.UI.createView({touchEnabled: false, bubbeParent: true, layout: "absolute",height: Ti.UI.SIZE, width: Ti.UI.FILL});
 		var time = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : talkHoursList[i] .time});
 		$.addClass(time,"scheduleDate");
+		if(Alloy.Globals.isAndroidTablet){
+			$.addClass(time,"scheduleDateTablet");
+		}
 		var headerSeparatorTop = Ti.UI.createView();
 		$.addClass(headerSeparatorTop,"headerSeparatorTop");
 		var headerSeparatorBottom = Ti.UI.createView();
@@ -68,13 +71,21 @@ function createRow(talkHoursList){
 			var rowView = Ti.UI.createView({touchEnabled: false, bubbeParent: true, layout : "horizontal", width: Ti.UI.FILL, height: Ti.UI.SIZE});
 			$.addClass(rowView,"rowView");
 			var title = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : talk.title});
-			$.addClass(title,"listTitle");
-			$.addClass(title,"listTitleSession");
+			$.addClass(title,"listTitle listTitleSession");
+			if(Alloy.Globals.isAndroidTablet){
+				$.addClass(title,"listTitleTablet listTitleSessionTablet");
+			}
 			var speaker = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : talk.name + " " + talk.surname});
 			$.addClass(speaker,"listSpeaker");
+			if(Alloy.Globals.isAndroidTablet){
+				$.addClass(speaker,"listSpeakerTablet");
+			}
 		
 			var track = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : talk.track});
 			$.addClass(track,"listTrack");
+			if(Alloy.Globals.isAndroidTablet){
+				$.addClass(track,"listTrackTablet");
+			}
 			var rowViewLeft = Ti.UI.createView({touchEnabled: false, bubbeParent: true, layout : "vertical", width: "80%", height: Ti.UI.SIZE});
 			var rowViewRight = Ti.UI.createView({touchEnabled: false, bubbeParent: true, layout : "vertical", width: "20%", height: Ti.UI.SIZE});
 		
@@ -86,13 +97,17 @@ function createRow(talkHoursList){
 					speakerTwitter = "@" + talk.speaker[k].twitter + " ";
 				}
 				$.addClass(speaker,"listSpeaker");
+				if(Alloy.Globals.isAndroidTablet){
+					$.addClass(speaker,"listSpeakerTablet");
+				}
 				rowViewLeft.add(speaker);
 			}
 			var twitter = Ti.UI.createImageView({
 				image : '/images/twitter.png',
 				top : "5dp",
 				bubbleParent : false,
-				speaker : speakerTwitter
+				speaker : speakerTwitter,
+				width:"50%"
 			});
 			twitter.addEventListener("click",function(e){
 				var data = e.source.speaker + Alloy.CFG.hastag;

@@ -17,8 +17,11 @@ for(var i = 0; i < blogPost.length; i++){
 	var image = Ti.UI.createImageView({touchEnabled: false, bubbeParent: true, image : blogPostImage, width : "100%"});
 	var label = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : blogPost[i].title});
 	$.addClass(label,"listTitle");
+	if(Alloy.Globals.isAndroidTablet){
+		$.addClass(label,"listTitleTablet");
+	}
 	var rowSeparator = Ti.UI.createView();
-	$.addClass(rowSeparator,"rowSeparator");
+	$.addClass(rowSeparator,"rowSeparatorBlog");
 	view.add(label);
 	view.add(image);
 	view.add(rowSeparator);

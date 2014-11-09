@@ -56,5 +56,8 @@ if(GPSerror === false){
 else{
 	var error = Ti.UI.createLabel({text : GPSerror});
 	$.addClass(error,"error");
+	if(Alloy.Globals.isAndroidTablet){
+		$.addClass(error,"errorTablet");
+	}
 	$.mapContainer.add(error);
 }

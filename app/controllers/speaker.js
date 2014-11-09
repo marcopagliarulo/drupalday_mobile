@@ -25,6 +25,9 @@ for(var i = 0; i < speakerData.length; i++){
 	$.addClass(image,"listImage");
 	var title = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : speaker.name + "\n" + speaker.surname});
 	$.addClass(title,"listTitle");
+	if(Alloy.Globals.isAndroidTablet){
+		$.addClass(title,"listTitleTablet");
+	}
 	
 	var tableViewSection = Ti.UI.createView({height : Ti.UI.SIZE, layout: "vertical"});
 	rowView.add(image);

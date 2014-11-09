@@ -26,13 +26,20 @@ var viewLabel = Ti.UI.createView({
 $.addClass(viewLabel,"viewLabel");
 
 var labelTitle = Ti.UI.createLabel({
-	text : blogPost.title
+	text : blogPost.title,
+	width: "80%"
 });
 $.addClass(labelTitle,"listTitle");
+if(Alloy.Globals.isAndroidTablet){
+	$.addClass(labelTitle,"listTitleTablet");
+}
 var labelDate = Ti.UI.createLabel({
 	text : blogPost.date
 });
 $.addClass(labelDate,"listDate");
+if(Alloy.Globals.isAndroidTablet){
+	$.addClass(labelDate,"listDateTablet");
+}
 $.headerBlog.add(image);
 $.headerBlog.add(labelDate);
 viewLabel.add(labelTitle);
@@ -58,13 +65,15 @@ webView.addEventListener('load', function(e) {
 });
 var social = Ti.UI.createView({
 	height : Ti.UI.SIZE,
-	layout : 'vertical'
+	layout : 'vertical',
+	width: "20%"
 });
 $.addClass(social,"social");
 var fb = Ti.UI.createImageView({
 	image : '/images/facebook.png',
 	top : "5dp",
-	bubbleParent : false
+	bubbleParent : false,
+	width:"50%"
 });
 fb.addEventListener("click",function(e){
 	var data = {
@@ -77,7 +86,8 @@ social.add(fb);
 var twitter = Ti.UI.createImageView({
 	image : '/images/twitter.png',
 	top : "5dp",
-	bubbleParent : false
+	bubbleParent : false,
+	width:"50%"
 });
 twitter.addEventListener("click",function(e){
 	var data = blogPost.url + Alloy.CFG.hastag;

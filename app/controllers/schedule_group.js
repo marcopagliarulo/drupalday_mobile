@@ -54,6 +54,9 @@ function createRow(talkData){
 		$.addClass(headerViewElement,"headerSession");
 		var time = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : talk.time});
 		$.addClass(time,"scheduleDate");
+		if(Alloy.Globals.isAndroidTablet){
+			$.addClass(time,"scheduleDateTablet");
+		}
 		var headerSeparatorTop = Ti.UI.createView();
 		$.addClass(headerSeparatorTop,"headerSeparatorTop");
 		var headerSeparatorBottom = Ti.UI.createView();
@@ -68,16 +71,22 @@ function createRow(talkData){
 	    var rowView = Ti.UI.createView({touchEnabled: false, bubbeParent: true, layout : "horizontal", width: Ti.UI.FILL, height: Ti.UI.SIZE});
 		$.addClass(rowView,"rowView");
 		var title = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : talk.title});
-		$.addClass(title,"listTitle");
-		$.addClass(title,"listTitleSession");
+		$.addClass(title,"listTitle listTitleSession");
+		if(Alloy.Globals.isAndroidTablet){
+			$.addClass(title,"listTitleTablet listTitleSessionTablet");
+		}
 		
 //		var track = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : talk.track});
 //		$.addClass(track,"listTrack");
+//		if(Alloy.Globals.isAndroidTablet){
+//			$.addClass(track,"listTrackTablet");
+//		}
+
 	    var rowViewLeft = Ti.UI.createView({touchEnabled: false, bubbeParent: true, layout : "vertical", width: "80%", height: Ti.UI.SIZE});
 	    var rowViewRight = Ti.UI.createView({touchEnabled: false, bubbeParent: true, layout : "vertical", width: "20%", height: Ti.UI.SIZE});
 		
 		var imagePath = (inFavorite) ? '/images/favOn.png' : '/images/favOff.png';
-		var favorite = Ti.UI.createImageView({image : imagePath, nid : talk.nid, bubbleParent : false});
+		var favorite = Ti.UI.createImageView({image : imagePath, nid : talk.nid, bubbleParent : false, width:"50%"});
 		$.addClass(favorite,"favorite");
 		favorite.addEventListener('click',function(e){
 			var favorites = Alloy.Collections.instance('favorites');
@@ -102,6 +111,9 @@ function createRow(talkData){
 		for(var k = 0; k < talk.speaker.length; k++){
 			var speaker = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : talk.speaker[k].name + " " + talk.speaker[k].surname});
 			$.addClass(speaker,"listSpeaker");
+			if(Alloy.Globals.isAndroidTablet){
+				$.addClass(speaker,"listSpeakerTablet");
+			}
 			rowViewLeft.add(speaker);
 		}
 		rowViewRight.add(favorite);

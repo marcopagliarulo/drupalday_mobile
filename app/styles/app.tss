@@ -10,7 +10,7 @@
 	color : Alloy.CFG.colors.first,
 	left: "0"
 }
-".listTitle[if=Alloy.Globals.isAndroidTablet]" : {
+".listTitleTablet" : {
 	font : {
 		fontSize : "37sp",
 		fontFamily : Alloy.Globals.museo_slab_700
@@ -27,7 +27,7 @@
 	top: "5dp",
 	bottom : "5dp"
 }
-".listDate[if=Alloy.Globals.isAndroidTablet]" : {
+".listDateTablet" : {
 	font : {
 		fontSize : "37sp",
 		fontFamily : Alloy.Globals.museo_slab_700
@@ -74,7 +74,7 @@
 	left: "5%",
 	top: "5dp",
 }
-".scheduleDate[if=Alloy.Globals.isAndroidTablet]" : {
+".scheduleDateTablet" : {
 	font : {
 		fontSize : "25sp",
 		fontFamily : Alloy.Globals.museo_slab_700
@@ -89,7 +89,7 @@
 	left: "5%",
 	bottom : "5dp",
 },
-".listSpeaker[if=Alloy.Globals.isAndroidTablet]" : {
+".listSpeakerTablet" : {
 	font : {
 		fontSize : "22sp",
 		fontFamily : Alloy.Globals.museo_slab_700
@@ -105,16 +105,15 @@
 	bottom : "5dp",
 	color: Alloy.CFG.colors.first
 }
-".listTrack[if=Alloy.Globals.isAndroidTablet]" : {
+".listTrackTablet" : {
 	font : {
 		fontSize : "22sp",
 		fontFamily : Alloy.Globals.museo_slab_500
 	},
 }
 ".favorite" : {
-	right: "5%",
 	top : "5dp",
-	width: "80%"
+	width: "50%"
 }
 ".listTitleSession" : {
 	left: "5%",
@@ -124,7 +123,7 @@
 	},
 	textAlign : "left",
 }
-".listTitleSession[if=Alloy.Globals.isAndroidTablet]" : {
+".listTitleSessionTablet" : {
 	font : {
 		fontSize : "33sp",
 	},

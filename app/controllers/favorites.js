@@ -41,6 +41,9 @@ function createRow(talkData){
 		$.addClass(headerSeparatorBottom,"headerSeparatorBottom");
 		var time = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : talk.time});
 		$.addClass(time,"scheduleDate");
+		if(Alloy.Globals.isAndroidTablet){
+			$.addClass(time,"scheduleDateTablet");
+		}
 		headerViewElement.add(headerSeparatorTop);
 		headerViewElement.add(time);
 		headerViewElement.add(headerSeparatorBottom);
@@ -50,17 +53,26 @@ function createRow(talkData){
 	    var rowView = Ti.UI.createView({touchEnabled: false, bubbeParent: true, layout : "horizontal", width: Ti.UI.FILL, height: Ti.UI.SIZE});
 		$.addClass(rowView,"rowView");
 		var title = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : talk.title});
-		$.addClass(title,"listTitle");
-		$.addClass(title,"listTitleSession");
+		$.addClass(title,"listTitle listTitleSession");
+		if(Alloy.Globals.isAndroidTablet){
+			$.addClass(title,"
+			listTitleTablet listTitleSessionTablet");
+		}
 		var speaker = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : talk.name + " " + talk.surname});
 		$.addClass(speaker,"listSpeaker");
+		if(Alloy.Globals.isAndroidTablet){
+			$.addClass(speaker,"listSpeakerTablet");
+		}
 		
 		var track = Ti.UI.createLabel({touchEnabled: false, bubbeParent: true, text : talk.track});
 		$.addClass(track,"listTrack");
+		if(Alloy.Globals.isAndroidTablet){
+			$.addClass(track,"listTrackTablet");
+		}
 	    var rowViewLeft = Ti.UI.createView({touchEnabled: false, bubbeParent: true, layout : "vertical", width: "80%", height: Ti.UI.SIZE});
 	    var rowViewRight = Ti.UI.createView({touchEnabled: false, bubbeParent: true, layout : "vertical", width: "20%", height: Ti.UI.SIZE});
 		
-		var favorite = Ti.UI.createImageView({image : '/images/favOn.png', nid : talk.nid, bubbleParent : false});
+		var favorite = Ti.UI.createImageView({image : '/images/favOn.png', nid : talk.nid, bubbleParent : false, width:"50%"});
 		$.addClass(favorite,"favorite");
 		favorite.addEventListener('click',function(e){
 			var favorites = Alloy.Collections.instance('favorites');

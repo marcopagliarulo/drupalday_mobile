@@ -15,8 +15,10 @@ Alloy.Globals.Map = require('ti.map');
 Alloy.Globals.osName = Ti.Platform.osname;
 Alloy.Globals.filesDownload = {};
 Alloy.Globals.updateCount = 0;
+Alloy.Globals.isAndroidTablet = false;
 switch(Alloy.Globals.osName){
 	case 'android':
+		Alloy.Globals.isAndroidTablet = (Ti.Platform.Android.getPhysicalSizeCategory() == Ti.Platform.Android.PHYSICAL_SIZE_CATEGORY_LARGE || Ti.Platform.Android.getPhysicalSizeCategory() == Ti.Platform.Android.PHYSICAL_SIZE_CATEGORY_XLARGE);
 		Alloy.Globals.museo_slab_500 = 'museo_slab_500';
 		Alloy.Globals.museo_slab_700 = 'museo_slab_700';
 		Alloy.Globals.museosans_300 = 'museosans_300';
@@ -97,6 +99,15 @@ updateData = function(type){
 							if(typeof mapping != 'undefined'){
 								for(var key in node){
 									if(typeof mapping[key] != 'undefined'){
+										if(node[key] != ""){
+											if(typeof mapping[key]['type'] != 'undefined' && mapping[key]['type'] == 'file' && typeof mapping[key]['callback'] != 'undefined' ){
+												object[mapping[key]['field']] = (typeof mapping[key]['callback'] != 'undefined') ? mapping[key]['callback'](node[key], type) : node[key];
+											}
+											else{
+												object[mapping[key]['field']] = (typeof mapping[key]['callback'] != 'undefined') ? mapping[key]['callback'](node[key]) : node[key];
+											}
+										}
+										/*
 										if(typeof mapping[key]['type'] != 'undefined' && mapping[key]['type'] == 'file' && typeof mapping[key]['callback'] != 'undefined' && node[key] != ""){
 											file = true;
 											files[files.length] = {
@@ -109,6 +120,7 @@ updateData = function(type){
 										else if(node[key] != ""){
 											object[mapping[key]['field']] = (typeof mapping[key]['callback'] != 'undefined') ? mapping[key]['callback'](node[key]) : node[key];
 										}
+										*/
 									}
 								}
 							}
@@ -120,6 +132,10 @@ updateData = function(type){
 							var currentCollection = collection.get(object[id]);
 							if(typeof object['changed'] == 'undefined' || (typeof currentCollection != 'undefined' && object['changed'] > currentCollection.get('changed')) || typeof currentCollection == 'undefined'){
 								ids[ids.length] = object[id];
+								Ti.API.info(JSON.stringify(object));
+								var row = Alloy.createModel(type,object);
+								row.save();
+								/*
 								if(file){
 									if(typeof Alloy.Globals.filesDownload[type] == 'undefined'){
 										Alloy.Globals.filesDownload[type] = new Array();
@@ -130,6 +146,7 @@ updateData = function(type){
 									var row = Alloy.createModel(type,object);
 									row.save();
 								}
+								*/
 							}
 						}
 					}
@@ -163,11 +180,17 @@ updateData = function(type){
 	client.open("GET", url);
 	client.send();	
 };
-function getImageBlob(url, data, field, type, files){
+function getImageBlob(url, type){
 	Alloy.Globals.updateCount++;
+	var filename = url.substring(url.lastIndexOf('/')+1);
+    var f = Ti.Filesystem.getFile(Ti.Filesystem.applicationDataDirectory,filename);
 	var xhr = Titanium.Network.createHTTPClient({
 		onload : function(e){
  			if (xhr.status == 200 ) {
+		        f.write(this.responseData); // write to the file
+				var type = this._properties['type'];
+// 				this.responseData
+/*
 	 			var data = this._properties['data'];
 				var field = this._properties['field'];
 				var files = this._properties['files'];
@@ -181,12 +204,15 @@ function getImageBlob(url, data, field, type, files){
 					var currentFile = files.shift();
 					currentFile.callback(currentFile.value, data, currentFile.field, type, files);
 				}
+*/
 			}
 			event = {};
 			event.type = type;
 			Ti.App.fireEvent('updateDataEnd',event);
 		},
 		onerror : function(e) {
+			var type = this._properties['type'];
+/*
  			var data = this._properties['data'];
 			var field = this._properties['field'];
 			var files = this._properties['files'];
@@ -200,20 +226,26 @@ function getImageBlob(url, data, field, type, files){
 				var currentFile = files.shift();
 				currentFile.callback(currentFile.value, data, currentFile.field, type, files);
 			}
+*/
 			event = {};
 			event.type = type;
 			Ti.App.fireEvent('updateDataEnd',event);
 		},
 	});
-	
+	xhr.applyProperties({
+		'type' : type,
+	});
+/*
 	xhr.applyProperties({
 		'data' : data,
 		'field' : field,
 		'type' : type,
 		'files' : files
 	});
+*/
 	xhr.open('GET',url);  
 	xhr.send();
+	return f.nativePath;
 }
 function getSponsorType(sponsorType){
 	var sponsorTypes = {
@@ -530,4 +562,3 @@ function twitterShare(data){
 	});
 
 }
-Alloy.Globals.isAndroidTablet = (Ti.Platform.osname == "android" && (Ti.Platform.Android.getPhysicalSizeCategory() == Ti.Platform.Android.PHYSICAL_SIZE_CATEGORY_LARGE || Ti.Platform.Android.getPhysicalSizeCategory() == Ti.Platform.Android.PHYSICAL_SIZE_CATEGORY_XLARGE)); 

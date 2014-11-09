@@ -22,6 +22,9 @@ else{
 		text : infoPost.title
 	});
 	$.addClass(labelTitle,"listTitle");
+	if(Alloy.Globals.isAndroidTablet){
+		$.addClass(labelTitle,"listTitleTablet");
+	}
 	$.infoPost.add(labelTitle);
 }
 
