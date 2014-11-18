@@ -130,9 +130,8 @@ updateData = function(type){
 								continue;
 							}
 							var currentCollection = collection.get(object[id]);
+							ids[ids.length] = object[id];
 							if(typeof object['changed'] == 'undefined' || (typeof currentCollection != 'undefined' && object['changed'] > currentCollection.get('changed')) || typeof currentCollection == 'undefined'){
-								ids[ids.length] = object[id];
-								Ti.API.info(JSON.stringify(object));
 								var row = Alloy.createModel(type,object);
 								row.save();
 								/*
