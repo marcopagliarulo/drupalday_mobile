@@ -1042,7 +1042,7 @@ function BirdHouse(params) {
 			params = '';
 		}
 
-		api("https://api.twitter.com/1/statuses/friends_timeline.json","GET",params,function(tweets){
+		api("https://api.twitter.com/1.1/search/tweets.json","GET",params,function(tweets){
 			try {
 				tweets = JSON.parse(tweets);
 			} catch (e) {
@@ -1055,7 +1055,7 @@ function BirdHouse(params) {
 			}
 
 			return tweets;
-		})
+		}, false, false, false)
 	}
 
 	// --------------------------------------------------------

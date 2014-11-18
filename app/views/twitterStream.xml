@@ -1,0 +1,5 @@
+<Alloy>
+	<ScrollView id="twitterStreamView">
+		<View id="twitterStreamViewWrapper" layout="vertical"></View>
+	</ScrollView>
+</Alloy>

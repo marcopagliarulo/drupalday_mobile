@@ -21,6 +21,7 @@ var menuItems = [
     { id: 5, controller : "blog" , title: "Blog", image: "/images/pen.png" , font: defaultFont , callback : function(e){openMenuItem(e);} },
     { id: 6, controller : "location" , title: "Location", image: "/images/pin.png" , font: defaultFont , callback : function(e){openMenuItem(e);} },
     { id: 7, controller : "info" , title: "Info", image: "/images/info.png" , font: defaultFont , callback : function(e){openMenuItem(e);} },
+    { id: 8, controller : "twitterStream" , title: "Twitter", image: "/images/twitterStream.png" , font: defaultFont , callback : function(e){openMenuItem(e);} },
 ];
 function openMenuItem(event){
 	if(typeof event.source.id != 'undefined'){

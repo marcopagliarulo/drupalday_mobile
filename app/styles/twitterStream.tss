@@ -1,0 +1,18 @@
+".listImage" : {
+	width: "25%",
+},
+".listTitle" : {
+	left : "5%",
+	width : "70%",
+	backgroundColor : "transparent",
+	font: {
+		fontSize : "15sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	},
+}
+".listTitleTablet" : {
+	font : {
+		fontSize : "22sp",
+		fontFamily : Alloy.Globals.museo_slab_700
+	},
+}
